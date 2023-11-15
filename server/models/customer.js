@@ -8,6 +8,7 @@ const customerSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
     },
     password: {
         type: String,
@@ -22,7 +23,6 @@ const customerSchema = new mongoose.Schema({
             cart: [
                 {
                     product: {
-                        name: String,
                         price: String,
                         description: String,
                         size: String,

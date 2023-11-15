@@ -4,5 +4,6 @@ import CustomersController from '../controllers/customers_controller.js'
 const customersRoute = express.Router()
 
 customersRoute.get('/', CustomersController.index)
+customersRoute.post('/', CustomersController.create)
 
 export default customersRoute

@@ -1,0 +1,38 @@
+.product-display{
+    width: 250px;
+    max-height: 530px;
+    margin: 15px;
+}
+
+.product-display:hover{
+    background-color: rgb(229, 227, 222);
+    border: none;
+    border-radius: 10px;
+    color: rgb(86, 62, 34);
+}
+
+.product-image-container{
+    width: 250px;
+    height: 250px;
+    background-color: rgb(239, 238, 238);
+    border:none;
+    border-radius: 10px;
+}
+
+.product-display img{
+    max-width: 100%;
+    max-height: 100%;
+    mix-blend-mode:multiply;
+}
+
+.product-display:hover .add-to-cart-btn{
+    display: inline;
+}
+
+.product-display:hover .quantity{
+    display: block;
+}
+
+select{
+    border: none;
+}

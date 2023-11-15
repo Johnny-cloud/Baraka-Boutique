@@ -382,6 +382,8 @@ class Seeder {
         await Product.create({description: "CASIO G Shock Quartz Watch with Resin Strap, Beige, 30 (Model: GG1000-1A5)", price: 350, rating: 4.6, category: 'watches', sub_category: 'men', image: "https://m.media-amazon.com/images/I/91nFR1HCTlL._AC_SX569_.jpg"})
 
 
-
+        console.log('........done seeding data!')
     }
 }
+
+export default Seeder

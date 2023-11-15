@@ -1,0 +1,23 @@
+table{
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+td{
+    padding: 10px;
+}
+.delete-btn{
+    color: red;
+    border: none;
+    font-size: 18px;
+}
+.delete-btn:hover{
+    cursor: pointer;
+}
+.td-description{
+    width: 70%;
+}
