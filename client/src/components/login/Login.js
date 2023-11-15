@@ -1,10 +1,13 @@
 import {useState, useContext} from 'react'
 import AppContext from '../context/AppContext'
 import './login.css'
+import { Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
     const {setCurrentCustomer} = useContext(AppContext)
+    const navigate = useNavigate()
 
     const[formData, setFormData] = useState({
         email: "",
@@ -29,6 +32,7 @@ const Login = () => {
         if(response.ok){
             const customer = await response.json()
             setCurrentCustomer(customer)
+            navigate('/profile')
 
         } else{
             console.log(response)
@@ -43,15 +47,21 @@ const Login = () => {
   return (
     <div className='display-container'>
         <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='email'>Email</label>
-            <input id='email' name='email' type='text' value={formData.email} onChange={handleChange} />
+        <Form onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label>Email</Form.Label>
+                <Form.Control id='email' name='email' type='text' value={formData.email} onChange={handleChange} />
+            </Form.Group>
 
-            <label htmlFor='password'>Password</label>
-            <input id='password' name='password' type='password' value={formData.password} onChange={handleChange} />
+            <Form.Group>
+                <Form.Label>Password</Form.Label>
+                <Form.Control id='password' name='password' type='password' value={formData.password} onChange={handleChange} />
+            </Form.Group>
 
-            <input type='submit' value={'Submit'} className='submit-btn' />
-        </form>
+            <Form.Group>
+                <Form.Control type='submit' value={'Login'} className='submit-btn' />
+            </Form.Group>
+        </Form>
     </div>
   )
 }

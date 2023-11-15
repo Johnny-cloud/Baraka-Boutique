@@ -10,7 +10,7 @@
 
 .selected-alert-item{
     width: 60%;
-    height: 700px;
+    height: 450px;
     position: fixed;
     z-index: 2;
     top: 10%;
@@ -22,8 +22,8 @@
 
 .selected-item-image-container{
     top: 0;
-    width: 500px;
-    height: 700px;
+    width: 350px;
+    height: 450px;
     left: 0;
     margin-right: 30px;
 }

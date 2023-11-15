@@ -1,21 +1,42 @@
+import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom'
+
+import './app.css'
+
 import { MenClothing, WomenClothing, BoysClothing, GirlsClothing } from './clothing';
 import { BoysShoes, MenShoes, WomenShoes, GirlsShoes  } from './shoes';
 import { BoysWatches, WomenWatches, GirlsWatches, MenWatches } from './watches';
 import Login from './login/Login';
 import Signup from './signup/Signup';
 import Navigation from './nav/Nav';
-import './app.css'
-import AppContext from './context/AppContext';
-import { useState } from 'react';
 import Cart from './cart/Cart';
 import ItemAlert from './alert/ItemAlert';
+import AppContext from './context/AppContext';
+import Profile from './profile/Profile';
+
 
 const App = () => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")))
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(null)
+
+    const auth = async () => {
+        const response = await fetch('/auth')
+
+        if(response.ok){
+            const customer = await response.json()
+            setCurrentCustomer(customer)
+        }
+    }
     
+    useEffect(() => {
+        auth()
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify([...cart]))
+    }, [cart])
+
 
     return (
         <div className='app'>
@@ -43,6 +64,8 @@ const App = () => {
 
                         <Route exact path='/login' element={<Login />} />
                         <Route exact path='/signup' element={<Signup />} />
+
+                        <Route exact path='/profile' element={<Profile />} />
                     </Routes>
                 </div>
             </AppContext.Provider>

@@ -1,10 +1,13 @@
-import {useContext} from 'react'
-import AppContext from '../context/AppContext'
+import { useContext } from "react"
+import AppContext from "../context/AppContext"
 
 const CartItem = ({cartItem}) => {
+
     const {cart, setCart} = useContext(AppContext)
+
     const deleteItem = () => {
-        setCart(cart.filter(item => item._id !== cartItem._id))
+      setCart(cart.filter(item => item._id !== cartItem._id))
+
     }
 
   return (

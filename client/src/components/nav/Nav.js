@@ -1,98 +1,35 @@
-// import { Link } from "react-router-dom"
 import './nav.css'
 import AppContext from "../context/AppContext"
 import { useContext } from "react"
-import {Nav, Navbar, NavDropdown, Container} from 'react-bootstrap'
+import {Nav, Navbar, NavDropdown, Container, Offcanvas} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
+import { useNavigate } from 'react-router-dom'
+
 
 const Navigation = () => {
 
-    const {cart, currentCustomer, setCurrentCustomer} = useContext(AppContext)
-
+    const {cart,  currentCustomer, setCurrentCustomer} = useContext(AppContext)
+    const navigate = useNavigate()
+    
     const handleLogout = async () => {
-        console.log("Logging out...........")
-        fetch('/logout', {method: 'DELETE'})
+        await fetch('/logout', {method: 'DELETE'})
         setCurrentCustomer(null)
+        navigate('/')
     }
 
   return (
     <div >
-
-        {/* <div className="nav-item">
-
-            <div className="dropdown-menu">
-                Men's Fashion <i class="bi bi-chevron-down"></i>
-                <div className="dropdown-item">
-                    <Link to='men-clothing'>clothing</Link>
-                    <Link to='men-shoes'>shoes</Link>
-                    <Link to='men-watches'>watches</Link>
-                </div>
-            </div>
-
-            <div className="dropdown-menu">
-                Women's Fashion <i class="bi bi-chevron-down"></i>
-                <div className="dropdown-item">
-                    <Link to='women-clothing'>clothing</Link>
-                    <Link to='women-shoes'>shoes</Link>
-                    <Link to='women-watches'>watches</Link>
-                </div>
-            </div>
-
-            <div className="dropdown-menu">
-                Boy's Fashion <i class="bi bi-chevron-down"></i>
-                <div className="dropdown-item">
-                    <Link to='boys-clothing'>clothing</Link>
-                    <Link to='boys-shoes'>shoes</Link>
-                    <Link to='boys-watches'>watches</Link>
-                </div>
-            </div>
-
-            <div className="dropdown-menu">
-                Girl's Fashion <i class="bi bi-chevron-down"></i>
-                <div className="dropdown-item">
-                    <Link to='girls-clothing'>clothing</Link>
-                    <Link to='girls-shoes'>shoes</Link>
-                    <Link to='girls-watches'>watches</Link>
-                </div>
-            </div>
-        </div>
-        
-        {currentCustomer ? (
-            <div className="nav-item">
-                <div className="dropdown-menu">
-                    <i class="bi bi-person-check-fill"></i> Welcome {currentCustomer.name} <i class="bi bi-chevron-down"></i> 
-                    <div className="dropdown-item">
-                        <Link className="logout-btn" onClick={handleLogout}>Logout</Link>
-                    </div>
-                </div>
-
-                <div className="cart-link">
-                    <Link to='/cart'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
-                </div>
-            </div>
-        ) : (
-            <div className="nav-item">
-
-                <div className="dropdown-menu">
-                    <i class="bi bi-person-circle"></i> Account<i class="bi bi-chevron-down"></i>
-                    <div className="dropdown-item">
-                        <Link to={'Login'}>Login</Link>
-                        <Link to={'signup'}>Signup</Link>
-                    </div>
-                </div>
-
-                <div className="cart-link">
-                    <Link to='/cart'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
-                </div>
-            </div>
-        )} */}
-
-        
-        <Navbar expand='lg' className="bg-body-tertiary">
+        <Navbar expand='lg' className="bg-body-tertiary" fixed='top'>
             <Container>
                 <Navbar.Brand>Baraka Botique</Navbar.Brand>
                 <Navbar.Toggle></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Offcanvas>
+                    <Offcanvas.Header closeButton>
+                        Baraka Botique
+                    </Offcanvas.Header>
+
+                    <Offcanvas.Body>
                     <Nav className="me-auto">
                         <LinkContainer to='/men-shoes'>
                             <Nav.Link>Home</Nav.Link>
@@ -170,8 +107,8 @@ const Navigation = () => {
                         <Nav>
                             <NavDropdown title=<span class="bi bi-person-check-fill">Welcome {currentCustomer.name}</span>  id="basic-nav-dropdown">
                                 <NavDropdown.Item>
-                                    <LinkContainer to={'/login'}>
-                                        <Nav.Link>Login</Nav.Link>
+                                    <LinkContainer to={'/profile'}>
+                                        <Nav.Link>Profile</Nav.Link>
                                     </LinkContainer>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item>
@@ -206,6 +143,9 @@ const Navigation = () => {
                     <Nav>
 
                     </Nav>
+                    </Offcanvas.Body>
+                </Navbar.Offcanvas>
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>

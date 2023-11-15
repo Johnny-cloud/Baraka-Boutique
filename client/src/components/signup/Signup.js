@@ -1,6 +1,7 @@
 import {useState, useContext} from 'react'
 import AppContext from '../context/AppContext'
 import './signup.css'
+import { Form } from 'react-bootstrap'
 
 const Signup = () => {
 
@@ -48,21 +49,31 @@ const Signup = () => {
     <div className='display-container'>
         <h2>Signup</h2>
         
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='name'>Name</label>
-            <input type='text' id='name' name='name' value={formData.name} onChange={handleChange} />
+        <Form onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label>Name</Form.Label>
+                <Form.Control type='text' id='name' name='name' value={formData.name} onChange={handleChange}  />
+            </Form.Group>
 
-            <label htmlFor='email'>Email</label>
-            <input type='email' id='email' name='email' value={formData.email} onChange={handleChange} />
+            <Form.Group>
+                <Form.Label>Email</Form.Label>
+                <Form.Control type='email' id='email' name='email' value={formData.email} onChange={handleChange} />
+            </Form.Group>
 
-            <label htmlFor='password'>Password</label>
-            <input type='password' id='password' name='password' value={formData.password} onChange={handleChange} />
+            <Form.Group>
+                <Form.Label>Password</Form.Label>
+                <Form.Control type='password' id='password' name='password' value={formData.password} onChange={handleChange}  />
+            </Form.Group>
 
-            <label htmlFor='password_confirmation'>Password Confirmation</label>
-            <input type='password' id='password_confirmation' name='password_confirmation' value={formData.password_confirmation} onChange={handleChange} />
+            <Form.Group>
+                <Form.Label>Password Confirmation</Form.Label>
+                <Form.Control type='password' id='password_confirmation' name='password_confirmation' value={formData.password_confirmation} onChange={handleChange} />
+            </Form.Group>
 
-            <input type='submit' value={'Submit'} className='submit-btn' />
-        </form>
+            <Form.Group>
+                <Form.Control type='submit' value={'Signup'} className='submit-btn'  />
+            </Form.Group>
+        </Form>
     </div>
   )
 }

@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 
 const ItemAlert = () => {
 
-    const {selectedItem, cart, setCart, setSelectedItem} = useContext(AppContext)
+    const {cart, setCart, selectedItem, setSelectedItem} = useContext(AppContext)
+    
 
     const addToCart = (event) => {
         if(cart.find(cartItem => cartItem._id === selectedItem._id)){
@@ -14,10 +15,11 @@ const ItemAlert = () => {
 
         } else if(selectedItem.quantity === undefined && !(cart.find(cartItem => cartItem._id === selectedItem._id))){
             selectedItem.quantity = 1
-            setCart([...cart, selectedItem])  
+            setCart([...cart, selectedItem])
 
         } else{
-            setCart([...cart, selectedItem]) 
+            setCart([...cart, selectedItem])
+        
         }
         
         setSelectedItem(null)

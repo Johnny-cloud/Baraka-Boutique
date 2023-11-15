@@ -1,6 +1,7 @@
 .main-content{
     width: 80%;
     margin: auto;
+    padding-top: 60px;
 }
 
 .display-container{
@@ -27,7 +28,7 @@ form{
     max-width: 800px;
     margin: auto;
     border: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px;
 }
 

@@ -6,6 +6,7 @@ class CustomersController {
         try {
             const customers = await Customer.find()
             res.json(customers)
+            
         } catch(err) {
             res.status(400).json({err})
         }
@@ -15,7 +16,18 @@ class CustomersController {
         try{
             const customer = await Customer.create({...req.body})
             res.json(customer)
+
         } catch(err){
+            res.status(400).json(err)
+        }
+    }
+
+    static async show(req, res){
+        try{
+            const customer = await Customer.findById(req.session.customer_id)
+            res.json(customer)
+
+        } catch(err) {
             res.status(400).json(err)
         }
     }
