@@ -21,7 +21,11 @@ const Navigation = () => {
     <div >
         <Navbar expand='lg' className="bg-body-tertiary" fixed='top'>
             <Container>
-                <Navbar.Brand>Baraka Botique</Navbar.Brand>
+                <Navbar.Brand>
+                    <LinkContainer to={'/'}>
+                        <Nav.Link>Baraka Botique</Nav.Link>
+                    </LinkContainer>
+                </Navbar.Brand>
                 <Navbar.Toggle></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Navbar.Offcanvas>
@@ -31,9 +35,6 @@ const Navigation = () => {
 
                     <Offcanvas.Body>
                     <Nav className="me-auto">
-                        <LinkContainer to='/men-shoes'>
-                            <Nav.Link>Home</Nav.Link>
-                        </LinkContainer>
                         <NavDropdown title="Men's Fashion" id="basic-nav-dropdown">
                             <NavDropdown.Item>
                                 <LinkContainer to={'/men-clothing'}>

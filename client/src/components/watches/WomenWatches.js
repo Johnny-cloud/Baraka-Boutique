@@ -18,7 +18,7 @@ const WomenWatches= () => {
 
     if(womenWatches){
         return(
-            <div className='display-container'>
+            <div>
                 <h1>Women's Watches</h1>
                 <div className='products-container'>
                     {womenWatches.map(watches=> <ProductDisplay product={watches} key={watches._id} />)}

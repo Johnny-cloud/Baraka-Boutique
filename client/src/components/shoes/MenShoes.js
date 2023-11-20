@@ -18,7 +18,7 @@ const MenShoes= () => {
 
     if(menShoes){
         return(
-            <div className='display-container'>
+            <div>
                 <h1>Men's Shoes</h1>
                 <div className='products-container'>
                     {menShoes.map(shoes=> <ProductDisplay product={shoes} key={shoes._id} />)}

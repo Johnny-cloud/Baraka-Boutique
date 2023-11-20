@@ -6,6 +6,7 @@ import './app.css'
 import { MenClothing, WomenClothing, BoysClothing, GirlsClothing } from './clothing';
 import { BoysShoes, MenShoes, WomenShoes, GirlsShoes  } from './shoes';
 import { BoysWatches, WomenWatches, GirlsWatches, MenWatches } from './watches';
+import Home from './home/Home';
 import Login from './login/Login';
 import Signup from './signup/Signup';
 import Navigation from './nav/Nav';
@@ -13,6 +14,7 @@ import Cart from './cart/Cart';
 import ItemAlert from './alert/ItemAlert';
 import AppContext from './context/AppContext';
 import Profile from './profile/Profile';
+import Checkout from './checkout/Checkout';
 
 
 const App = () => {
@@ -34,7 +36,7 @@ const App = () => {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify([...cart]))
+        localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart])
 
 
@@ -45,6 +47,10 @@ const App = () => {
                 <div className='main-content'>
                     <ItemAlert  /> 
                     <Routes>
+                        <Route exact path='/' element={<Home />} />
+
+                        <Route exact path='/checkout' element={<Checkout />} />
+
                         <Route exact path='/men-clothing' element={<MenClothing />} />
                         <Route exact path='/women-clothing' element={<WomenClothing />} />
                         <Route exact path='/boys-clothing' element={<BoysClothing />} />

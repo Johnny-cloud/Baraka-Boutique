@@ -3,6 +3,7 @@ import { Alert } from 'react-bootstrap'
 import './item_alert.css'
 import AppContext from '../context/AppContext'
 import { Link } from 'react-router-dom'
+import {Rating} from 'react-simple-star-rating'
 
 const ItemAlert = () => {
 
@@ -51,6 +52,8 @@ const ItemAlert = () => {
                     <p>
                         <div className='selected-item-details-container'>
                                 <p>{selectedItem.description}</p>
+                                <p><Rating initialValue={selectedItem.rating} size={22} allowFraction /></p>
+                                <p><h4>Ksh. {selectedItem.price}</h4></p>
                                 <p className='quantity'>Quantity  <input type='number'  onChange={handleQuantityChange} defaultValue={1} /></p>
                                 <p><Link to='/cart' onClick={addToCart} className='add-to-cart-btn'>Add to cart <i class="bi bi-cart-check-fill"></i></Link></p>
                         </div>  

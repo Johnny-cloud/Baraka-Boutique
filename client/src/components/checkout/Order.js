@@ -1,18 +1,12 @@
-import CartItem from './CartItem'
-import './cart.css'
+import CheckoutCartItem from './OrderItem'
 import { Table } from 'react-bootstrap'
 import { useContext } from 'react'
 import AppContext from '../context/AppContext'
-import {useNavigate} from 'react-router-dom'
 
-const Cart = () => {
+const Order = () => {
 
   const{cart} = useContext(AppContext)
-  const navigate = useNavigate()
 
-  const proceedToCheckout = () => {
-    navigate('/checkout')
-  }
 
   if(cart){
     
@@ -29,14 +23,10 @@ const Cart = () => {
                   </tr>
               </thead>
               <tbody>
-                {cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem._id} />)}
+                {cart.map(cartItem => <CheckoutCartItem cartItem={cartItem} key={cartItem._id} />)}
                 <tr>
                   <td><h3>Total</h3></td>
                   <td><h4> {cart.reduce((accumulator, cartItem) =>  (cartItem.price * cartItem.quantity) + accumulator, 0)}</h4></td>
-                  <td></td>
-                </tr> 
-                <tr>
-                  <td className='chekout-btn-container'><button className='checkout-btn' onClick={proceedToCheckout}>Proceed to checkout <i class="bi bi-bag-check"></i></button></td>
                 </tr> 
               </tbody>
           </Table>
@@ -55,4 +45,4 @@ const Cart = () => {
   
 }
 
-export default Cart
+export default Order

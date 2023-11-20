@@ -1,10 +1,9 @@
 import {useState, useContext} from 'react'
 import AppContext from '../context/AppContext'
-import './login.css'
 import { Form } from 'react-bootstrap'
 import { useNavigate, Link } from 'react-router-dom'
 
-const Login = () => {
+const CheckoutLogin = () => {
 
     const {setCurrentCustomer} = useContext(AppContext)
     const navigate = useNavigate()
@@ -32,12 +31,7 @@ const Login = () => {
         if(response.ok){
             const customer = await response.json()
             setCurrentCustomer(customer)
-            
-            navigate('/profile')
-
-            
-            
-
+            navigate('/checkout')
         } else{
             console.log(response)
         }
@@ -71,4 +65,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default CheckoutLogin

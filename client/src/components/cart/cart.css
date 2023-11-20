@@ -10,14 +10,29 @@ table{
 td{
     padding: 10px;
 }
+
 .delete-btn{
     color: red;
     border: none;
     font-size: 18px;
 }
+
 .delete-btn:hover{
     cursor: pointer;
 }
+
 .td-description{
     width: 70%;
+}
+
+
+.checkout-btn{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    background-color: green;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+
 }

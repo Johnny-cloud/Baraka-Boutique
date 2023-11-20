@@ -1,0 +1,56 @@
+.checkout-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.checkout-container > * {
+    width: 40%;
+    margin: 15px;
+    padding: 0px 0px 10px;
+    border: none;
+    border-radius: 10px;
+    height: fit-content;
+    
+}
+
+.payment-method form{
+    width: 90%;
+}
+
+.order-and-payment{
+    background-color: rgb(232, 226, 226);
+    color: black;
+}
+
+.order-and-payment > *{
+    margin-bottom: 25px;
+}
+
+.order-and-payment button{
+    width: 90%;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(142, 83, 5);
+    color: aliceblue;
+    margin-bottom: 5px;
+}
+
+.credit-card-image-container{
+    width: 40px;
+    height: 10px;
+    margin: 10px;
+}
+
+.credit-card-image-container img{
+    width: 40px;
+    height: 100%;
+}
+
+@media  screen and (max-width: 600px) {
+    .checkout-container > * {
+        width: 500px;
+    }
+}
