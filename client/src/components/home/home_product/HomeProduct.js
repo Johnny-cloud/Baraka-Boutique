@@ -1,6 +1,7 @@
 import {useContext} from 'react'
 import './home_product.css'
 import AppContext from '../../context/AppContext'
+import { Rating } from 'react-simple-star-rating'
 
 const HomeProduct = ({product}) => {
 
@@ -17,6 +18,8 @@ const HomeProduct = ({product}) => {
             </div>
             <div className='home-product-details-container'>
                 <p>{product.description.substring(0, 30)}...</p>
+                <p><Rating size={20} initialValue={product.rating} allowFraction /></p>
+                <p><h5>Ksh. {product.price}</h5></p>
             </div>
         </div>
     )

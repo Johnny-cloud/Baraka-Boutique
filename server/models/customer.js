@@ -20,15 +20,19 @@ const customerSchema = new mongoose.Schema({
                 type: Date,
                 default: () =>  Date.now()
             },
-            cart: [
-                {
-                    product: {
-                        price: String,
-                        description: String,
-                        size: String,
-                    }
-                }
-            ]
+            price: {
+                required: true,
+                type: Number,
+            },
+            description: {
+                required: true,
+                type: String,
+            },
+            quantity: {
+                required: true,
+                type: Number
+            },
+                
         }
     ]
 })

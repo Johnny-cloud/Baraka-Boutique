@@ -1,11 +1,11 @@
-import {useContext, useState} from 'react'
+import {useContext, useState, useEffect} from 'react'
 import './profile.css'
 import AppContext from '../context/AppContext'
 import { Form } from 'react-bootstrap'
 
 const Profile = () => {
 
-    const {currentCustomer} = useContext(AppContext)
+    const {currentCustomer, setCurrentCustomer} = useContext(AppContext)
 
     const[formData, setFormData] = useState({
         name: "",
@@ -18,9 +18,34 @@ const Profile = () => {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
 
-    if(currentCustomer){
+    const updateProfile = async () => {
+        const response = await fetch(`/customers/${currentCustomer._id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({...formData})
+        })
 
-        console.log(currentCustomer)
+        if(response.ok){
+            const customer = await response.json()
+            setCurrentCustomer(customer)
+            alert("Profile updated successfully!")
+
+        } else{
+            alert("Unable to update profile")
+        }
+
+    }
+
+    useEffect(() => {
+        setFormData({...currentCustomer})
+        console.log('New data.......')
+        
+    }, [currentCustomer])
+    
+
+    if(currentCustomer){
 
         return(
             <div className='display-container'>
@@ -48,7 +73,7 @@ const Profile = () => {
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Control type='submit' className='submit-btn' value={'Update profile'}/>
+                        <Form.Control type='submit' className='submit-btn' value={'Update profile'} onClick={updateProfile}/>
                     </Form.Group>
                 </Form>
             </div>

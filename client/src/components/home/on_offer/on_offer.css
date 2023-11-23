@@ -1,0 +1,21 @@
+.on-offer-contents-container{
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    height: 500px;
+    padding-top: 5%;
+}
+
+.on-offer-details-container p{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.current-price{
+    color: green;
+}
+
+.previous-price{
+    color: red;
+    text-decoration: line-through;
+    text-decoration-line: 3px;
+}

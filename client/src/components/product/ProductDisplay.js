@@ -19,7 +19,7 @@ const ProductDisplay = ({product}) => {
         </div>
 
         <div className='products-detail-container'>
-            <p className='description'>{`${product.description.substring(0, 70)}...`}</p>
+            <p className='description'>{`${product.description.substring(0, 30)}...`}</p>
             <p className='rating'><Rating size={22} initialValue={product.rating} allowFraction /></p>
             <p className='price'><h4>Ksh. {product.price}</h4></p>
         </div>

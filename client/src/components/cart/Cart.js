@@ -11,7 +11,14 @@ const Cart = () => {
   const navigate = useNavigate()
 
   const proceedToCheckout = () => {
-    navigate('/checkout')
+    if(cart.length === 0){
+      alert("Add items to cart!")
+
+    } else{
+      navigate('/checkout')
+      
+    }
+    
   }
 
   if(cart){

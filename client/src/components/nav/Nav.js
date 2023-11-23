@@ -1,14 +1,16 @@
 import './nav.css'
 import AppContext from "../context/AppContext"
 import { useContext } from "react"
-import {Nav, Navbar, NavDropdown, Container, Offcanvas} from 'react-bootstrap'
-import {LinkContainer} from 'react-router-bootstrap'
+import {Navbar, Nav,  Container, Offcanvas} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 
 const Navigation = () => {
 
-    const {cart,  currentCustomer, setCurrentCustomer} = useContext(AppContext)
+    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts} = useContext(AppContext)
+    const [products, setProducts] = useState(null)
     const navigate = useNavigate()
     
     const handleLogout = async () => {
@@ -17,133 +19,86 @@ const Navigation = () => {
         navigate('/')
     }
 
+    const fetchProducts = async () => {
+        const response = await fetch('/products')
+
+        if(response.ok){
+            const allProducts = await response.json()
+            setProducts(allProducts)
+            console.log(allProducts)
+        }
+    }
+
+    useEffect(() => {
+        fetchProducts()
+
+    }, [])
+
+    const setProductsToDisplay = (event) => {
+        if(products){
+            console.log('Setting products..........')
+            setCollectionProducts(products.filter(product => product.sub_category === event.target.id))
+        }
+    }
+
   return (
     <div >
         <Navbar expand='lg' className="bg-body-tertiary" fixed='top'>
+        <Navbar.Brand><Link to={'/'}><h3>Baraka Boutique</h3></Link></Navbar.Brand>
             <Container>
-                <Navbar.Brand>
-                    <LinkContainer to={'/'}>
-                        <Nav.Link>Baraka Botique</Nav.Link>
-                    </LinkContainer>
-                </Navbar.Brand>
                 <Navbar.Toggle></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Navbar.Offcanvas>
                     <Offcanvas.Header closeButton>
-                        Baraka Botique
+                        <h3>Baraka Boutique</h3>
                     </Offcanvas.Header>
 
                     <Offcanvas.Body>
-                    <Nav className="me-auto">
-                        <NavDropdown title="Men's Fashion" id="basic-nav-dropdown">
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/men-clothing'}>
-                                    <Nav.Link>Clothing</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/men-shoes'}>
-                                    <Nav.Link>Shoes</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/men-watches'}>
-                                    <Nav.Link>Watches</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="Women's Fashion" id="basic-nav-dropdown">
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/women-clothing'}>
-                                    <Nav.Link>Clothing</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/women-shoes'}>
-                                    <Nav.Link>Shoes</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/women-watches'}>
-                                    <Nav.Link>Watches</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="Boys' Fashion" id="basic-nav-dropdown">
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/boys-clothing'}>
-                                    <Nav.Link>Clothing</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/boys-shoes'}>
-                                    <Nav.Link>Shoes</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/boys-watches'}>
-                                    <Nav.Link>Watches</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="Girls' Fashion" id="basic-nav-dropdown">
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/girls-clothing'}>
-                                    <Nav.Link>Clothing</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/girls-shoes'}>
-                                    <Nav.Link>Shoes</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <LinkContainer to={'/girls-watches'}>
-                                    <Nav.Link>Watches</Nav.Link>
-                                </LinkContainer>
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                    <Nav className='me-auto'>
+                        <Link to={'/'}>Home</Link>
+
+                        <div className='my-dropdown'>
+                            <span>Collections <i class="bi bi-chevron-down"></i></span>
+                            <div className='my-dropdown-menu'>
+                                <Link to={'/all-products-display'} id='men' onClick={setProductsToDisplay}>Men's Fashion</Link>
+                                <Link to={'/all-products-display'} id='women' onClick={setProductsToDisplay}>Women's Fashion</Link>
+                                <Link to={'/all-products-display'} id='boys' onClick={setProductsToDisplay}>Boys' Fashion</Link>
+                                <Link to={'/all-products-display'} id='girls' onClick={setProductsToDisplay}>Girls' Fashion</Link>
+                            </div>
+                           
+                        </div>
                     </Nav>
                     {currentCustomer ? (
-                        <Nav>
-                            <NavDropdown title=<span class="bi bi-person-check-fill">Welcome {currentCustomer.name}</span>  id="basic-nav-dropdown">
-                                <NavDropdown.Item>
-                                    <LinkContainer to={'/profile'}>
-                                        <Nav.Link>Profile</Nav.Link>
-                                    </LinkContainer>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                        <Nav className='me-auto'>
+                            <div  className='my-dropdown'>
+                                <span><span class="bi bi-person-check-fill">Welcome {currentCustomer.name}</span><i class="bi bi-chevron-down"></i></span>
+                                <div className='my-dropdown-menu'>
+                                    <Link to={'/profile'}>Update Profile</Link>
+                                    <Link to='/customer-orders'>My Previous Orders</Link>
+                                    <Link onClick={handleLogout}>Logout</Link>
+                                </div>
+                               
+                            </div>
 
-                            <LinkContainer to={'/cart'}>
-                                <Nav.Link className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Nav.Link>
-                            </LinkContainer>
+                            <Link className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
+                            
                         </Nav>
                     ) : (
-                        <Nav>
-                            <NavDropdown title=<span class="bi bi-person-circle">Account</span>  id="basic-nav-dropdown">
-                                <NavDropdown.Item>
-                                    <LinkContainer to={'/login'}>
-                                        <Nav.Link>Login</Nav.Link>
-                                    </LinkContainer>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <LinkContainer to={'/signup'}>
-                                        <Nav.Link>Signup</Nav.Link>
-                                    </LinkContainer>
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                        <Nav className='me-auto'>
+                            <div className='my-dropdown'> 
+                                <span><span class="bi bi-person-circle">Account</span><i class="bi bi-chevron-down"></i></span>
+                                <div className='my-dropdown-menu'>
+                                    <Link to={'/login'} >Login</Link>
+                                    <Link to={'/signup'}>Signup</Link>
+                                </div>
+                               
+                            </div>
 
-                            <LinkContainer to={'/cart'}>
-                                <Nav.Link className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Nav.Link>
-                            </LinkContainer>
+                            <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
+                
                         </Nav>
                     )}
-                    <Nav>
 
-                    </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
                     

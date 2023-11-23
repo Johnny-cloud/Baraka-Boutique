@@ -1,0 +1,43 @@
+.categories{
+    width: 20%;
+    position: absolute;
+    left: 0;
+    text-align: start;
+}
+
+.categories .me-auto > *:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+.categories .me-auto  h5:hover, .categories .me-auto h6:hover{
+    color: black;
+    cursor: not-allowed;
+}
+
+.categories .me-auto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 15px;
+    border-bottom: solid;
+    border-bottom-color: black;
+    border-width: 1px;
+
+}
+
+.categories .offcanvas-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categories .me-auto h6{
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+

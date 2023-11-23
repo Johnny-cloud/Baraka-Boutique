@@ -1,16 +1,18 @@
 import {useState, useContext} from 'react'
 import AppContext from '../context/AppContext'
 import { Form } from 'react-bootstrap'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const CheckoutLogin = () => {
+const CheckoutSignup = () => {
 
     const {setCurrentCustomer} = useContext(AppContext)
     const navigate = useNavigate()
 
-    const[formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
+        name: "",
         email: "",
-        password: ""
+        password: "",
+        password_confirmation: ""
     })
 
     const handleChange = (event) => {
@@ -20,7 +22,7 @@ const CheckoutLogin = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const response =  await fetch('/login', {
+        const response = await fetch('/customers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,37 +34,50 @@ const CheckoutLogin = () => {
             const customer = await response.json()
             setCurrentCustomer(customer)
             navigate('/checkout')
+
         } else{
             console.log(response)
         }
 
         setFormData({
+            name: "",
             email: "",
-            password: ""
+            password: "",
+            password_confirmation: ""
         })
     }
 
   return (
     <div className='display-container'>
-        <h2>Login</h2>
+        <h2>Signup</h2>
+        
         <Form onSubmit={handleSubmit}>
             <Form.Group>
+                <Form.Label>Name</Form.Label>
+                <Form.Control type='text' id='name' name='name' value={formData.name} onChange={handleChange}  />
+            </Form.Group>
+
+            <Form.Group>
                 <Form.Label>Email</Form.Label>
-                <Form.Control id='email' name='email' type='text' value={formData.email} onChange={handleChange} />
+                <Form.Control type='email' id='email' name='email' value={formData.email} onChange={handleChange} />
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Password</Form.Label>
-                <Form.Control id='password' name='password' type='password' value={formData.password} onChange={handleChange} />
+                <Form.Control type='password' id='password' name='password' value={formData.password} onChange={handleChange}  />
             </Form.Group>
 
             <Form.Group>
-                <Form.Control type='submit' value={'Login'} className='submit-btn' />
-                <Form.Label>Don't have an account? <Link to={'/checkout-signup'} className='signup-link'>SignUp</Link></Form.Label>
+                <Form.Label>Password Confirmation</Form.Label>
+                <Form.Control type='password' id='password_confirmation' name='password_confirmation' value={formData.password_confirmation} onChange={handleChange} />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Control type='submit' value={'Signup'} className='submit-btn'  />
             </Form.Group>
         </Form>
     </div>
   )
 }
 
-export default CheckoutLogin
+export default CheckoutSignup

@@ -1,0 +1,9 @@
+.products{
+    position: absolute;
+    width: 80%;
+    left: 20%;
+}
+
+.products > .products-container{
+    width: 100%;
+}

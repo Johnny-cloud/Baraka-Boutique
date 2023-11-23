@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+import {useContext, useState} from 'react'
 import { Alert } from 'react-bootstrap'
 import './item_alert.css'
 import AppContext from '../context/AppContext'
@@ -8,7 +8,7 @@ import {Rating} from 'react-simple-star-rating'
 const ItemAlert = () => {
 
     const {cart, setCart, selectedItem, setSelectedItem} = useContext(AppContext)
-    
+    let [quantity, setQuantity] = useState(1)
 
     const addToCart = (event) => {
         if(cart.find(cartItem => cartItem._id === selectedItem._id)){
@@ -24,22 +24,30 @@ const ItemAlert = () => {
         }
         
         setSelectedItem(null)
+        setQuantity(1)
+        
     }
 
-    const handleQuantityChange = (event) => {
-        if(event.target.value < 0){
-            event.target.value = 0
-            selectedItem.quantity = 1
-        } else if(event.target.value === 0){
-            selectedItem.quantity = 1
-        }
-        else{
-            selectedItem.quantity = event.target.value
+
+    const reduceQuantity = () => {
+        if(quantity <= 1){
+            setQuantity(1)
+
+        } else{
+            setQuantity(quantity -= 1)
+
         }
         
     }
 
+    const increaseQuantity = () => {
+        setQuantity(quantity += 1)
+    }
+
     if(selectedItem){
+        // set quantity dynamically
+        selectedItem.quantity = quantity
+
         return (
             <div className='selected-alert-item'>
                 <Alert dismissible  onClose={() => setSelectedItem(null)} className='item-alert' >
@@ -54,7 +62,7 @@ const ItemAlert = () => {
                                 <p>{selectedItem.description}</p>
                                 <p><Rating initialValue={selectedItem.rating} size={22} allowFraction /></p>
                                 <p><h4>Ksh. {selectedItem.price}</h4></p>
-                                <p className='quantity'>Quantity  <input type='number'  onChange={handleQuantityChange} defaultValue={1} /></p>
+                                <p className='quantity'>Quantity <button className='reduce-btn' onClick={reduceQuantity}>-</button> {quantity} <button className='add-btn' onClick={increaseQuantity}>+</button></p>
                                 <p><Link to='/cart' onClick={addToCart} className='add-to-cart-btn'>Add to cart <i class="bi bi-cart-check-fill"></i></Link></p>
                         </div>  
                     </p>

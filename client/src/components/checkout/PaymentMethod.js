@@ -10,17 +10,17 @@ const PaymentMethod = () => {
             <Form>
                 <Form.Group>
                     <Form.Label>Card Number</Form.Label>
-                    <Form.Control />
+                    <Form.Control placeholder='1234 5678 9101 1121' />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Expiration(MM/YY)</Form.Label>
-                    <Form.Control type='text' placeholder='MM/YY'/>
+                    <Form.Control type='text' placeholder='09 / 24'/>
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Card Security Code</Form.Label>
-                    <Form.Control type='number' placeholder='CSC'/>
+                    <Form.Control type='number' placeholder='0123'/>
                 </Form.Group>
             </Form>
         </div>

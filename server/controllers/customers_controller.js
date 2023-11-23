@@ -31,6 +31,16 @@ class CustomersController {
             res.status(400).json(err)
         }
     }
+
+    static async update(req, res){
+        try{
+            const customer = await Customer.findByIdAndUpdate(req.params.id, {...req.body}, {new: true})
+            res.json(customer)
+
+        } catch(err){
+            res.status(404).json(err)
+        }
+    }
 }
 
 export default CustomersController

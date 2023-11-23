@@ -6,7 +6,7 @@
 }
 
 .checkout-container > * {
-    width: 40%;
+    width: 30%;
     margin: 15px;
     padding: 0px 0px 10px;
     border: none;
@@ -17,6 +17,11 @@
 
 .payment-method form{
     width: 90%;
+    padding: 2px;
+}
+
+.order table{
+    font-size: 16px;
 }
 
 .order-and-payment{

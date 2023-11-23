@@ -11,22 +11,22 @@ const Order = () => {
   if(cart){
     
     return (
-      <div className='display-container'>
-          <h3>Your cart</h3>
+      <div className='order'>
+          <h4>Your cart</h4>
           <Table>
               <thead>
                   <tr>
-                      <td><h4>Description</h4></td>
-                      <td><h3>Price (Ksh.)</h3></td>
-                      <td><h3>Quantity</h3></td>
+                      <td><h5>Description</h5></td>
+                      <td><h5>Price (Ksh.)</h5></td>
+                      <td><h5>Quantity</h5></td>
                       <td></td>
                   </tr>
               </thead>
               <tbody>
                 {cart.map(cartItem => <CheckoutCartItem cartItem={cartItem} key={cartItem._id} />)}
                 <tr>
-                  <td><h3>Total</h3></td>
-                  <td><h4> {cart.reduce((accumulator, cartItem) =>  (cartItem.price * cartItem.quantity) + accumulator, 0)}</h4></td>
+                  <td><h5>Total</h5></td>
+                  <td><h5> {cart.reduce((accumulator, cartItem) =>  (cartItem.price * cartItem.quantity) + accumulator, 0)}</h5></td>
                 </tr> 
               </tbody>
           </Table>

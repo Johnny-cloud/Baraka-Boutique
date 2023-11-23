@@ -1,34 +1,34 @@
 import { useState, useEffect } from "react"
 import HomeProduct from "../home_product/HomeProduct"
 
-const BestSelling = () => {
+const Featured = () => {
 
-    const[bestSelling, setBestSelling] = useState(null)
+    const[featured, setFeatured] = useState(null)
 
-    const fetchBestSelling = async () => {
+    const fetchFeatured = async () => {
         const response = await fetch('/products')
 
         if(response.ok){
             const products = await response.json()
-            setBestSelling(products.filter(product => product.category === 'best_selling'))
+            setFeatured(products.filter(product => product.category === 'featured'))
 
         }
     }
 
     useEffect(() => {
-        fetchBestSelling()
+        fetchFeatured()
     }, [])
 
-    if(bestSelling){  
+    if(featured){  
         return(
             <div className="display-container">
-                <h3>Best Sellers</h3>
+                <h3>Featured</h3>
                 <div className="products-container">
-                    {bestSelling.slice(0,4).map(product => <HomeProduct product={product} key={product._id} />)}
+                    {featured.map(product => <HomeProduct product={product} key={product._id} />)}
                 </div>
             </div>
         )
     }
 }
 
-export default BestSelling
+export default Featured

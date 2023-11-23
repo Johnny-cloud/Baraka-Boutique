@@ -26,5 +26,5 @@ app.get('/auth', CustomersController.show)
 
 
 
-// Seeder.seedData()
+//  Seeder.seedData()
 app.listen(3000, () => console.log(`Listening on port http://localhost:3000`))
