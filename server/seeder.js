@@ -1,5 +1,6 @@
 import Product from "./models/product.js";
 import Customer from "./models/customer.js";
+import Order from "./models/order.js";
 
 class Seeder {
 
@@ -8,8 +9,8 @@ class Seeder {
         await Product.deleteMany()
         await Customer.deleteMany()
 
-        await Customer.create({name: 'Jane Doe', email: 'jane@gmail.com', password: 'doe'})
-        await Customer.create({name: 'John Doe', email: 'john@gmail.com', password: 'doe'})
+        let john = await Customer.create({name: 'Jane Doe', email: 'jane@gmail.com', password: 'doe'})
+        let jane = await Customer.create({name: 'John Doe', email: 'john@gmail.com', password: 'doe'})
         
         // shoes
 
@@ -401,6 +402,13 @@ class Seeder {
         await Product.create({description: "Trendy Denim Long sleeve", price: 600, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
         await Product.create({description: "Women side pocket", price: 1000, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
   
+        await Order.create({description: "First Order", price: 345, quantity: 1, status: 'completed', customer_id: john._id})
+        await Order.create({description: "Second Order", price: 345, quantity: 1, status: 'completed', customer_id: john._id})
+        await Order.create({description: "Third Order", price: 345, quantity: 1, status: 'completed', customer_id: john._id})
+
+        await Order.create({description: "First Order", price: 345, quantity: 1, status: 'completed', customer_id: jane._id})
+        await Order.create({description: "Second Order", price: 345, quantity: 1, status: 'completed', customer_id: jane._id})
+        await Order.create({description: "Third Order", price: 345, quantity: 1, status: 'completed', customer_id: jane._id})
 
         console.log('........done seeding data!')
     }

@@ -14,27 +14,6 @@ const customerSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    orders: [
-        {   
-            createdAt: {
-                type: Date,
-                default: () =>  Date.now()
-            },
-            price: {
-                required: true,
-                type: Number,
-            },
-            description: {
-                required: true,
-                type: String,
-            },
-            quantity: {
-                required: true,
-                type: Number
-            },
-                
-        }
-    ]
 })
 
 const Customer = mongoose.model('Customer', customerSchema)

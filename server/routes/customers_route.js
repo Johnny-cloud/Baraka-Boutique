@@ -5,6 +5,7 @@ const customersRoute = express.Router()
 
 customersRoute.get('/', CustomersController.index)
 customersRoute.post('/', CustomersController.create)
+customersRoute.get('/:id', CustomersController.show)
 customersRoute.patch('/:id', CustomersController.update)
 
 export default customersRoute

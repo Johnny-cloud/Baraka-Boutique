@@ -1,5 +1,5 @@
 import Customer from "../models/customer.js";
-
+import Order from "../models/order.js";
 class CustomersController {
 
     static async index(req, res) {
@@ -25,7 +25,10 @@ class CustomersController {
     static async show(req, res){
         try{
             const customer = await Customer.findById(req.session.customer_id)
-            res.json(customer)
+            // const customer = await Customer.findById(req.params.id)
+            const orders = await Order.find({customer_id: customer._id})
+            const {_id, name, email, password} = customer
+            res.json({_id, name, email, password, orders})
 
         } catch(err) {
             res.status(400).json(err)

@@ -9,29 +9,31 @@ const OrderAndPayment = () => {
   const navigate = useNavigate()
 
   const placeOder = async () => {
-    const response = await fetch(`/customers/${currentCustomer._id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        ...currentCustomer,
-        orders: [...currentCustomer.orders, ...cart]
-      })
-    })
 
-    if(response.ok){
+    try{
+      cart.forEach(item => createOrder(item))
       setCart([])
-      const customer = await response.json()
-      setCurrentCustomer(customer)
       alert("Your oder was placed successfully!")
       navigate('/customer-orders')
 
-    } else{
-      console.log(response)
-      alert("Unsuccessful")
+    } catch(err){
+      console.log(err);
     }
 
+  }
+
+  const createOrder = async (item) => {
+    const response = await fetch('/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({...item, customer_id: currentCustomer._id})
+    })
+
+    if(response.ok){
+     console.log('Order created........') 
+    }
   }
 
   return (

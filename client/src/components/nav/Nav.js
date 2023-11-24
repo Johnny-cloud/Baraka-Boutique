@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 
 const Navigation = () => {
 
-    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts} = useContext(AppContext)
+    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts, setSubCategory} = useContext(AppContext)
     const [products, setProducts] = useState(null)
     const navigate = useNavigate()
     
@@ -25,7 +25,6 @@ const Navigation = () => {
         if(response.ok){
             const allProducts = await response.json()
             setProducts(allProducts)
-            console.log(allProducts)
         }
     }
 
@@ -36,8 +35,8 @@ const Navigation = () => {
 
     const setProductsToDisplay = (event) => {
         if(products){
-            console.log('Setting products..........')
             setCollectionProducts(products.filter(product => product.sub_category === event.target.id))
+            setSubCategory(event.target.id)
         }
     }
 
@@ -80,7 +79,7 @@ const Navigation = () => {
                                
                             </div>
 
-                            <Link className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
+                            <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
                             
                         </Nav>
                     ) : (

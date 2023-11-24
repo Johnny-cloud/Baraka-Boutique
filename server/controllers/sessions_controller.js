@@ -1,4 +1,5 @@
 import Customer from "../models/customer.js";
+import Order from "../models/order.js";
 
 class SessionsController{
 
@@ -9,7 +10,9 @@ class SessionsController{
             if(customer){
                 if(customer.password === req.body.password){
                     req.session.customer_id = customer._id
-                    res.json(customer)
+                    const orders = await Order.find({customer_id: customer._id})
+                    const {_id, name, email, password} = customer
+                    res.json({_id, name, email, password, orders})
                 }
 
             }

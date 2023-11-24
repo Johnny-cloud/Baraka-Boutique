@@ -13,7 +13,6 @@ const Products = () => {
 
     }, [collectionProducts])
 
-    console.log(filteredProducts)
 
     if(filteredProducts){
         

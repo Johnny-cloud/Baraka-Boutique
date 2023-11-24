@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import AppContext from '../context/AppContext'
 
+
 const ProductDisplay = ({product}) => {
 
     const {setSelectedItem} = useContext(AppContext)
@@ -13,7 +14,7 @@ const ProductDisplay = ({product}) => {
     }
 
   return (
-    <Link className='product-display' onClick={handleClick} >
+    <Link className='product-display' onClick={handleClick} to={'/selected-display'}>
         <div className='product-image-container'>
             <img src={product.image} alt={product.description} />
         </div>

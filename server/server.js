@@ -1,6 +1,6 @@
 import express from 'express'
 import connectToDB from './dbConnection.js'
-import { productsRoute, customersRoute } from './routes/index.js'
+import { productsRoute, customersRoute, ordersRoute } from './routes/index.js'
 import SessionsController from './controllers/sessions_controller.js'
 import CustomersController from './controllers/customers_controller.js'
 import Seeder from './seeder.js'
@@ -20,6 +20,8 @@ app.use(session({
 
 app.use('/products', productsRoute)
 app.use('/customers', customersRoute)
+app.use('/orders', ordersRoute)
+
 app.post('/login', SessionsController.create)
 app.delete('/logout', SessionsController.destroy)
 app.get('/auth', CustomersController.show)

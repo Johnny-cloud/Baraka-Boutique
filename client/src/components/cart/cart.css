@@ -30,9 +30,13 @@ td{
     width: fit-content;
     margin: auto;
     text-align: center;
-    background-color: green;
+    background-color: rgb(9, 9, 9);
     color: aliceblue;
     border: none;
-    border-radius: 10px;
+    border-radius: 2px;
+    padding: 1% 2%;
+}
 
+.checkout-btn:hover{
+    background-color: green;
 }

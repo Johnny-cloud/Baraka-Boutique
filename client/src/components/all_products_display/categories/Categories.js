@@ -26,8 +26,9 @@ const Categories = () => {
                         <Navbar.Offcanvas>
                             <Offcanvas.Header closeButton></Offcanvas.Header>
                             <Offcanvas.Body className='offcanvas-column'>
+                                <h4>Filter Products</h4>
                                 <Nav className='me-auto'>
-                                    <h5>Product categories</h5>
+                                    <h5>Categories</h5>
                                     <Nav.Link id={'shoes'} onClick={handleClick}>Shoes</Nav.Link>
                                     <Nav.Link id={'clothing'} onClick={handleClick}>Clothes</Nav.Link>
                                     <Nav.Link id={'watches'} onClick={handleClick}>Watches</Nav.Link>                                

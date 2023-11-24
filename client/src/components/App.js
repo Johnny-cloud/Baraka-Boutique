@@ -8,22 +8,23 @@ import Login from './login/Login';
 import Signup from './signup/Signup';
 import Navigation from './nav/Nav';
 import Cart from './cart/Cart';
-import ItemAlert from './alert/ItemAlert';
 import AppContext from './context/AppContext';
 import Profile from './profile/Profile';
 import Checkout from './checkout/Checkout';
 import CustomerOrders from './customer_orders/CustomerOrders';
 import CheckoutSignup from './checkout/CheckoutSignup';
 import AllProductsDisplay from './all_products_display/AllProductsDisplay';
+import SelectedDisplay from './selected_display/SelectedDisplay';
 
 
 const App = () => {
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")))
     const [currentCustomer, setCurrentCustomer] = useState(null)
-    const [selectedItem, setSelectedItem] = useState(null)
+    const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
     const [collectionProducts, setCollectionProducts] = useState(null)
     const [filteredProducts, setFilteredProducts] = useState(null)
     const [category, setCategory] = useState(null)
+    const [subCategory, setSubCategory] = useState(null)
 
     const auth = async () => {
         const response = await fetch('/auth')
@@ -43,13 +44,15 @@ const App = () => {
         localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart])
 
+    useEffect(() => {
+        localStorage.setItem("selectedItem", JSON.stringify(selectedItem))
+    }, [selectedItem])
 
     return (
         <div className='app'>
-            <AppContext.Provider value={{category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
+            <AppContext.Provider value={{subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
                 <Navigation />
                 <div className='main-content'>
-                    <ItemAlert  /> 
                     <Routes>
                         <Route exact path='/' element={<Home />} />
 
@@ -67,6 +70,8 @@ const App = () => {
                         <Route exact path='/profile' element={<Profile />} />
 
                         <Route exact path='/all-products-display' element={<AllProductsDisplay />} />
+
+                        <Route exact path='/selected-display' element={<SelectedDisplay />} />
                     </Routes>
                 </div>
             </AppContext.Provider>
