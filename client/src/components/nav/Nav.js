@@ -98,6 +98,10 @@ const Navigation = () => {
                         </Nav>
                     )}
 
+                    <Nav className='me-auto'>
+                        <Link to={'/admin-dashboard'}>Admin Dashboard</Link>
+                    </Nav>
+
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
                     

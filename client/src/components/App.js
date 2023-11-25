@@ -4,17 +4,18 @@ import { Route, Routes } from 'react-router-dom'
 
 import './app.css'
 import Home from './home/Home';
-import Login from './login/Login';
-import Signup from './signup/Signup';
+import Login from './customer/login/Login';
+import Signup from './customer/signup/Signup';
 import Navigation from './nav/Nav';
 import Cart from './cart/Cart';
 import AppContext from './context/AppContext';
-import Profile from './profile/Profile';
+import Profile from './customer/profile/Profile';
 import Checkout from './checkout/Checkout';
-import CustomerOrders from './customer_orders/CustomerOrders';
+import CustomerOrders from './customer/customer_orders/CustomerOrders';
 import CheckoutSignup from './checkout/CheckoutSignup';
 import AllProductsDisplay from './all_products_display/AllProductsDisplay';
 import SelectedDisplay from './selected_display/SelectedDisplay';
+import {AdminDashboard, Orders, Sales, Stocks, Analytics} from './admin_dashboard';
 
 
 const App = () => {
@@ -72,6 +73,12 @@ const App = () => {
                         <Route exact path='/all-products-display' element={<AllProductsDisplay />} />
 
                         <Route exact path='/selected-display' element={<SelectedDisplay />} />
+
+                        <Route exact path='/admin-dashboard' element={<AdminDashboard />} />
+                        <Route exact path='/admin-dashboard/sales' element={<Sales />} />
+                        <Route exact path='/admin-dashboard/orders' element={<Orders />} />
+                        <Route exact path='/admin-dashboard/stocks' element={<Stocks />} />
+                        <Route exact path='/admin-dashboard/analytics' element={<Analytics />} />
                     </Routes>
                 </div>
             </AppContext.Provider>

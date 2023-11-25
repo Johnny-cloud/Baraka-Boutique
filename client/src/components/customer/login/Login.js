@@ -1,5 +1,5 @@
 import {useState, useContext} from 'react'
-import AppContext from '../context/AppContext'
+import AppContext from '../../context/AppContext'
 import './login.css'
 import { Form } from 'react-bootstrap'
 import { useNavigate, Link } from 'react-router-dom'

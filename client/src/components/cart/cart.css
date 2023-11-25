@@ -14,7 +14,7 @@ td{
 .delete-btn{
     color: red;
     border: none;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .delete-btn:hover{
@@ -39,4 +39,11 @@ td{
 
 .checkout-btn:hover{
     background-color: green;
+}
+
+.reduce-btn, .increase-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
 }

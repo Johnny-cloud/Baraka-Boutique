@@ -1,0 +1,82 @@
+.totals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.totals > *{
+    width: 450px;
+    margin: 15px;
+    padding-top: 0px;
+    border-radius: 5px;
+}
+
+.month-revenues{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.month-revenues >*{
+    width: 30%;
+    font-size: 15px;
+}
+
+.line-chart{
+    width: 80%;
+    margin: auto;
+    background-color: rgb(230 230 230);
+}
+
+.other-stats{
+    margin-top: 50px;
+}
+
+.additional-stats{
+    width: 450px;
+    height: fit-content;
+}
+
+.other-stats-container{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.other-stats-container > *{
+    background: linear-gradient(90deg, rgba(192,241,205,1) 0%, rgba(255,179,162,1) 93%);
+    border-radius: 5px;
+}
+
+.sales-revenue{
+    width: 600px;
+    height: fit-content;
+    background-color: rgb(231, 230, 230);
+    margin: 15px;
+    padding-top: 20px;
+}
+
+.stats-container{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: fit-content;
+    margin: auto;
+    margin-left: 15px;
+}
+
+.stats-container > *{
+    padding-top: 15px;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(230, 230, 230);
+    margin: 10px;
+    border-radius: 5px;
+}

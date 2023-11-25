@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 
 const OrderAndPayment = () => {
-  let {currentCustomer, cart, setCart, setCurrentCustomer} = useContext(AppContext)
+  let {currentCustomer, cart, setCart} = useContext(AppContext)
   const navigate = useNavigate()
 
   const placeOder = async () => {

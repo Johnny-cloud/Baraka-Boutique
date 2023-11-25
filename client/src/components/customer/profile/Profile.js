@@ -1,6 +1,6 @@
 import {useContext, useState, useEffect} from 'react'
 import './profile.css'
-import AppContext from '../context/AppContext'
+import AppContext from '../../context/AppContext'
 import { Form } from 'react-bootstrap'
 
 const Profile = () => {

@@ -1,0 +1,15 @@
+.dashboard{
+    position: relative;
+    width: 100%;
+}
+
+.dashboard-contents{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 15%;
+}
+
+.dashboard-contents > *{
+    margin-bottom: 30px;
+}
