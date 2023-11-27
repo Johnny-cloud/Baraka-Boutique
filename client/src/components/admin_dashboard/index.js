@@ -1,5 +1,2 @@
-export {default as Stocks} from './stocks/Stocks'
-export {default as Sales} from './sales/Sales'
-export {default as Orders} from './orders/Orders'
-export {default as Analytics} from './analytics/Analytics'
 export {default as AdminDashboard} from './AdminDashboard'
+export {default as Overview} from './overview/Overview'

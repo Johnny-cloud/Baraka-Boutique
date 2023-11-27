@@ -15,7 +15,7 @@ import CustomerOrders from './customer/customer_orders/CustomerOrders';
 import CheckoutSignup from './checkout/CheckoutSignup';
 import AllProductsDisplay from './all_products_display/AllProductsDisplay';
 import SelectedDisplay from './selected_display/SelectedDisplay';
-import {AdminDashboard, Orders, Sales, Stocks, Analytics} from './admin_dashboard';
+import {AdminDashboard, Overview} from './admin_dashboard';
 
 
 const App = () => {
@@ -75,10 +75,8 @@ const App = () => {
                         <Route exact path='/selected-display' element={<SelectedDisplay />} />
 
                         <Route exact path='/admin-dashboard' element={<AdminDashboard />} />
-                        <Route exact path='/admin-dashboard/sales' element={<Sales />} />
-                        <Route exact path='/admin-dashboard/orders' element={<Orders />} />
-                        <Route exact path='/admin-dashboard/stocks' element={<Stocks />} />
-                        <Route exact path='/admin-dashboard/analytics' element={<Analytics />} />
+                        <Route exact path='/admin-dashboard/overview' element={<Overview />} />
+                       
                     </Routes>
                 </div>
             </AppContext.Provider>

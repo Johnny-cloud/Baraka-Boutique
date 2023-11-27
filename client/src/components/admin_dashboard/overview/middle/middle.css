@@ -1,0 +1,29 @@
+
+.middle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.middle > *{
+    background-color: rgb(231, 230, 229);
+    border-radius: 10px;
+    width: 450px;
+    height: 500px;
+    margin: 10px;
+    
+}
+
+.chart-table-container{
+    width: 800px;
+    height: 500px;
+}
+
+@media screen and (max-width: 600px) {
+    .chart-table-container{
+        width: 500px;
+        height: 500px;
+    }
+}
