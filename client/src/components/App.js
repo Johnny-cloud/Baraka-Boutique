@@ -15,7 +15,7 @@ import CustomerOrders from './customer/customer_orders/CustomerOrders';
 import CheckoutSignup from './checkout/CheckoutSignup';
 import AllProductsDisplay from './all_products_display/AllProductsDisplay';
 import SelectedDisplay from './selected_display/SelectedDisplay';
-import {AdminDashboard, Overview} from './admin_dashboard';
+import {AdminDashboard, Overview, Products, Customers, Orders, CustomerUpdatePage, ProductUpdatePage} from './admin_dashboard';
 
 
 const App = () => {
@@ -26,6 +26,8 @@ const App = () => {
     const [filteredProducts, setFilteredProducts] = useState(null)
     const [category, setCategory] = useState(null)
     const [subCategory, setSubCategory] = useState(null)
+    const [customerToUpdate, setCustomerToUpdate] = useState(null)
+    const [productToUpdate, setProductToUpdate] = useState(null)
 
     const auth = async () => {
         const response = await fetch('/auth')
@@ -51,7 +53,7 @@ const App = () => {
 
     return (
         <div className='app'>
-            <AppContext.Provider value={{subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
+            <AppContext.Provider value={{productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate, subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
                 <Navigation />
                 <div className='main-content'>
                     <Routes>
@@ -76,7 +78,12 @@ const App = () => {
 
                         <Route exact path='/admin-dashboard' element={<AdminDashboard />} />
                         <Route exact path='/admin-dashboard/overview' element={<Overview />} />
-                       
+                        <Route exact path='/admin-dashboard/products' element={<Products />} />
+                        <Route exact path='/admin-dashboard/customers' element={<Customers />} />
+                        <Route exact path='/admin-dashboard/orders' element={<Orders />} />
+                        <Route exact path='/admin-dashboard/customers/customer-update-page' element={<CustomerUpdatePage />} />
+                        <Route exact path='/admin-dashboard/products/product-update-page' element={<ProductUpdatePage />} />
+
                     </Routes>
                 </div>
             </AppContext.Provider>

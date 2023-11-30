@@ -28,7 +28,7 @@ const Bottom = () => {
         </div>
 
         <div className='chart-table-container'>
-            <h4>Website visitors</h4>
+            <h4>Visitors</h4>
             <Bar 
                 data={{
                     labels: ["Aug", "Sep", "Oct", "Nov", "Dec"],

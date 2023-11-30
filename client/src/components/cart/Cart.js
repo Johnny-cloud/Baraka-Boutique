@@ -49,7 +49,7 @@ const Cart = () => {
                 {cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem._id} updateTotal={updateTotal} />)}
                 <tr>
                   <td><h3>Total</h3></td>
-                  <td><h4>{total}</h4></td>
+                  <td><h4>Ksh.{total}</h4></td>
                   <td></td>
                 </tr> 
                 <tr>

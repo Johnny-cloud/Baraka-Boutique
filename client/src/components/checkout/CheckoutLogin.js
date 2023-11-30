@@ -19,7 +19,6 @@ const CheckoutLogin = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-
         const response =  await fetch('/login', {
             method: 'POST',
             headers: {
@@ -32,20 +31,45 @@ const CheckoutLogin = () => {
             const customer = await response.json()
             setCurrentCustomer(customer)
             navigate('/checkout')
-        } else{
             console.log(response)
+
+        } else{
+            alert("Unable to login. Try again!")
+            console.log(response);
         }
+
 
         setFormData({
             email: "",
             password: ""
         })
+
+        console.log("Submitted data....")
+    }
+
+    const logInDemo = async (event) => {
+        event.preventDefault()
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: "john@gmail.com",
+                password: "doe"
+            })
+        })
+
+        if(response.ok){
+            const customer = await response.json()
+            setCurrentCustomer(customer)
+        }
     }
 
   return (
     <div className='display-container'>
         <h2>Login</h2>
-        <Form onSubmit={handleSubmit}>
+        <Form>
             <Form.Group>
                 <Form.Label>Email</Form.Label>
                 <Form.Control id='email' name='email' type='text' value={formData.email} onChange={handleChange} />
@@ -56,8 +80,17 @@ const CheckoutLogin = () => {
                 <Form.Control id='password' name='password' type='password' value={formData.password} onChange={handleChange} />
             </Form.Group>
 
+            <Form.Group className='multiple-btns'>
+                <Form.Group>
+                    <button className='submit-btn' onClick={handleSubmit}>Submit</button>  
+                </Form.Group>
+                <div>
+                    <button className='demo-btn' onClick={logInDemo}>Demo Account</button>
+                </div>
+
+            </Form.Group>
+
             <Form.Group>
-                <Form.Control type='submit' value={'Login'} className='submit-btn' />
                 <Form.Label>Don't have an account? <Link to={'/checkout-signup'} className='signup-link'>SignUp</Link></Form.Label>
             </Form.Group>
         </Form>

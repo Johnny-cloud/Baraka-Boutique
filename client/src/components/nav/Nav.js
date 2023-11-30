@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 
 const Navigation = () => {
 
-    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts, setSubCategory} = useContext(AppContext)
+    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts, setSubCategory, setCategory} = useContext(AppContext)
     const [products, setProducts] = useState(null)
     const navigate = useNavigate()
     
@@ -17,6 +17,26 @@ const Navigation = () => {
         await fetch('/logout', {method: 'DELETE'})
         setCurrentCustomer(null)
         navigate('/')
+    }
+
+    const logInDemo = async () => {
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: "john@gmail.com",
+                password: "doe"
+            })
+        })
+
+        if(response.ok){
+            const customer = await response.json()
+            setCurrentCustomer(customer)
+            alert("You are logged in!")
+            navigate('/')
+        }
     }
 
     const fetchProducts = async () => {
@@ -37,6 +57,7 @@ const Navigation = () => {
         if(products){
             setCollectionProducts(products.filter(product => product.sub_category === event.target.id))
             setSubCategory(event.target.id)
+            setCategory('clothing')
         }
     }
 
@@ -87,8 +108,10 @@ const Navigation = () => {
                             <div className='my-dropdown'> 
                                 <span><span class="bi bi-person-circle">Account</span><i class="bi bi-chevron-down"></i></span>
                                 <div className='my-dropdown-menu'>
+                                    <Link onClick={logInDemo}>Demo Account</Link>
                                     <Link to={'/login'} >Login</Link>
                                     <Link to={'/signup'}>Signup</Link>
+                                    
                                 </div>
                                
                             </div>

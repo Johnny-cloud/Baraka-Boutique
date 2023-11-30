@@ -13,3 +13,16 @@
 .dashboard-contents > *{
     margin-bottom: 10px;
 }
+
+.update-btn{
+    background-color: green;
+    color: aliceblue;
+}
+
+.delete-btn{
+    color: red;
+}
+
+button{
+    border: none;
+}

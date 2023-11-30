@@ -32,14 +32,11 @@ const Login = () => {
         if(response.ok){
             const customer = await response.json()
             setCurrentCustomer(customer)
-            
-            navigate('/profile')
-
-            
-            
+            alert("You are logged in!")
+            navigate('/')
 
         } else{
-            console.log(response)
+            alert("Unable to log in. Try again!")
         }
 
         setFormData({

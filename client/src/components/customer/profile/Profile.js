@@ -38,11 +38,6 @@ const Profile = () => {
 
     }
 
-    useEffect(() => {
-        setFormData({...currentCustomer})
-        console.log('New data.......')
-        
-    }, [currentCustomer])
     
 
     if(currentCustomer){
@@ -64,7 +59,7 @@ const Profile = () => {
 
                     <Form.Group>
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type='password' name='password' value={formData.password} onChange={handleChange} placeholder='Enter new password' />
+                        <Form.Control type='password' name='password' value={formData.password} onChange={handleChange} placeholder={currentCustomer.password} />
                     </Form.Group>
 
                     <Form.Group>

@@ -24,8 +24,15 @@ const SelectedDisplay = () => {
     }
 
     const addToCart = () => {
-        setCart([...cart, selectedItem])
-        navigate('/cart')
+        let itemInCart = cart.find(item => item._id === selectedItem._id)
+        if(itemInCart){
+            alert("Item already in cart!")
+
+        } else {
+            setCart([...cart, selectedItem])
+            navigate('/cart')
+        }
+        
     }
 
     if(selectedItem){

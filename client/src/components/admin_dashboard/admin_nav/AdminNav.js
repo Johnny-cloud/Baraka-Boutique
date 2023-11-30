@@ -15,6 +15,9 @@ const AdminNav = () => {
                         <Offcanvas.Body>
                             <Nav className='me-auto'>
                                 <Link to={'/admin-dashboard/overview'}> Overview</Link>
+                                <Link to={'/admin-dashboard/products'}> Products</Link>
+                                <Link to={'/admin-dashboard/customers'}> Customers</Link>
+                                <Link to={'/admin-dashboard/orders'}> Orders</Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>

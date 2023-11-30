@@ -54,6 +54,34 @@
     height: 100%;
 }
 
+.multiple-btns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.multiple-btns > * {
+    margin: auto;
+    width: 50%;
+}
+
+.multiple-btns button{
+    width: 50%;
+}
+
+.multiple-btns .demo-btn{
+    border: none;
+    background-color: blue;
+    color: aliceblue;
+   
+}
+
+.multiple-btns  .demo-btn:hover{
+    background-color: green;
+    color: orange;
+}
+
 @media  screen and (max-width: 600px) {
     .checkout-container > * {
         width: 500px;
