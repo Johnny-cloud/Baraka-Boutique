@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const CheckoutSignup = () => {
 
-    const {setCurrentCustomer} = useContext(AppContext)
+    const {setCurrentCustomer, api} = useContext(AppContext)
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
@@ -22,7 +22,7 @@ const CheckoutSignup = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const response = await fetch('/customers', {
+        const response = await fetch(`${api}/customers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

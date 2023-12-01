@@ -4,10 +4,10 @@ import { Table } from 'react-bootstrap'
 import SingleOrder from './SingleOrder'
 
 const CustomerOrders = () => {
-    const {currentCustomer, setCurrentCustomer, placedOrder} = useContext(AppContext)
+    const {currentCustomer, setCurrentCustomer, placedOrder, api} = useContext(AppContext)
 
     const auth = async () => {
-        const response = await fetch('/auth')
+        const response = await fetch(`${api}/auth`)
 
         if(response.ok){
             const customer = await response.json()

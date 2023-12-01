@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom'
 
 const CheckoutLogin = () => {
 
-    const {setCurrentCustomer} = useContext(AppContext)
+    const {setCurrentCustomer, api} = useContext(AppContext)
     const navigate = useNavigate()
 
     const[formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const CheckoutLogin = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const response =  await fetch('/login', {
+        const response =  await fetch(`${api}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ const CheckoutLogin = () => {
     const logInDemo = async (event) => {
         event.preventDefault()
         navigate('/animations/login-page')
-        const response = await fetch('/login', {
+        const response = await fetch(`${api}/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

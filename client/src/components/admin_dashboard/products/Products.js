@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import './products.css'
 import SingleProduct from './SingleProduct'
 import { Table } from 'react-bootstrap'
 import AdminNav from '../admin_nav/AdminNav'
 import Loading from '../../animations/loading/Loading'
+import AppContext from '../../context/AppContext'
 
 
 const Products = () => {
 
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
+    const {api} = useContext(AppContext)
 
     const fetchProducts = async () => {
-        const response = await fetch("/products")
+        const response = await fetch(`${api}/products`)
 
         if(response.ok){
             const allProducts = await response.json()

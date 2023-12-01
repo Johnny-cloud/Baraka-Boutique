@@ -1,16 +1,18 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import './orders.css'
 import AdminNav from '../admin_nav/AdminNav'
 import { Table } from 'react-bootstrap'
 import SingleOrder from './SingleOrder'
 import Loading from '../../animations/loading/Loading'
+import AppContext from '../../context/AppContext'
 
 const Orders = () => {
     const [orders, setOrders] = useState([])
     const [filteredOrders, setFilteredOrders] = useState([])
+    const {api} = useContext(AppContext)
 
     const fetchOrders = async () => {
-        const response = await fetch('/orders')
+        const response = await fetch(`${api}/orders`)
 
         if(response.ok){
             const fetchedOrders = await response.json()

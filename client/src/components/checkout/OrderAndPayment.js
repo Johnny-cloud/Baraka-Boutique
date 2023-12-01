@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 
 const OrderAndPayment = () => {
-  let {currentCustomer, cart, setCart, setPlacedOrder} = useContext(AppContext)
+  let {currentCustomer, cart, setCart, setPlacedOrder, api} = useContext(AppContext)
   const navigate = useNavigate()
 
   const placeOder = async () => {
@@ -24,7 +24,7 @@ const OrderAndPayment = () => {
   }
 
   const createOrder = async (item) => {
-    const response = await fetch('/orders', {
+    const response = await fetch(`${api}/orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

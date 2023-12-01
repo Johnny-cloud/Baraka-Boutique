@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap'
 
 const Signup = () => {
 
-    const {setCurrentCustomer} = useContext(AppContext)
+    const {setCurrentCustomer, api} = useContext(AppContext)
 
     const [formData, setFormData] = useState({
         name: "",
@@ -21,7 +21,7 @@ const Signup = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const response = await fetch('/customers', {
+        const response = await fetch(`${api}/customers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

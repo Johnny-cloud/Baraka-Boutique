@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap'
 
 const Profile = () => {
 
-    const {currentCustomer, setCurrentCustomer} = useContext(AppContext)
+    const {currentCustomer, setCurrentCustomer, api} = useContext(AppContext)
 
     const[formData, setFormData] = useState({
         name: "",
@@ -19,7 +19,7 @@ const Profile = () => {
     }
 
     const updateProfile = async () => {
-        const response = await fetch(`/customers/${currentCustomer._id}`, {
+        const response = await fetch(`${api}/customers/${currentCustomer._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

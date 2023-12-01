@@ -20,7 +20,7 @@ const Navigation = () => {
     }
 
     const logInDemo = async () => {
-        const response = await fetch('/login', {
+        const response = await fetch(`${api}/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const Navigation = () => {
     }
 
     const fetchProducts = async () => {
-        const response = await fetch('/api/products')
+        const response = await fetch(`/${api}/products`)
 
         if(response.ok){
             const allProducts = await response.json()

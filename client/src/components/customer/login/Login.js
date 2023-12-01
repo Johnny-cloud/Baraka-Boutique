@@ -6,7 +6,7 @@ import { useNavigate, Link } from 'react-router-dom'
 
 const Login = () => {
 
-    const {setCurrentCustomer} = useContext(AppContext)
+    const {setCurrentCustomer, api} = useContext(AppContext)
     const navigate = useNavigate()
 
     const[formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const Login = () => {
     }
 
     const handleSubmit = async () => {
-        const response =  await fetch('/login', {
+        const response =  await fetch(`${api}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

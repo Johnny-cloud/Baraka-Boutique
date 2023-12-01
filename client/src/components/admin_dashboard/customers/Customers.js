@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import './customers.css'
 import SingleCustomer from './SingleCustomer'
 import {Table, Form} from 'react-bootstrap'
 import AdminNav from '../admin_nav/AdminNav'
 import Loading from '../../animations/loading/Loading'
+import AppContext from '../../context/AppContext'
 
 const Customers = () => {
 
     const [customers, setCustomers] = useState([])
     const [filteredCustomers, setFilteredCustomers] = useState([])
+    const {api} = useContext(AppContext)
 
     const [formData, setFormData] = useState({
         searchTerm: ""
@@ -20,7 +22,7 @@ const Customers = () => {
     }
 
     const fetchCustomers = async () => {
-        const response = await fetch("/customers")
+        const response = await fetch(`${api}/customers`)
 
         if(response.ok){
             const allCustomers = await response.json()
