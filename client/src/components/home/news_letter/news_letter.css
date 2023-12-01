@@ -33,3 +33,9 @@
     background-color: black;
     color: aliceblue;
 }
+
+@media screen and (max-width: 600px) {
+    .news-letter, .news-letter-contents{
+        width: 500px;
+    }
+}

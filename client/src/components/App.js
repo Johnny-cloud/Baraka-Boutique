@@ -20,7 +20,7 @@ import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
     const api = "https://baraka-boutique-backend.vercel.app"
-    const [cart, setCart] = useState([JSON.parse(localStorage.getItem("cart"))])
+    const [cart, setCart] = useState([...JSON.parse(localStorage.getItem("cart"))])
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
     const [collectionProducts, setCollectionProducts] = useState(JSON.parse(localStorage.getItem("collectionProducts")))

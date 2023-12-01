@@ -13,6 +13,8 @@ const CustomerOrders = () => {
             const customer = await response.json()
             setCurrentCustomer(customer)
             console.log('Authenticated!')
+        } else{
+            console.log(response)
         }
     }
 
