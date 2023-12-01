@@ -99,7 +99,7 @@ const Navigation = () => {
                                
                             </div>
 
-                            <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
+                            <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
                             
                         </Nav>
                     ) : (
@@ -115,7 +115,7 @@ const Navigation = () => {
                                
                             </div>
 
-                            <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length}</span></sup> cart</Link>
+                            <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
                 
                         </Nav>
                     )}

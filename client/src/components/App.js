@@ -20,10 +20,7 @@ import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
 
-    const [cart, setCart] = useState([])
-    if(JSON.parse(localStorage.getItem("cart"))){
-        setCart(JSON.parse(localStorage.getItem("cart")))
-    }
+    const [cart, setCart] = useState([JSON.parse(localStorage.getItem("cart"))])
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
     const [collectionProducts, setCollectionProducts] = useState(JSON.parse(localStorage.getItem("collectionProducts")))
