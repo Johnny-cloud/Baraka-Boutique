@@ -44,7 +44,11 @@ const Navigation = () => {
         if(response.ok){
             const allProducts = await response.json()
             setProducts(allProducts)
+
+        } else{
+            console.log(response)
         }
+
     }
 
     useEffect(() => {
