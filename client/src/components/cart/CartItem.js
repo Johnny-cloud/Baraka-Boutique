@@ -30,6 +30,7 @@ const CartItem = ({cartItem, updateTotal}) => {
 
     }, [quantity])
 
+
     const increaseQuantity = () => {
       setQuantity(quantity + 1)
       updateTotal()

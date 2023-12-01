@@ -34,7 +34,8 @@ const Category = () => {
     }, [])
 
   return (
-    <div className='category'>
+    <div>
+        <div className='category'>
         <div>
             <Link className='category-contents large' onClick={setProductsToDisplay} to={'/all-products-display'} id='women'>
                 <div className='category-image-container'>
@@ -81,6 +82,8 @@ const Category = () => {
             </Link>
         </div>
     </div>
+    </div>
+    
   )
 }
 

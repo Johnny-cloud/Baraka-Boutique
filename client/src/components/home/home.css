@@ -33,5 +33,10 @@
 @media screen and (max-width: 600px) {
     .home-landing-page{
         height: 400px;
+        
+    }
+
+    .home-container > * {
+        margin-bottom: 15px;
     }
 }

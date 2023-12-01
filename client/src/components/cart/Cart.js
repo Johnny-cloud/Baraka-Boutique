@@ -30,6 +30,11 @@ const Cart = () => {
 
   }, [])
 
+  useEffect(() => {
+    updateTotal()
+
+  }, [cart.length])
+
   if(cart){
     
     return (
