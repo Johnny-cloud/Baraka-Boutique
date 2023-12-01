@@ -14,11 +14,7 @@ connectToDB()
 
 app.use(express.json())
 app.use(cors());
-app.use(cors({
-    origin: "https://baraka-boutique-chepseon.vercel.app/"
-}
-    
-));
+
 
 app.use(session({
     secret: 'Braka Botique secret key',
