@@ -19,7 +19,7 @@ import {AdminDashboard, Overview, Products, Customers, Orders, CustomerUpdatePag
 import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
-
+    const api = "https://baraka-boutique-backend.vercel.app"
     const [cart, setCart] = useState([JSON.parse(localStorage.getItem("cart"))])
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
@@ -32,7 +32,7 @@ const App = () => {
     const [placedOrder, setPlacedOrder] = useState(false)
     
     const auth = async () => {
-        const response = await fetch('/api/auth')
+        const response = await fetch(`${api}/auth`)
 
         if(response.ok){
             const customer = await response.json()
@@ -61,7 +61,7 @@ const App = () => {
 
     return (
         <div className='app'>
-            <AppContext.Provider value={{placedOrder, setPlacedOrder, productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate, subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
+            <AppContext.Provider value={{api, placedOrder, setPlacedOrder, productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate, subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
                 <Navigation />
                 <div className='main-content'>
                     <Routes>

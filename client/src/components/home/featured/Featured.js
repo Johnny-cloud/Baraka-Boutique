@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import HomeProduct from "../home_product/HomeProduct"
+import AppContext from "../../context/AppContext"
 
 const Featured = () => {
 
     const[featured, setFeatured] = useState(null)
+    const {api} = useContext(AppContext)
 
     const fetchFeatured = async () => {
-        const response = await fetch('/api/products')
+        const response = await fetch(`${api}/products`)
 
         if(response.ok){
             console.log(response)

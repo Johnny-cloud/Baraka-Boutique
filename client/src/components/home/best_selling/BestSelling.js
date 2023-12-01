@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import HomeProduct from "../home_product/HomeProduct"
+import AppContext from "../../context/AppContext"
 
 const BestSelling = () => {
 
     const[bestSelling, setBestSelling] = useState(null)
+    const {api} = useContext(AppContext)
 
     const fetchBestSelling = async () => {
-        const response = await fetch('/api/products')
+        const response = await fetch(`${api}/products`)
 
         if(response.ok){
             const products = await response.json()

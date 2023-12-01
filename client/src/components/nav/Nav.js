@@ -9,12 +9,12 @@ import { useEffect, useState } from 'react'
 
 const Navigation = () => {
 
-    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts, setSubCategory, setCategory} = useContext(AppContext)
+    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts, setSubCategory, setCategory, api} = useContext(AppContext)
     const [products, setProducts] = useState(null)
     const navigate = useNavigate()
     
     const handleLogout = async () => {
-        await fetch('/api/logout', {method: 'DELETE'})
+        await fetch(`${api}/logout`, {method: 'DELETE'})
         setCurrentCustomer(null)
         navigate('/')
     }
