@@ -12,6 +12,8 @@ const Featured = () => {
             const products = await response.json()
             setFeatured(products.filter(product => product.category === 'featured'))
 
+        } else{
+            console.log(response)
         }
     }
 
