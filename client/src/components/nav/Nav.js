@@ -39,7 +39,7 @@ const Navigation = () => {
     }
 
     const fetchProducts = async () => {
-        const response = await fetch('/products')
+        const response = await fetch('https://baraka-boutique-backend.vercel.app/products')
 
         if(response.ok){
             const allProducts = await response.json()

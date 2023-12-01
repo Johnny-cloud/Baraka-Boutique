@@ -6,7 +6,7 @@ const BestSelling = () => {
     const[bestSelling, setBestSelling] = useState(null)
 
     const fetchBestSelling = async () => {
-        const response = await fetch('/products')
+        const response = await fetch('https://baraka-boutique-backend.vercel.app/products')
 
         if(response.ok){
             const products = await response.json()

@@ -6,7 +6,7 @@ const Featured = () => {
     const[featured, setFeatured] = useState(null)
 
     const fetchFeatured = async () => {
-        const response = await fetch('/products')
+        const response = await fetch('https://baraka-boutique-backend.vercel.app/products')
 
         if(response.ok){
             console.log(response)

@@ -6,7 +6,7 @@ const Trending = () => {
     const[trending, setTrending] = useState(null)
 
     const fetchTrending = async () => {
-        const response = await fetch('/products')
+        const response = await fetch('https://baraka-boutique-backend.vercel.app/products')
 
         if(response.ok){
             const products = await response.json()
