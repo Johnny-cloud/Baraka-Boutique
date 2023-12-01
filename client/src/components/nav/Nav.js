@@ -58,6 +58,7 @@ const Navigation = () => {
 
     const setProductsToDisplay = (event) => {
         if(products){
+            console.log(products)
             setCollectionProducts(products.filter(product => product.sub_category === event.target.id))
             setSubCategory(event.target.id)
             setCategory('clothing')
