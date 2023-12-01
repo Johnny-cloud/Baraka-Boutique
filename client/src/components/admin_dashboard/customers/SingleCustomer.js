@@ -12,6 +12,7 @@ const SingleCustomer = ({customer}) => {
   
   return (
     <tr>
+       
         <td>{customer.name}</td>
         <td>{customer.email}</td>
         <td><Link to={'/admin-dashboard/customers/customer-update-page'} onClick={handleClick}><button className='update-btn'>Update</button></Link></td>

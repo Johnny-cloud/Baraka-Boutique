@@ -3,6 +3,7 @@ import './products.css'
 import SingleProduct from './SingleProduct'
 import { Table } from 'react-bootstrap'
 import AdminNav from '../admin_nav/AdminNav'
+import Loading from '../../animations/loading/Loading'
 
 
 const Products = () => {
@@ -60,6 +61,7 @@ const Products = () => {
                         </thead>
                         <tbody>
                             {filteredProducts.map(product => <SingleProduct key={product._id} product={product} />)}
+                            <Loading />
                         </tbody>
                     </Table>
                 </div>

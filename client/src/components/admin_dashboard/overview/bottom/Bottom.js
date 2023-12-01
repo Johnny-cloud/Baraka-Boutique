@@ -6,7 +6,7 @@ const Bottom = () => {
   return (
     <div className='bottom'>
 
-        <div className='chart-container'>
+        <div className='left-container'>
             <h4>Orders summary</h4>
             <div className='chart'>
                 <Pie 
@@ -27,7 +27,7 @@ const Bottom = () => {
            
         </div>
 
-        <div className='chart-table-container'>
+        <div className='right-container'>
             <h4>Visitors</h4>
             <Bar 
                 data={{

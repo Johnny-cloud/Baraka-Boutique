@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 
 const OrderAndPayment = () => {
-  let {currentCustomer, cart, setCart} = useContext(AppContext)
+  let {currentCustomer, cart, setCart, setPlacedOrder} = useContext(AppContext)
   const navigate = useNavigate()
 
   const placeOder = async () => {
@@ -13,6 +13,7 @@ const OrderAndPayment = () => {
     try{
       cart.forEach(item => createOrder(item))
       setCart([])
+      setPlacedOrder(true)
       alert("Your oder was placed successfully!")
       navigate('/customer-orders')
 

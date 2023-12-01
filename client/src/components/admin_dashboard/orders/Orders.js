@@ -3,6 +3,7 @@ import './orders.css'
 import AdminNav from '../admin_nav/AdminNav'
 import { Table } from 'react-bootstrap'
 import SingleOrder from './SingleOrder'
+import Loading from '../../animations/loading/Loading'
 
 const Orders = () => {
     const [orders, setOrders] = useState([])
@@ -57,6 +58,7 @@ const Orders = () => {
                         </thead>
                         <tbody>
                             {filteredOrders.map(order => <SingleOrder key={order._id} order={order} />)}
+                            <Loading />
                         </tbody>
                     </Table>
                 </div>

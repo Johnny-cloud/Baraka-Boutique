@@ -7,12 +7,16 @@
 }
 
 .top > *{
-    width: 700px;
-    margin: 10px;
+    width: 100%;
+    margin: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.statistics{
+    border-radius: 10px;
 }
 
 .stats-container{
@@ -20,7 +24,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0;
 }
 
 .stats-container > *{
@@ -40,13 +43,13 @@
 }
 
 .stats-container .stats-large{
-    width: 300px;
-    padding: 2%;
-    height: 150px;
+    width: 200px;
+    padding: 1%;
+    height: 120px;
 }
 
 .stats-container .stats-small{
-    width: 200px;
+    width: 150px;
 }
 
 .greeting{
@@ -56,9 +59,7 @@
     flex-wrap: wrap;
     border-radius: 10px;
     margin: 10px;
-    background-color: rgb(153, 153, 7);
-    color: aliceblue;
-    height: 300px;
+    height: 200px;
 }
 
 .greeting > *{
@@ -67,7 +68,7 @@
 
 .greeting .message{
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .greeting .info{
@@ -79,13 +80,13 @@
 }
 
 .greeting .info > *{
-    padding: 2%;
+    padding: 1%;
 }
 
-.greeting .info >div{
-   border-right: solid;
-   border-right-color: aliceblue;
+.statistics {
+    height: 200px;
 }
+
 
 .up{
     color: green;
@@ -95,30 +96,28 @@
     color: red;
 }
 
-.right .chart-container{
-    width: 100%;
-    margin: 10px;
+.right > *, .left > *, .stats-container > *{
+    border: solid;
+    border-width: 2px;
     border-radius: 10px;
+    border-color: rgb(200, 198, 198);
+    margin: 10px;
 }
 
-.stats-container > *, .right .chart-container{
-    background-color: rgb(231, 231, 231);
-}
 
-
-.stats-small .bi{
+.top .bi{
     font-size: 25px;
 }
 
-.stats-small .bi-cash-stack{
+.stats-small .bi-cash-stack, .bi-cash-coin{
     color: green;
 }
 
-.stats-small .bi-box, .stats-small .bi-truck{
+.stats-small .bi-box, .stats-small .bi-truck, .bi-people{
     color: blue;
 }
 
-.stats-small .bi-cart, .stats-small .bi-arrow-left-right{
+.stats-small .bi-cart, .stats-small .bi-arrow-left-right, .bi-coin{
     color: orange;
 }
 
@@ -127,8 +126,13 @@
 }
 
 @media screen and (max-width: 600px) {
-    .top > *, .chart-container{
+    .top > *{
         width: 500px;
+    }
+
+    .chart-container{
+        width: 100%;
+        background-color: aqua;
     }
 
     .stats-container .stats-small{

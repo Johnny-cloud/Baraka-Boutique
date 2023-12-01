@@ -435,10 +435,7 @@ class Seeder {
         await Order.create({description: "Lefflow Cheer Shoes Girls White Cheerleading Shoes Lightweight", price: 345, quantity: 1, status: 'pending', customer_id: john._id})
         await Order.create({description: "Stride Rite 360 Unisex-Child Ace 2.0 Sneaker", price: 345, quantity: 1, status: 'declined', customer_id: john._id})
         await Order.create({description: "Herschel supply co 25!", price: 345, quantity: 1, status: 'completed', customer_id: john._id})
-        await Order.create({description: "Fossil Mens Nate Quartz Stainless Steel Chronograph Watch", price: 345, quantity: 1, status: 'pending', customer_id: john._id})
-        await Order.create({description: "Cole Haan Men's 2.Zerogrand Laser Wing Oxford", price: 345, quantity: 1, status: 'pending', customer_id: john._id})
-        await Order.create({description: "RORUN Women Men s 8 inch Lightweight Hiking Trekking Backpacking Outdoor Bootsr", price: 345, quantity: 1, status: 'completed', customer_id: john._id})
-
+    
         await Order.create({description: "UGG Unisex-Child Tazz Slipper", price: 345, quantity: 1, status: 'pending', customer_id: jane._id})
         await Order.create({description: "Lefflow Cheer Shoes Girls White Cheerleading Shoes Lightweight", price: 345, quantity: 1, status: 'pending', customer_id: jane._id})
         await Order.create({description: "Stride Rite 360 Unisex-Child Ace 2.0 Sneaker", price: 345, quantity: 1, status: 'completed', customer_id: jane._id})

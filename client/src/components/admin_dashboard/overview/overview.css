@@ -1,4 +1,12 @@
+.left-container{
+    width: 450px;
+    height: 500px;
+}
 
+.right-container{
+    width: 900px;
+    height: 500px;
+}
 
 @media screen and (max-width: 600px){
     .chart-container, .chart-table-container{

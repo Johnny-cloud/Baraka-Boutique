@@ -3,7 +3,7 @@ import React from 'react'
 const Left = () => {
   return (
     <div className='left'>
-        <div className='greeting'>
+        <div className='greeting left-container'>
             <div className='message'>
                 <h4>Good Day Admin!</h4>
                 <p>Here is what's happening in the store</p>
@@ -19,17 +19,19 @@ const Left = () => {
                 </div>
             </div>
         </div>
-        
+        <div className='statistics right-container'>
+        <h2>Statistics</h2>
         <div className='stats-container'>
+            
             <div className='stats-large'>
-                <h6>EXPECTED EARNINGS</h6>
+                <h6>EARNINGS <i class="bi bi-currency-exchange"></i></h6>
                 <h4>Ksh. 150000</h4>
                 <p className='up'>5.5% <i class="bi bi-arrow-up"></i></p>
                
             </div>
 
             <div className='stats-large'>
-                <h6>AVERAGE DAILY SALES</h6>
+                <h6>SALES <i class="bi bi-coin"></i></h6>
                 <h4>Ksh. 50000</h4>
                 <p className='up'>3.9% <i class="bi bi-arrow-up"></i></p>
                
@@ -37,18 +39,20 @@ const Left = () => {
             </div>
 
             <div className='stats-large'>
-                <h6>REVENUE THIS MONTH</h6>
+                <h6>REVENUE <i class="bi bi-cash-coin"></i></h6>
                 <h4>Ksh. 105920</h4>
                 <p className='down'>2.5% <i class="bi bi-arrow-down"></i></p>
                
             </div>
 
             <div className='stats-large'>
-                <h6>NEW CUSTOMERS THIS MONTH</h6>
+                <h6>CUSTOMERS <i class="bi bi-people"></i></h6>
                 <h4>2K</h4>
                 <p className='up'>2.8% <i class="bi bi-arrow-up"></i></p>
             </div>
         </div>
+        </div>
+        
     </div>
   )
 }

@@ -3,6 +3,7 @@ import './customers.css'
 import SingleCustomer from './SingleCustomer'
 import {Table, Form} from 'react-bootstrap'
 import AdminNav from '../admin_nav/AdminNav'
+import Loading from '../../animations/loading/Loading'
 
 const Customers = () => {
 
@@ -55,12 +56,10 @@ const Customers = () => {
                         </thead>
                         <tbody>
                             {filteredCustomers.map(customer => <SingleCustomer customer={customer} key={customer._id} />)}
+                            {filteredCustomers? <Loading />: null}
                         </tbody>
                     </Table>
                 </div>
-
-                
-                
             </div>
         )
     }

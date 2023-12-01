@@ -1,10 +1,10 @@
 import React from 'react'
-import {Line} from 'react-chartjs-2'
+import {Bar} from 'react-chartjs-2'
 
 const Right = () => {
   return (
     <div className='right'>
-        <div className='stats-container'>
+        <div className='left-container stats-container'>
             <div className='stats-small'>
                 <h6><i class="bi bi-box"></i> ORDERS</h6>
                 <h4>15809</h4>
@@ -42,9 +42,9 @@ const Right = () => {
             </div>
         </div>
 
-        <div className='chart-container'>
+        <div className='chart-container right-container'>
                     <h4>Weekly sales</h4>
-                    <Line 
+                    <Bar 
                         data={{
                             labels: ["sun", "mon", "tue", "wed", "thur", "fri", "sat"],
                             datasets: [
@@ -56,7 +56,9 @@ const Right = () => {
                                     borderWidth: 3,
                                     pointStyle: "line",
                                     pointBorderWidth: 0,
-                                    pointBackgroundColor: "purple"
+                                    pointBackgroundColor: "purple",
+                                    backgroundColor: "purple",
+                                    fill: true
                                     
                                 },
                                 {
@@ -66,6 +68,8 @@ const Right = () => {
                                     borderColor: "green",
                                     borderWidth: 3,
                                     pointStyle: "line",
+                                    backgroundColor: "green",
+                                    fill: true
                                     
                                 },
                                 {
@@ -75,6 +79,8 @@ const Right = () => {
                                     borderColor: "orange",
                                     borderWidth: 3,
                                     pointStyle: "line",
+                                    backgroundColor: "orange",
+                                    fill: true,
                                     
                                 },
 

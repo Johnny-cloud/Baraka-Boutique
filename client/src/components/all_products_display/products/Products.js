@@ -6,11 +6,18 @@ import AppContext from '../../context/AppContext'
 
 const Products = () => {
     
-    const {collectionProducts, setFilteredProducts, filteredProducts} = useContext(AppContext)
+    const {collectionProducts, setFilteredProducts, filteredProducts, category} = useContext(AppContext)
 
     useEffect(() => {
-        setFilteredProducts(collectionProducts)
+        
+        if(category){
+            setFilteredProducts(collectionProducts.filter(product =>  product.category === category))
+            console.log(category);
 
+        } else{
+            setFilteredProducts(collectionProducts)
+        }
+    
     }, [collectionProducts])
 
 

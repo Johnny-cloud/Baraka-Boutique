@@ -49,6 +49,7 @@ const CheckoutLogin = () => {
 
     const logInDemo = async (event) => {
         event.preventDefault()
+        navigate('/animations/login-page')
         const response = await fetch('/login', {
             method: 'POST',
             headers: {
@@ -63,6 +64,7 @@ const CheckoutLogin = () => {
         if(response.ok){
             const customer = await response.json()
             setCurrentCustomer(customer)
+            navigate('/checkout')
         }
     }
 

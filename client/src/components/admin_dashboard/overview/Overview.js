@@ -11,7 +11,7 @@ import Bottom from './bottom/Bottom'
 Chart.register(CategoryScale)
 const Overview = () => {
   return (
-    <div>
+    <div className='overview'>
         <AdminNav />
         <div className='dashboard-contents'>
             <h3>Overview</h3>

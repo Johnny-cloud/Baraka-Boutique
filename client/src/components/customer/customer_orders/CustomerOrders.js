@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap'
 import SingleOrder from './SingleOrder'
 
 const CustomerOrders = () => {
-    const {currentCustomer, setCurrentCustomer} = useContext(AppContext)
+    const {currentCustomer, setCurrentCustomer, placedOrder} = useContext(AppContext)
 
     const auth = async () => {
         const response = await fetch('/auth')
@@ -19,6 +19,11 @@ const CustomerOrders = () => {
     useEffect(() => {
         auth()
     }, [])
+
+    useEffect(() => {
+        auth()
+        console.log("placed order....")
+    }, [placedOrder])
 
     if(currentCustomer){
         return (

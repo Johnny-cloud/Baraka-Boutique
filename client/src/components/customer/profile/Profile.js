@@ -57,7 +57,7 @@ const Profile = () => {
                         <Form.Control type='email' name='email' value={formData.email} onChange={handleChange} placeholder={currentCustomer.email} />
                     </Form.Group>
 
-                    <Form.Group>
+                    {/* <Form.Group>
                         <Form.Label>Password</Form.Label>
                         <Form.Control type='password' name='password' value={formData.password} onChange={handleChange} placeholder={currentCustomer.password} />
                     </Form.Group>
@@ -65,7 +65,7 @@ const Profile = () => {
                     <Form.Group>
                         <Form.Label>Password Confirmation</Form.Label>
                         <Form.Control type='password' name='password_confirmation' value={formData.password_confirmation} onChange={handleChange} placeholder='Confirm the new password' />
-                    </Form.Group>
+                    </Form.Group> */}
 
                     <Form.Group>
                         <Form.Control type='submit' className='submit-btn' value={'Update profile'} onClick={updateProfile}/>

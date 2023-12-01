@@ -16,8 +16,7 @@ const Cart = () => {
       alert("Add items to cart!")
 
     } else{
-      navigate('/checkout')
-      
+        navigate('/checkout')
     }
     
   }

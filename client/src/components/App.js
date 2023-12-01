@@ -16,19 +16,20 @@ import CheckoutSignup from './checkout/CheckoutSignup';
 import AllProductsDisplay from './all_products_display/AllProductsDisplay';
 import SelectedDisplay from './selected_display/SelectedDisplay';
 import {AdminDashboard, Overview, Products, Customers, Orders, CustomerUpdatePage, ProductUpdatePage} from './admin_dashboard';
-
+import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")))
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
-    const [collectionProducts, setCollectionProducts] = useState(null)
+    const [collectionProducts, setCollectionProducts] = useState(JSON.parse(localStorage.getItem("collectionProducts")))
     const [filteredProducts, setFilteredProducts] = useState(null)
     const [category, setCategory] = useState(null)
     const [subCategory, setSubCategory] = useState(null)
     const [customerToUpdate, setCustomerToUpdate] = useState(null)
     const [productToUpdate, setProductToUpdate] = useState(null)
-
+    const [placedOrder, setPlacedOrder] = useState(false)
+    
     const auth = async () => {
         const response = await fetch('/auth')
 
@@ -38,6 +39,8 @@ const App = () => {
             
         }
     }
+
+    
     
     useEffect(() => {
         auth()
@@ -51,9 +54,13 @@ const App = () => {
         localStorage.setItem("selectedItem", JSON.stringify(selectedItem))
     }, [selectedItem])
 
+    useEffect(() => {
+        localStorage.setItem("collectionProducts", JSON.stringify(collectionProducts))
+    }, [collectionProducts])
+
     return (
         <div className='app'>
-            <AppContext.Provider value={{productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate, subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
+            <AppContext.Provider value={{placedOrder, setPlacedOrder, productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate, subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts, collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, selectedItem, setSelectedItem }}>
                 <Navigation />
                 <div className='main-content'>
                     <Routes>
@@ -84,6 +91,8 @@ const App = () => {
                         <Route exact path='/admin-dashboard/customers/customer-update-page' element={<CustomerUpdatePage />} />
                         <Route exact path='/admin-dashboard/products/product-update-page' element={<ProductUpdatePage />} />
 
+                        <Route exact path='/animations/login-page' element={<LoginPage />} />
+                        <Route exact path='/animations/logout-page' element={<LogoutPage />} />
                     </Routes>
                 </div>
             </AppContext.Provider>

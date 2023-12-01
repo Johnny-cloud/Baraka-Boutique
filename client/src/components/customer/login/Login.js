@@ -18,9 +18,7 @@ const Login = () => {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
 
-    const handleSubmit = async (event) => {
-        event.preventDefault()
-
+    const handleSubmit = async () => {
         const response =  await fetch('/login', {
             method: 'POST',
             headers: {
@@ -45,10 +43,11 @@ const Login = () => {
         })
     }
 
+
   return (
     <div className='display-container'>
         <h2>Login</h2>
-        <Form onSubmit={handleSubmit}>
+        <Form >
             <Form.Group>
                 <Form.Label>Email</Form.Label>
                 <Form.Control id='email' name='email' type='text' value={formData.email} onChange={handleChange} />
@@ -60,7 +59,10 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group>
-                <Form.Control type='submit' value={'Login'} className='submit-btn' />
+                <Link to={'/animations/login-page'} onClick={handleSubmit} className='submit-btn'>Login</Link>
+            </Form.Group>
+
+            <Form.Group>
                 <Form.Label>Don't have an account? <Link to={'/signup'} className='signup-link'>SignUp</Link></Form.Label>
             </Form.Group>
         </Form>

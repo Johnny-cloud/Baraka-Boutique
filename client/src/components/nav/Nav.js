@@ -34,7 +34,6 @@ const Navigation = () => {
         if(response.ok){
             const customer = await response.json()
             setCurrentCustomer(customer)
-            alert("You are logged in!")
             navigate('/')
         }
     }
@@ -95,7 +94,7 @@ const Navigation = () => {
                                 <div className='my-dropdown-menu'>
                                     <Link to={'/profile'}>Update Profile</Link>
                                     <Link to='/customer-orders'>My Previous Orders</Link>
-                                    <Link onClick={handleLogout}>Logout</Link>
+                                    <Link to={'/animations/logout-page'} onClick={handleLogout}>Logout</Link>
                                 </div>
                                
                             </div>
@@ -108,7 +107,7 @@ const Navigation = () => {
                             <div className='my-dropdown'> 
                                 <span><span class="bi bi-person-circle">Account</span><i class="bi bi-chevron-down"></i></span>
                                 <div className='my-dropdown-menu'>
-                                    <Link onClick={logInDemo}>Demo Account</Link>
+                                    <Link to={'/animations/login-page'} onClick={logInDemo}>Demo Account</Link>
                                     <Link to={'/login'} >Login</Link>
                                     <Link to={'/signup'}>Signup</Link>
                                     
@@ -122,7 +121,7 @@ const Navigation = () => {
                     )}
 
                     <Nav className='me-auto'>
-                        <Link to={'/admin-dashboard'}>Admin Dashboard</Link>
+                        <Link to={'/admin-dashboard'} target='_blank'>Admin Dashboard</Link>
                     </Nav>
 
                     </Offcanvas.Body>
