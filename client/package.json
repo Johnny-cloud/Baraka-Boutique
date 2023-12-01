@@ -1,10 +1,4 @@
 { 
-  "proxy": {
-    "/api": {
-      "target": "https://baraka-boutique-backend.vercel.app",
-      "changeOrigin": true
-    }
-  },
   "name": "client",
   "version": "0.1.0",
   "private": true,

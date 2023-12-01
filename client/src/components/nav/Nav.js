@@ -39,7 +39,7 @@ const Navigation = () => {
     }
 
     const fetchProducts = async () => {
-        const response = await fetch(`/${api}/products`)
+        const response = await fetch(`${api}/products`)
 
         if(response.ok){
             const allProducts = await response.json()
