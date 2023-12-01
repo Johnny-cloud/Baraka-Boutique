@@ -14,7 +14,7 @@ const Navigation = () => {
     const navigate = useNavigate()
     
     const handleLogout = async () => {
-        await fetch('/logout', {method: 'DELETE'})
+        await fetch('/api/logout', {method: 'DELETE'})
         setCurrentCustomer(null)
         navigate('/')
     }
@@ -39,7 +39,7 @@ const Navigation = () => {
     }
 
     const fetchProducts = async () => {
-        const response = await fetch('https://baraka-boutique-backend.vercel.app/products')
+        const response = await fetch('/api/products')
 
         if(response.ok){
             const allProducts = await response.json()

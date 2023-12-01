@@ -32,7 +32,7 @@ const App = () => {
     const [placedOrder, setPlacedOrder] = useState(false)
     
     const auth = async () => {
-        const response = await fetch('/auth')
+        const response = await fetch('/api/auth')
 
         if(response.ok){
             const customer = await response.json()
