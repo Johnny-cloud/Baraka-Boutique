@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage": "https://baraka-boutique-chepseon.vercel.app/",
   "proxy": "https://baraka-boutique-backend.vercel.app/",
   "name": "client",
   "version": "0.1.0",
