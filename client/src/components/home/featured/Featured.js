@@ -9,6 +9,7 @@ const Featured = () => {
         const response = await fetch('/products')
 
         if(response.ok){
+            console.log(response)
             const products = await response.json()
             setFeatured(products.filter(product => product.category === 'featured'))
 
