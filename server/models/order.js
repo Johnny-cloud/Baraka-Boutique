@@ -1,32 +1,59 @@
 import mongoose from "mongoose";
+
 import Customer from "./customer.js";
 
 const orderSchema = new mongoose.Schema({
+
     createdAt: {
+
         type: Date,
+
         default: () =>  Date.now()
+
     },
+
     price: {
+
         required: true,
+
         type: Number,
+
     },
+
     description: {
+
         required: true,
+
         type: String,
+
     },
+
     quantity: {
+
         required: true,
-        type: Number
+
+        type: Number,
+
     },
+
     status: {
+
         type: String,
-        default: 'pending'
+
+        default: 'pending',
+
     },
+
     customer_id: {
+
         required: true,
+
         type: mongoose.SchemaTypes.ObjectId,
-        ref: Customer
+
+        ref: Customer,
+
     }
+    
 })
 
 
