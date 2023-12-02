@@ -9,6 +9,23 @@ class Seeder {
         await Product.deleteMany()
         await Customer.deleteMany()
         await Order.deleteMany()
+
+
+        await Product.create({description: "Herschel supply co 25!", price: 1000, rating: 4.7, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1632282003890-020318a49e62?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Black leather jacket", price: 600, rating: 4.5, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Timex silver", price: 350, rating: 5.0, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1694656937152-b2377c0b5de7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Soft shirt", price: 350, rating: 4.6, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+  
+        await Product.create({description: "Cotton t-shirt", price: 400, rating: 4.7, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHNoaXJ0fGVufDB8fDB8fHww"})
+        await Product.create({description: "Flowring skirt", price: 350, rating: 4.8, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1592301933927-35b597393c0a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Cotton scarf", price: 350, rating: 4.6, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1601244005535-a48d21d951ac?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Jasmin socks", price: 200, rating: 4.9, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1631180543602-727e1197619d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+
+        await Product.create({description: "Nike sneakers", price: 2500, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Adma boots", price: 2700, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1582897085656-c636d006a246?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Trendy Denim Long sleeve", price: 600, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+        await Product.create({description: "Women side pocket", price: 1000, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
+  
         
         // shoes
 
@@ -385,21 +402,7 @@ class Seeder {
         await Product.create({description: "Crocs Kids' Classic Tie Dye Clogs (Little Kid/Big Kid)", price: 300, rating: 4.8, category: 'shoes', sub_category: 'girls', image: "https://m.media-amazon.com/images/I/718+jFPd-BL._AC_SX575_.jpg"})
         await Product.create({description: "adidas Unisex-Child Adilette Shower Slides", price: 350, rating: 4.7, category: 'shoes', sub_category: 'girls', image: "https://m.media-amazon.com/images/I/616Rb45Yh7L._AC_SX575_.jpg"})
 
-        await Product.create({description: "Herschel supply co 25!", price: 1000, rating: 4.7, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1632282003890-020318a49e62?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Black leather jacket", price: 600, rating: 4.5, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Timex silver", price: 350, rating: 5.0, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1694656937152-b2377c0b5de7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Soft shirt", price: 350, rating: 4.6, category: 'featured', sub_category: 'none', image: "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-  
-        await Product.create({description: "Cotton t-shirt", price: 400, rating: 4.7, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHNoaXJ0fGVufDB8fDB8fHww"})
-        await Product.create({description: "Flowring skirt", price: 350, rating: 4.8, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1592301933927-35b597393c0a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Cotton scarf", price: 350, rating: 4.6, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1601244005535-a48d21d951ac?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Jasmin socks", price: 200, rating: 4.9, category: 'trending', sub_category: 'none', image: "https://images.unsplash.com/photo-1631180543602-727e1197619d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-
-        await Product.create({description: "Nike sneakers", price: 2500, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Adma boots", price: 2700, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1582897085656-c636d006a246?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Trendy Denim Long sleeve", price: 600, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-        await Product.create({description: "Women side pocket", price: 1000, rating: 5.0, category: 'best_selling', sub_category: 'none', image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"})
-  
+        
         let john = await Customer.create({name: 'Jane Doe', email: 'jane@gmail.com', password: 'doe'})
         let jane = await Customer.create({name: 'John Doe', email: 'john@gmail.com', password: 'doe'})
         let james = await Customer.create({name: 'James Michael', email: 'james@gmail.com', password: 'doe'})
