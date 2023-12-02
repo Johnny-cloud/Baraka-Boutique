@@ -1,5 +1,4 @@
 import express from 'express'
-
 import ProductsController from '../controllers/products_controller.js'
 
 const productsRoute = express.Router()
