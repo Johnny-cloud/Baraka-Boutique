@@ -12,7 +12,6 @@ const app = express()
 // const connURI = "mongodb+srv://John:ynnhoj157@cluster0.76ioyjl.mongodb.net/baraka_boutique?retryWrites=true&w=majority"
 // const connURI = "mongodb://localhost/baraka_botique"
 app.use(express.json())
-app.use(cors())
 app.use(cors({ 
     credentials: true, 
     origin: "http://localhost:3000",
