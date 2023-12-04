@@ -17,8 +17,8 @@ import {AdminDashboard, Overview, Products, Customers, Orders, CustomerUpdatePag
 import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
-    const api = "https://baraka-boutique-backend.vercel.app" // This tis the route for the backend
-    // let api = "http://localhost:5000"
+    // const api = "https://baraka-boutique-backend.vercel.app" // This tis the route for the backend
+    let api = "http://localhost:5000"
     const [cart, setCart] = useState([...JSON.parse(localStorage.getItem("cart"))])
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
@@ -62,8 +62,8 @@ const App = () => {
    }
 
    useEffect(() => {
-    fetchAllProducts()
     auth()
+    fetchAllProducts()
    }, [])
 
     useEffect(() => {
