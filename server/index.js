@@ -29,11 +29,6 @@ app.use(session({
     resave: false,
     saveUninitialized: false, 
     store: store,
-    cookie: {
-        sameSite: 'none',
-        secure: true,
-        httpOnly: false,
-    }
 }))
 app.post('/login', SessionsController.create)
 app.delete('/logout', SessionsController.destroy)
