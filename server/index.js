@@ -27,7 +27,10 @@ app.use(session({
     secret: "mysecretkey123456",
     resave: false,
     saveUninitialized: false, 
-    store: store
+    store: store,
+    cookie: {
+        sameSite: 'none'
+    }
 }))
 app.post('/login', SessionsController.create)
 app.delete('/logout', SessionsController.destroy)
