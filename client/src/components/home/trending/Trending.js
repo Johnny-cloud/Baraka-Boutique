@@ -1,30 +1,17 @@
 // This code displays the trending products
-import { useState, useEffect, useContext } from "react"
+import { useContext } from "react"
 import HomeProduct from "../home_product/HomeProduct"
 import AppContext from "../../context/AppContext"
 
 const Trending = () => {
-    const[trending, setTrending] = useState(null)
-    const {api} = useContext(AppContext)
-
-    const fetchTrending = async () => {
-        const response = await fetch(`${api}/products`)
-        if(response.ok){
-            const products = await response.json()
-            setTrending(products.filter(product => product.category === 'trending'))
-        }
-    }
-
-    useEffect(() => {
-        fetchTrending()
-    }, [])
+    const {allProducts} = useContext(AppContext)
     
-    if(trending){ 
+    if(allProducts){ 
             return(
                 <div className="display-container">
                 <h3>Trending</h3>
                 <div className="products-container">
-                    {trending.map(product => <HomeProduct product={product} key={product._id} />)}
+                    {allProducts.filter(product => product.category === "trending").map(product => <HomeProduct product={product} key={product._id} />)}
                 </div>
             </div>
         )

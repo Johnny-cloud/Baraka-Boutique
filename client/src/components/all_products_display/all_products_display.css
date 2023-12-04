@@ -7,6 +7,7 @@
     width: 80%;
     height: 100%;
     margin: auto;
+    background-color: aqua;
 }
 
 .products-banner{
@@ -23,4 +24,13 @@
     padding: 5%;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+    .all-products-display-container{
+        width: 100%;
+    }
+    .products-banner{
+        height: 50px;
+    }
 }

@@ -4,18 +4,11 @@ import AppContext from '../../../../context/AppContext'
 
 const PopularProducts = () => {
     const [popularProducts, setPopularProducts] = useState([])
-    const {api} = useContext(AppContext)
+    const {allProducts} = useContext(AppContext)
 
-    const fetchPopularProducts = async () => {
-            const response = await fetch(`${api}/products`)
-        if(response.ok){
-                const productsFetched = await response.json()
-            setPopularProducts(productsFetched.filter(product => product.rating === 5))
-        }
-    }
 
     useEffect(() => {
-            fetchPopularProducts()
+        setPopularProducts(allProducts)
     }, [])
 
   return (

@@ -18,6 +18,7 @@ import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
     const api = "https://baraka-boutique-backend.vercel.app" // This tis the route for the backend
+    // let api = "http://localhost:5000"
     const [cart, setCart] = useState([...JSON.parse(localStorage.getItem("cart"))])
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
@@ -28,26 +29,42 @@ const App = () => {
     const [customerToUpdate, setCustomerToUpdate] = useState(null)
     const [productToUpdate, setProductToUpdate] = useState(null)
     const [placedOrder, setPlacedOrder] = useState(false)
+    const [allProducts, setAllProducts] = useState([])
     
     const contextValue = {
         api, placedOrder, setPlacedOrder, productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate,
         subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts,
         collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, 
-        selectedItem, setSelectedItem 
+        selectedItem, setSelectedItem, allProducts 
     }
 
-    const auth = async () => {
-        const response = await fetch(`${api}/auth`)
+    const fetchAllProducts = async () => {
+        const response = await fetch(`${api}/products`)
         if(response.ok){
-            const customer = await response.json()
-            setCurrentCustomer(customer)
+            const fetchedProducts = await response.json()
+            setAllProducts(fetchedProducts)
         }
     }
 
+    const auth = async (req, res) => {
+    const response = await fetch(`${api}/auth`, {
+        method: "GET",
+        credentials: "include",
+    })
 
-    useEffect(() => {
-        auth()
-    }, [])
+    if(response.ok){
+        const customer = await response.json()
+        console.log(customer)
+        setCurrentCustomer(customer)
+    } else{
+        console.log(await response.json())
+    }
+   }
+
+   useEffect(() => {
+    fetchAllProducts()
+    auth()
+   }, [])
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))

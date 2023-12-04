@@ -2,8 +2,17 @@
     position: absolute;
     width: 80%;
     left: 20%;
+    
 }
 
 .products > .products-container{
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .products{
+        left: 0;
+        top: 90px;
+        width: 100%;
+    }
 }

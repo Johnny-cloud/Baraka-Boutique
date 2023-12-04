@@ -8,7 +8,7 @@ const CustomerOrders = () => {
     const {currentCustomer, setCurrentCustomer, placedOrder, api} = useContext(AppContext)
 
     const auth = async () => {
-        const response = await fetch(`${api}/auth`)
+        const response = await fetch(`${api}/auth`, {method: "GET", credentials: "include"})
 
         if(response.ok){
             const customer = await response.json()

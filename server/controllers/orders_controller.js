@@ -7,7 +7,7 @@ class OrdersController{
             const orders = await Order.find()
             res.json(orders)
         } catch(err){
-                res.status(400).json(err)
+            res.status(400).json(err)
         }
     }
 

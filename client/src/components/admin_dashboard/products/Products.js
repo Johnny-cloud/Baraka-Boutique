@@ -9,30 +9,19 @@ import { useEffect, useState, useContext } from 'react'
 import './products.css'
 
 const Products = () => {
-    const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const {api} = useContext(AppContext)
-    
-    const fetchProducts = async () => {
-            const response = await fetch(`${api}/products`)
-        if(response.ok){
-                const allProducts = await response.json()
-            setFilteredProducts(allProducts)
-            setProducts(allProducts)
-
-        }
-    }
+    const {allProducts} = useContext(AppContext)
 
     const handleSelectChange = (event) => {
             if(event.target.value === 'all'){
-                setFilteredProducts(products)
+                setFilteredProducts(allProducts)
         } else{
-                setFilteredProducts(products.filter(product => product.category === event.target.value))
+                setFilteredProducts(allProducts.filter(product => product.category === event.target.value))
         }
     }
 
     useEffect(() => {
-            fetchProducts()
+        setFilteredProducts(allProducts)
     }, [])
 
     if(filteredProducts){

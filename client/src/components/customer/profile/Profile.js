@@ -9,44 +9,64 @@ const Profile = () => {
     const[formData, setFormData] = useState({
         name: "",
         email: "",
-        password: "",
-        password_confirmation: ""
+        password: "doe",
+        password_confirmation: "doe"
     })
 
     const handleChange = (event) => {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
 
-    const updateProfile = async () => {
-        const response = await fetch(`${api}/customers/${currentCustomer._id}`, {
-            method: 'PATCH',
-            headers: {
-                    'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({...formData})
-        })
-
-        if(response.ok){
-            const customer = await response.json()
-            setCurrentCustomer(customer)
-            alert("Profile updated successfully!")
+    const updateProfile = async (event) => {
+        event.preventDefault()
+        if(formData.name === ""){
+            alert("Enter a name")
+        } else if(formData.email === ""){
+            alert("Enter email adress")
+        } else if(formData.password === "" || formData.password_confirmation === ""){
+            alert("Enter password")
         } else{
-            alert("Unable to update profile")
+            const response = await fetch(`${api}/customers/${currentCustomer._id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({...formData}),
+                credentials: "include",
+            })
+
+            if(response.ok){
+                const customer = await response.json()
+                setCurrentCustomer(customer)
+                alert("Profile updated successfully!")
+            } else{
+                
+                alert("Unable to update profile")
+                
+            }
+
+            setFormData({
+                name: "",
+                email: "",
+                password: "doe",
+                password_confirmation: "doe"
+            })
         }
+        
     }
 
     if(currentCustomer){
             return(
                 <div className='display-container'>
-                <h2>{currentCustomer.name}'s profile</h2>
+                <h2>Update {currentCustomer.name}'s profile</h2>
                 <Form >
                     <Form.Group>
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type='text' name='name' value={formData.name} onChange={handleChange} placeholder={currentCustomer.name} />
+                        <Form.Control type='text' name='name' value={formData.name} onChange={handleChange}  />
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type='email' name='email' value={formData.email} onChange={handleChange} placeholder={currentCustomer.email} />
+                        <Form.Control type='email' name='email' value={formData.email} onChange={handleChange} />
                     </Form.Group>
                     {/* <Form.Group>
                         <Form.Label>Password</Form.Label>

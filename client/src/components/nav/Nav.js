@@ -5,15 +5,16 @@ import { useContext } from "react"
 import {Navbar, Nav,  Container, Offcanvas} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 
 const Navigation = () => {
-    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts, setSubCategory, setCategory, api} = useContext(AppContext)
-    const [products, setProducts] = useState(null)
+    const {cart,  currentCustomer, setCurrentCustomer, setCollectionProducts, setSubCategory, setCategory, api, allProducts} = useContext(AppContext)
     const navigate = useNavigate()
 
     const handleLogout = async () => {
-        await fetch(`${api}/logout`, {method: 'DELETE'})
+        await fetch(`${api}/logout`, {
+            method: 'DELETE',
+            credentials: "include"
+        })
         setCurrentCustomer(null)
         navigate('/')
     }
@@ -23,38 +24,28 @@ const Navigation = () => {
         const response = await fetch(`${api}/login`, {
             method: 'POST',
             headers: {
-                        "Content-Type": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                        email: "john@gmail.com",
+                email: "jane@gmail.com",
                 password: "doe"
-            })
+            }),
+            credentials: "include"
         })
 
         if(response.ok){
             const customer = await response.json()
             setCurrentCustomer(customer)
             navigate('/')
-        }
-    }
-
-    const fetchProducts = async () => {
-        const response = await fetch(`${api}/products`)
-        if(response.ok){
-            const allProducts = await response.json()
-            setProducts(allProducts)
         } else{
-            console.log(response)
+            console.log(response.json())
         }
     }
 
-    useEffect(() => {
-        fetchProducts()  
-    }, [])
 
     const setProductsToDisplay = (event) => {
-        if(products){
-            setCollectionProducts(products.filter(product => product.sub_category === event.target.id))
+        if(allProducts){
+            setCollectionProducts(allProducts.filter(product => product.sub_category === event.target.id))
             setSubCategory(event.target.id)
             setCategory('clothing')
         }
@@ -89,7 +80,7 @@ const Navigation = () => {
                             <div  className='my-dropdown'>
                                 <span><span class="bi bi-person-check-fill">Welcome {currentCustomer.name}</span><i class="bi bi-chevron-down"></i></span>
                                 <div className='my-dropdown-menu'>
-                                    <Link to={'/profile'}>Update Profile</Link>
+                                    {/* <Link to={'/profile'}>Update Profile</Link> */}
                                     <Link to='/customer-orders'>My Previous Orders</Link>
                                     <Link to={'/animations/logout-page'} onClick={handleLogout}>Logout</Link>
                                 </div>

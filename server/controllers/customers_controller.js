@@ -27,8 +27,10 @@ class CustomersController {
             const orders = await Order.find({customer_id: customer._id})
             const {_id, name, email, password} = customer
             res.json({_id, name, email, password, orders})
+            console.log("Customer show hit +++")
         } catch(err) {
             res.status(400).json(err)
+            console.log("Customer show hit ---")
         }
     }
 
