@@ -12,9 +12,9 @@ const app = express()
 // const connURI = "mongodb+srv://John:ynnhoj157@cluster0.76ioyjl.mongodb.net/baraka_boutique?retryWrites=true&w=majority"
 // const connURI = "mongodb://localhost/baraka_botique"
 app.use(express.json())
-app.use(cors({ 
-    credentials: true, 
-    origin: ["http://localhost:3000",]
+app.use(cors({
+    credentials: true,
+    origin: ["http://localhost:3000"]
 })) //enable fetch to send cookies
 connectToDB()
 app.use(session({
@@ -22,7 +22,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
-app.post('/login',SessionsController.create)
+app.post('/login', SessionsController.create)
 app.delete('/logout', SessionsController.destroy)
 app.get('/auth', CustomersController.show)
 app.use('/products', productsRoute)
