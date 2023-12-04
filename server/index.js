@@ -18,7 +18,6 @@ const store = new mongoDBStore({
     uri: connURI,
     collection: "userSessions"
 })
-app.use(cors())
 app.use(cors({
     credentials: true,
     origin: ["http://localhost:3000", "https://baraka-boutique-chepseon.vercel.app/"]
