@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cors())
 app.use(cors({ 
     credentials: true, 
-    origin: true,
+    origin: "http://localhost:3000",
 })) //enable fetch to send cookies
 connectToDB()
 app.use(session({
