@@ -97,7 +97,8 @@
     }
 
     .selected-display-image-container{
-        width: 400px;
+        width: 250px;
         height: 300px;
+        margin: auto;
     }
 }
