@@ -17,25 +17,26 @@ import {AdminDashboard, Overview, Products, Customers, Orders, CustomerUpdatePag
 import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
-     const api = "https://baraka-boutique-backend.vercel.app" // This is the route for the backend
-    // let api = "http://localhost:5000"
+    //  const api = "https://baraka-boutique-backend.vercel.app" // This is the route for the backend
+    let api = "http://localhost:5000"
     let [cart, setCart] = useState([])
     const [currentCustomer, setCurrentCustomer] = useState(null)
-    const [selectedItem, setSelectedItem] = useState(JSON.parse(localStorage.getItem("selectedItem")))
-    const [collectionProducts, setCollectionProducts] = useState(JSON.parse(localStorage.getItem("collectionProducts")))
-    const [filteredProducts, setFilteredProducts] = useState(null)
+    const [selectedItem, setSelectedItem] = useState(null)
+    const [collectionProducts, setCollectionProducts] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
     const [category, setCategory] = useState(null)
     const [subCategory, setSubCategory] = useState(null)
     const [customerToUpdate, setCustomerToUpdate] = useState(null)
     const [productToUpdate, setProductToUpdate] = useState(null)
     const [placedOrder, setPlacedOrder] = useState(false)
     const [allProducts, setAllProducts] = useState([])
+    const [expanded, setExpanded] = useState(false)
     
     const contextValue = {
         api, placedOrder, setPlacedOrder, productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate,
         subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts,
         collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, 
-        selectedItem, setSelectedItem, allProducts 
+        selectedItem, setSelectedItem, allProducts, expanded, setExpanded 
     }
 
     const fetchAllProducts = async () => {
@@ -64,19 +65,19 @@ const App = () => {
    useEffect(() => {
     auth()
     fetchAllProducts()
+    setCart([...JSON.parse(localStorage.getItem("cart"))])
+
+    if(JSON.parse(localStorage.getItem("cart")).length > 0){
+        console.log("cart in localstorage...........")
+        console.log(JSON.parse(localStorage.getItem("cart")))
+        setCart([...JSON.parse(localStorage.getItem("cart"))])
+    }
+
    }, [])
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart])
-
-    useEffect(() => {
-        localStorage.setItem("selectedItem", JSON.stringify(selectedItem))
-    }, [selectedItem])
-
-    useEffect(() => {
-        localStorage.setItem("collectionProducts", JSON.stringify(collectionProducts))
-    }, [collectionProducts])
 
     return (
             <div className='app'>

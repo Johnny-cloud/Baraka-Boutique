@@ -2,8 +2,8 @@
 import { useEffect, useContext } from 'react'
 import './all_products_display.css'
 import Products from './products/Products'
-import Categories from './categories/Categories'
 import AppContext from '../context/AppContext'
+import Categories from './categories/Categories'
 
 const AllProductsDisplay = () => {
     const {subCategory, collectionProducts} = useContext(AppContext)

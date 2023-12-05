@@ -6,23 +6,14 @@ import AppContext from '../../context/AppContext'
 
 const Products = () => {
 
-    const {collectionProducts, setFilteredProducts, filteredProducts, category} = useContext(AppContext)
+    const {filteredProducts} = useContext(AppContext)
 
-    useEffect(() => {
-        // Checks if category was set when an image was clicked on one the images on the top part of the home section
-        if(category){ 
-            setFilteredProducts(collectionProducts.filter(product =>  product.category === category))    
-        } else{
-            setFilteredProducts(collectionProducts)
-        }
-
-    }, [collectionProducts])
 
     if(filteredProducts){
             return (
             <div className='products'>
                 <div className='products-container'>
-                    {filteredProducts.slice(0, 12).map(product => <ProductDisplay key={product._id} product={product} />)}
+                    {filteredProducts.slice(0, 18).map(product => <ProductDisplay key={product._id} product={product} />)}
                 </div>
             </div>
 

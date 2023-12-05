@@ -5,9 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 80%;
-    height: 100%;
     margin: auto;
-    background-color: aqua;
 }
 
 .products-banner{
@@ -31,6 +29,6 @@
         width: 100%;
     }
     .products-banner{
-        height: 50px;
+        height: 100px;
     }
 }
