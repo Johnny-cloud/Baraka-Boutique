@@ -51,7 +51,7 @@ const Navigation = () => {
         if(allProducts){
             setCollectionProducts(allProducts.filter(product => product.sub_category === event.target.name))
             setFilteredProducts(allProducts.filter(product => product.category === event.target.id && product.sub_category === event.target.name))
-            setSubCategory(event.target.id)
+            setSubCategory(event.target.name)
             setCategory(event.target.id)
         }
     }

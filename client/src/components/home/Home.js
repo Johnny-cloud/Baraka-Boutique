@@ -11,7 +11,7 @@ const Home = () => {
     return (
       <div className='home-container'>
         <div className='home-landing-page'>
-          <h2>Baraka Boutique</h2>
+          <h2>Welcome to Baraka Boutique</h2>
         </div>
         <Category />
         <Featured />

@@ -1,13 +1,14 @@
 // This code displays the products in the collections section
-import { useEffect, useContext} from 'react'
+import { useContext} from 'react'
 import './products.css'
 import ProductDisplay from '../../product/ProductDisplay'
 import AppContext from '../../context/AppContext'
+import { useNavigate } from 'react-router-dom'
 
 const Products = () => {
 
-    const {filteredProducts} = useContext(AppContext)
-
+    const {filteredProducts, collectionProducts} = useContext(AppContext)
+    const navigate = useNavigate()
 
     if(filteredProducts.length > 0){
             return (
@@ -18,12 +19,14 @@ const Products = () => {
             </div>
 
         )
-    } else{
+    } else if(collectionProducts.length !== 0 && filteredProducts.length === 0){
         return (
             <div className='products'>
                 <h2>Sorry! No such product with the selected filter category</h2>
             </div>
         )
+    } else{
+        navigate('/')
     }
 
 }
