@@ -33,6 +33,10 @@ const SelectedDisplay = () => {
 
     }
 
+    const continueShopping = () => {
+        navigate(-1)
+    }
+
     if(selectedItem){
         selectedItem.quantity = quantity
         return(
@@ -57,6 +61,9 @@ const SelectedDisplay = () => {
                     </div>
                    <div className='add-to-cart'>
                     <p><button onClick={addToCart}>Add to cart <i class="bi bi-cart-check"></i></button></p>
+                   </div>
+                   <div className='back-btn'>
+                    <p><button onClick={continueShopping}>Back</button></p>
                    </div>
                 </div>
             </div>

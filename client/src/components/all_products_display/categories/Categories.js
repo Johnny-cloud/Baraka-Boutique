@@ -41,19 +41,19 @@ const Categories = () => {
                                 <Offcanvas.Body className='offcanvas-column'>
                                     <h4>Filter Products</h4>
                                     <Nav className='me-auto'>
-                                        <h5>Filter By Categories</h5>
+                                        <h5>Filter By Category</h5>
                                         <Nav.Link id={'shoes'} onClick={handleClick}>Shoes</Nav.Link>
                                         <Nav.Link id={'clothing'} onClick={handleClick}>Clothes</Nav.Link>
                                         <Nav.Link id={'watches'} onClick={handleClick}>Watches</Nav.Link> 
                                     </Nav>
                                     <Nav className='me-auto'>
-                                        <h6>Filter By Rating</h6>
+                                        <h5>Filter By Rating</h5>
                                         <Nav.Link id={4.0} onClick={handleRatingClick}>3.0 - 4.0</Nav.Link>
                                         <Nav.Link id={4.5} onClick={handleRatingClick}>4.0 - 4.5</Nav.Link>
                                         <Nav.Link id={5.0} onClick={handleRatingClick}>4.5 - 5.0</Nav.Link> 
                                     </Nav>
                                     <Nav className='me-auto'>
-                                        <h6>Filter By Price</h6>
+                                        <h5>Filter By Price</h5>
                                         <Nav.Link id={500} onClick={handlePriceClick}>ksh.0  -  ksh.500</Nav.Link>
                                         <Nav.Link id={1000} onClick={handlePriceClick}>ksh.500 - ksh.1000</Nav.Link>
                                         <Nav.Link id={1500} onClick={handlePriceClick}>ksh.1000 - ksh.1500</Nav.Link>  

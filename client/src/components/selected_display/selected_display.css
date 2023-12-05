@@ -13,7 +13,7 @@
 
 .selected-display-image-container{
     width: 600px;
-    height: 95%;
+    height: 93%;
     margin: auto;
 }
 
@@ -25,7 +25,7 @@
 .selected-display-details-container{
     width: 45%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .selected-display-details-container h4{
@@ -80,6 +80,13 @@
 
 .add-to-cart button:hover{
     background-color: green;
+}
+
+.back-btn button{ 
+    background-color: rgb(146, 10, 10);
+    width: 50%;
+    font-size: 20px;
+    color: aliceblue;
 }
 
 @media screen and (max-width: 600px) {

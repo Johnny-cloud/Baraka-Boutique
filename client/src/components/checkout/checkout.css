@@ -78,8 +78,8 @@
 }
 
 .multiple-btns  .demo-btn:hover{
-    background-color: green;
-    color: orange;
+    background-color: gold;
+    color: green;
 }
 
 @media  screen and (max-width: 600px) {
