@@ -23,6 +23,7 @@ app.use(cors({
     origin: "https://baraka-boutique-chepseon.vercel.app"
 })) //enable fetch to send cookies
 // "http://localhost:3000"
+
 connectToDB()
 app.use(session({
     secret: "mysecretkey123456",
