@@ -21,8 +21,8 @@ const mongoDBStore = ConnectMongoDBSession(session)
 app.use(cors({
     credentials: true,
     origin: "https://baraka-boutique-chepseon.vercel.app"
+    // origin: "http://localhost:3000"
 })) //enable fetch to send cookies
-// "http://localhost:3000"
 
 connectToDB()
 app.use(session({
