@@ -50,7 +50,7 @@ const CheckoutLogin = () => {
                     "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                email: "john@gmail.com",
+                email: "jane@gmail.com",
                 password: "doe"
             })
         })
