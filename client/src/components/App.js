@@ -68,8 +68,6 @@ const App = () => {
     setCart([...JSON.parse(localStorage.getItem("cart"))])
 
     if(JSON.parse(localStorage.getItem("cart")).length > 0){
-        console.log("cart in localstorage...........")
-        console.log(JSON.parse(localStorage.getItem("cart")))
         setCart([...JSON.parse(localStorage.getItem("cart"))])
     }
 
@@ -78,6 +76,11 @@ const App = () => {
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart])
+
+    useEffect(() => {
+        localStorage.removeItem("collectionProducts")
+        localStorage.removeItem("selectedItem")
+    })
 
     return (
             <div className='app'>
