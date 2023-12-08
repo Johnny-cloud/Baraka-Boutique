@@ -12,8 +12,8 @@ const app = express()
 app.use(express.json())
 app.use(cors({
     credentials: true,
-    // origin: "https://baraka-boutique-chepseon.vercel.app"
-    origin: "http://localhost:3000"
+    origin: "https://baraka-boutique-chepseon.vercel.app"
+    // origin: "http://localhost:3000"
 })) //enable fetch to send cookies
 
 connectToDB()
