@@ -104,6 +104,10 @@
     margin: 10px;
 }
 
+.close-offcanvas .bi{
+    font-size: 40px;
+}
+
 @media screen and (max-width: 600px) {
 
     .my-dropdown{

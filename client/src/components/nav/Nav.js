@@ -64,8 +64,11 @@ const Navigation = () => {
                 <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Navbar.Offcanvas>
-                    <Offcanvas.Header closeButton>
+                    <Offcanvas.Header>
                         <h3>Ches-Baraka Boutique</h3>
+                        <div className='close-offcanvas'>
+                            <i class="bi bi-x-square" onClick={() => setExpanded(false)}></i>
+                        </div>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                     <Nav className='me-auto'>

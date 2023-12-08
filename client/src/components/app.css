@@ -73,15 +73,7 @@ form input{
 }
 
 @media screen and (max-width: 600px) {
-
-    .products-container{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
     .app{
         width: 100%;
     }
-
 }
