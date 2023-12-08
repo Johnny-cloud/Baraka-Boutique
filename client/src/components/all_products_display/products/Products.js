@@ -21,7 +21,7 @@ const Products = () => {
         )
     } else if(collectionProducts.length !== 0 && filteredProducts.length === 0){
         return (
-            <div className='products'>
+            <div className='products no-product-alert'>
                 <h2>Sorry! No such product with the selected filter category</h2>
             </div>
         )

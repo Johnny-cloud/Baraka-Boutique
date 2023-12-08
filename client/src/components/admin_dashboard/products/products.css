@@ -1,6 +1,7 @@
 .filter{
     margin-left: 100px;
-    font-size: 20px;
+    font-size: 25px;
+    color: red;
 }
 
 .filter select{

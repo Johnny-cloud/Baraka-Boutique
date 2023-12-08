@@ -52,7 +52,8 @@ const CheckoutLogin = () => {
             body: JSON.stringify({
                 email: "jane@gmail.com",
                 password: "doe"
-            })
+            }),
+            credentials: "include"
         })
         if(response.ok){
             const customer = await response.json()

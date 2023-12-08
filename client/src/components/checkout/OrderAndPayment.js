@@ -27,7 +27,8 @@ const OrderAndPayment = () => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({...item, customer_id: currentCustomer._id})
+        body: JSON.stringify({...item, customer_id: currentCustomer._id}),
+        credentials: "include"
     })
   }
   

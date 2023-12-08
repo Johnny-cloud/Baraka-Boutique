@@ -7,6 +7,9 @@ const SingleProduct = ({product}) => {
   const handleClick = () => {
       setProductToUpdate(product)
   }
+  const handleDeleteClick = () => {
+    alert("Only the main admin can delete")
+  }
   return (
       <tr>
         <td>{product.description}</td>
@@ -15,7 +18,7 @@ const SingleProduct = ({product}) => {
         <td>{product.rating}</td>
         <td><Link to={'/admin-dashboard/products/product-update-page'} onClick={handleClick}><button className='update-btn'>Update</button></Link></td>
 
-        <td><button className='delete-btn'><i class="bi bi-trash"></i></button></td>
+        <td><button className='delete-btn' onClick={handleDeleteClick}><i class="bi bi-trash"></i></button></td>
 
     </tr>
 

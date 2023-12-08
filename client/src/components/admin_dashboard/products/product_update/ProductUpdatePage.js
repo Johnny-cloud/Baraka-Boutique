@@ -3,12 +3,16 @@ import {useContext} from 'react'
 import AppContext from '../../../context/AppContext'
 import { Form } from 'react-bootstrap'
 import AdminNav from '../../admin_nav/AdminNav'
+import { useNavigate } from 'react-router-dom'
+
 const ProductUpdatePage = () => {
     const {productToUpdate} = useContext(AppContext)
+    const navigate = useNavigate()
 
     const handleSubmit = (event) => {
-        event.target.preventDefault()
+        event.preventDefault()
         alert("Only the main Adnmin can update")
+        navigate('/admin-dashboard/products')
     }
 
     if(productToUpdate){

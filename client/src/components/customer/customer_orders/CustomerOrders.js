@@ -3,9 +3,11 @@ import {useContext, useEffect} from 'react'
 import AppContext from '../../context/AppContext'
 import { Table } from 'react-bootstrap'
 import SingleOrder from './SingleOrder'
+import { useNavigate } from 'react-router-dom'
 
 const CustomerOrders = () => {
     const {currentCustomer, setCurrentCustomer, placedOrder, api} = useContext(AppContext)
+    const navigate = useNavigate()
 
     const auth = async () => {
         const response = await fetch(`${api}/auth`, {method: "GET", credentials: "include"})
@@ -13,16 +15,12 @@ const CustomerOrders = () => {
         if(response.ok){
             const customer = await response.json()
             setCurrentCustomer(customer)
-            console.log('Authenticated!')
-        } else{
-            console.log(response)
         }
     }
 
     // Fetches orders including the one recently placed
     useEffect(() => {
         auth()
-        console.log("placed order....")
     }, [placedOrder])
 
     useEffect(() => {
@@ -49,6 +47,8 @@ const CustomerOrders = () => {
                 </div>
             </div>
           )
+    } else{
+        navigate('/')
     }
 
 }

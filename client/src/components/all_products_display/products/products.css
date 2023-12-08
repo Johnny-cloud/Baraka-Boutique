@@ -9,6 +9,11 @@
     width: 100%;
 }
 
+.no-product-alert{
+    color: green;
+    padding-top: 25%;
+}
+
 @media screen and (max-width: 600px) {
     .products{
         left: 0;
