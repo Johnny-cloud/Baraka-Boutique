@@ -59,49 +59,69 @@ const Navigation = () => {
   return (
         <div >
         <Navbar expand='lg' className="bg-body-tertiary" fixed='top' expanded={expanded}>
-        <Navbar.Brand><Link to={'/'}><h3>Baraka Boutique</h3></Link></Navbar.Brand>
+        <Navbar.Brand><Link to={'/'}><h3>Ches-Baraka Boutique</h3></Link></Navbar.Brand>
             <Container>
                 <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Navbar.Offcanvas>
                     <Offcanvas.Header closeButton>
-                        <h3>Baraka Boutique</h3>
+                        <h3>Ches-Baraka Boutique</h3>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                     <Nav className='me-auto'>
                         <Link to={'/'} onClick={() => setExpanded(false)}>Home</Link>
-                        <div className='my-dropdown'>
-                            <span>Men's <i class="bi bi-chevron-down"></i></span>
-                            <div className='my-dropdown-menu'>
-                                <Link to={'/all-products-display'} name="men" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                <Link to={'/all-products-display'} name="men" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                <Link to={'/all-products-display'} name="men" id='watches' onClick={setProductsToDisplay}>Watches</Link>
+                        <div className='dropdown-shop'>
+                            <span>Shop <i class="bi bi-chevron-down"></i></span>
+                            <div >
+                                <div className='shop-menu'>
+                                    <div>
+                                        <h5>Men's Fashion </h5>
+                                        <div className='my-dropdown-list'>
+                                        <Link to={'/all-products-display'} name="men" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
+                                        <Link to={'/all-products-display'} name="men" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
+                                        <Link to={'/all-products-display'} name="men" id='watches' onClick={setProductsToDisplay}>Watches</Link>
+                                    
+                                        </div>
+                                    
+                                    </div>
+
+                                    <div>
+                                        <h5>Women's Fashion </h5>
+                                        <div className='my-dropdown-list'>
+                                        <Link to={'/all-products-display'} name="women" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
+                                        <Link to={'/all-products-display'} name="women" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
+                                        <Link to={'/all-products-display'} name="women" id='watches' onClick={setProductsToDisplay}>Watches</Link>
+                                    
+                                        </div>
+                                    
+                                    </div>
+
+                                    <div>
+                                        <h5>Boys Fashion </h5>
+                                        <div className='my-dropdown-list'>
+                                        <Link to={'/all-products-display'} name="boys" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
+                                        <Link to={'/all-products-display'} name="boys" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
+                                        <Link to={'/all-products-display'} name="boys" id='watches' onClick={setProductsToDisplay}>Watches</Link>
+                                    
+                                        </div>
+                                    
+                                    </div>
+
+                                    <div>
+                                        <h5>Girls Fashion </h5>
+                                        <div className='my-dropdown-list'>
+                                        <Link to={'/all-products-display'} name="girls" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
+                                        <Link to={'/all-products-display'} name="girls" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
+                                        <Link to={'/all-products-display'} name="girls" id='watches' onClick={setProductsToDisplay}>Watches</Link>
+                                    
+                                        </div>
+                                    
+                                    </div>
+                                </div>
                             </div>
+                           
                         </div>
-                        <div className='my-dropdown'>
-                            <span>Women's <i class="bi bi-chevron-down"></i></span>
-                            <div className='my-dropdown-menu'>
-                                <Link to={'/all-products-display'} name="women" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                <Link to={'/all-products-display'} name="women" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                <Link to={'/all-products-display'} name="women" id='watches' onClick={setProductsToDisplay}>Watches</Link>
-                            </div>
-                        </div>
-                        <div className='my-dropdown'>
-                            <span>Boys <i class="bi bi-chevron-down"></i></span>
-                            <div className='my-dropdown-menu'>
-                                <Link to={'/all-products-display'} name="boys" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                <Link to={'/all-products-display'} name="boys" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                <Link to={'/all-products-display'} name="boys" id='watches' onClick={setProductsToDisplay}>Watches</Link>
-                            </div>
-                        </div>
-                        <div className='my-dropdown'>
-                            <span>Girls <i class="bi bi-chevron-down"></i></span>
-                            <div className='my-dropdown-menu'>
-                                <Link to={'/all-products-display'} name="girls" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                <Link to={'/all-products-display'} name="girls" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                <Link to={'/all-products-display'} name="girls" id='watches' onClick={setProductsToDisplay}>Watches</Link>
-                            </div>
-                        </div>
+                      
                     </Nav>
                     {currentCustomer ? (
                             <Nav className='me-auto'>
@@ -129,7 +149,7 @@ const Navigation = () => {
                         </Nav>
                     )}
                     <Nav className='me-auto'>
-                        <Link to={'/admin-dashboard'} target='_blank' onClick={() => setExpanded(false)}>Admin Dashboard</Link>
+                        <Link to={'/admin-dashboard'} onClick={() => setExpanded(false)}>Admin Dashboard</Link>
                     </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>

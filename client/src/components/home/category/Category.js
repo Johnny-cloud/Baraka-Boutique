@@ -9,9 +9,6 @@ const Category = () => {
 
     const setProductsToDisplay = (event) => {
         if(allProducts){
-            console.log(event.target)
-            console.log("Home category......")
-            console.log(allProducts)
             setCollectionProducts(allProducts.filter(product => product.sub_category === event.target.id))
             setFilteredProducts(allProducts.filter(product => product.sub_category === event.target.id && product.category === event.target.name))
             setSubCategory(event.target.id)

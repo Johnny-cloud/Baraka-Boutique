@@ -55,22 +55,17 @@ const App = () => {
 
     if(response.ok){
         const customer = await response.json()
-        console.log(customer)
         setCurrentCustomer(customer)
-    } else{
-        console.log(await response.json())
     }
+    
    }
 
    useEffect(() => {
     auth()
     fetchAllProducts()
-    setCart([...JSON.parse(localStorage.getItem("cart"))])
-
-    if(JSON.parse(localStorage.getItem("cart")).length > 0){
+    if(JSON.parse(localStorage.getItem("cart"))){
         setCart([...JSON.parse(localStorage.getItem("cart"))])
     }
-
    }, [])
 
     useEffect(() => {
