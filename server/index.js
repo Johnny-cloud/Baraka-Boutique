@@ -25,7 +25,7 @@ app.use(session({
     name: "sessionId",
     cookie: {
         secure: true,
-        httpOnly: true,
+        httpOnly: false,
         sameSite: "none",
     }
 }))
