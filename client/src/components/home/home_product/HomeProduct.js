@@ -13,7 +13,7 @@ const HomeProduct = ({product}) => {
     }
     
     return (
-            <Link className='home-product' onClick={handleClick} to={'/selected-display'}>
+        <Link className='home-product' onClick={handleClick} to={'/selected-display'}>
             <div className='home-product-image-container'>
                 <img src={product.image} alt='img' />
             </div>

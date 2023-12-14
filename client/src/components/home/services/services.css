@@ -1,0 +1,12 @@
+.services-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service{
+    margin: 10px;
+    border: dotted;
+    width: 350px;
+}

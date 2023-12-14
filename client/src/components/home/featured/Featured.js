@@ -1,19 +1,27 @@
 // This code returns featured products
 
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import HomeProduct from "../home_product/HomeProduct"
 import AppContext from "../../context/AppContext"
+import Loading from "../../animations/loading/Loading"
 
 const Featured = () => {
     const {allProducts} = useContext(AppContext)
 
-    if(allProducts){
+    if(allProducts ){
             return(
-                <div className="display-container">
-                <h3>Featured</h3>
+            <div className="featured">
+                <h3>FEATURED PRODUCTS</h3>
                 <div className="products-container">
-                    {allProducts.filter(product => product.category === "featured").map(product => <HomeProduct product={product} key={product._id} />)}
+                    {allProducts.filter(product => product.category === "featured").map(product => <HomeProduct product={product} key={product._id} />) }
+                    
                 </div>
+            </div>
+        )
+    } else{
+        return(
+            <div>
+                <Loading />
             </div>
         )
     }

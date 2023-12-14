@@ -1,9 +1,8 @@
 .news-letter{
     width: 100%;
-    height: 500px;
     background-color: rgb(235, 235, 235);
     text-align: center;
-    padding-top: 5%;
+    padding: 2% 0;
 }
 
 .news-letter p{

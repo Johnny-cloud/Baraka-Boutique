@@ -10,17 +10,22 @@ import session from 'express-session'
 
 const app = express()
 app.use(express.json())
+app.set("trust proxy", 1)
 app.use(cors({
     credentials: true,
     origin: "https://baraka-boutique-chepseon.vercel.app"
-    // origin: "http://localhost:3000"
-})) //enable fetch to send cookies
+    // origin: "http://localhost:3000",
+})) 
 
 connectToDB()
 app.use(session({
-    secret: "mysecretkey123456",
+    secret: "mysecretkey12456",
     resave: false,
-    saveUninitialized: false, 
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        httpOnly: true,
+    }
 }))
 app.post('/login', SessionsController.create)
 app.delete('/logout', SessionsController.destroy)

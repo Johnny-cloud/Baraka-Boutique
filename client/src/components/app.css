@@ -1,7 +1,7 @@
 .main-content{
     width: 100%;
     margin: auto;
-    padding: 100px 0px 100px;
+    padding: 100px 0px 30px;
 }
 
 
@@ -10,6 +10,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0;
 }
 
 

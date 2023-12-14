@@ -6,6 +6,7 @@ import Featured from './featured/Featured'
 import Trending from './trending/Trending'
 import OnOffer from './on_offer/OnOffer'
 import NewsLetter from './news_letter/NewsLetter'
+import Services from './services/Services'
 
 const Home = () => {
     return (
@@ -15,9 +16,10 @@ const Home = () => {
         </div>
         <Category />
         <Featured />
-        <OnOffer />
         <Trending />
+        <OnOffer />
         <BestSelling />
+        <Services />
         <NewsLetter />
     </div>
 
