@@ -24,9 +24,9 @@ app.use(session({
     saveUninitialized: false,
     name: "sessionId",
     cookie: {
-        secure: false,
+        secure: true,
         httpOnly: true,
-        // sameSite: "none",
+        sameSite: "none",
     }
 }))
 app.post('/login', SessionsController.create)
