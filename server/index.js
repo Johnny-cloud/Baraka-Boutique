@@ -10,7 +10,7 @@ import session from 'express-session'
 
 const app = express()
 app.use(express.json())
-app.set("trust proxy", 1)
+app.set("trust proxy")
 app.use(cors({
     credentials: true,
     origin: "https://baraka-boutique-chepseon.vercel.app"
