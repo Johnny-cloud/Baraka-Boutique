@@ -22,10 +22,11 @@ app.use(session({
     secret: "mysecretkey12456",
     resave: false,
     saveUninitialized: false,
+    name: "sessionId",
     cookie: {
-        secure: true,
+        secure: false,
         httpOnly: true,
-        sameSite: "none",
+        // sameSite: "none",
     }
 }))
 app.post('/login', SessionsController.create)
