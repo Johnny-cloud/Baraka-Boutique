@@ -1,7 +1,5 @@
 .categories{
-    width: 20%;
-    position: absolute;
-    left: 0;
+    width: 300px;
     text-align: start;
 }
 
@@ -21,11 +19,13 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 15px;
     border-bottom: solid;
     border-bottom-color: black;
     border-width: 1px;
+}
 
+.offcanvas-column > *{
+    padding: 25px 0 50px;
 }
 
 .categories .offcanvas-column{
@@ -33,6 +33,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.offcanvas-column h4{
+    padding: 2px;
 }
 
 .categories .me-auto h6{

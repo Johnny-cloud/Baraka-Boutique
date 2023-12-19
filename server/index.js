@@ -13,8 +13,8 @@ app.use(express.json())
 app.set("trust proxy", 1)
 app.use(cors({
     credentials: true,
-    origin: "https://baraka-boutique-chepseon.vercel.app"
-    // origin: "http://localhost:3000",
+    // origin: "https://baraka-boutique-chepseon.vercel.app"
+    origin: "http://localhost:3000",
 })) 
 
 connectToDB()

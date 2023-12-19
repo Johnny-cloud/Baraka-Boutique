@@ -14,7 +14,7 @@ const Products = () => {
             return (
             <div className='products'>
                 <div className='products-container'>
-                    {filteredProducts.slice(0, 18).map(product => <ProductDisplay key={product._id} product={product} />)}
+                    {filteredProducts.slice(0, 9).map(product => <ProductDisplay key={product._id} product={product} />)}
                 </div>
             </div>
 
