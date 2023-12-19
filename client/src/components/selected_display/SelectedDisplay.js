@@ -1,11 +1,13 @@
 // This is the code contains section of the product display that users  use to add item to cart
-import {useContext, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import AppContext from '../context/AppContext'
 import './selected_display.css'
 import { useNavigate } from 'react-router-dom'
+import Categories from '../all_products_display/categories/Categories'
+import HomeProduct from '../home/home_product/HomeProduct'
 
 const SelectedDisplay = () => {
-    const {selectedItem, cart, setCart} = useContext(AppContext)
+    const {selectedItem, cart, setCart, filteredProducts} = useContext(AppContext)
     const [quantity, setQuantity] = useState(1)
     const navigate = useNavigate()
 
@@ -37,35 +39,51 @@ const SelectedDisplay = () => {
         navigate(-1)
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [selectedItem])
+
     if(selectedItem){
         selectedItem.quantity = quantity
         return(
                 <div className='selected-display'>
-                <div className='selected-display-image-container'><img src={selectedItem.image} alt='' /></div>
-                <div className='selected-display-details-container'>
-                    <div className='description'>
-                        <h4>Description</h4>
-                        <p>{selectedItem.description}</p>
+                    <div className='selected-product-display'>
+                    <div className='selected-display-image-container'><img src={selectedItem.image} alt='' /></div>
+                        <div className='selected-display-details-container'>
+                            <div className='price'>
+                                <h4>Price</h4>
+                                <p>Ksh.{selectedItem.price}</p>
+                            </div>
+                            <div className='in-stock'>
+                                <h4>Availability</h4>
+                                <p>In stock</p>
+                            </div>
+                            <div className='quantity'>
+                                <h4>Quantity</h4>
+                                <p><button className='reduce-btn' onClick={reduceQuantity}>-</button> {quantity} <button className='increase-btn' onClick={increaseQuantity}>+</button></p>
+                            </div>
+                        <div className='add-to-cart'>
+                            <p><button onClick={addToCart}>Add to cart <i class="bi bi-cart-check"></i></button></p>
+                        </div>
+                        <div className='back-btn'>
+                            <p><button onClick={continueShopping}>Back</button></p>
+                        </div>
+                        </div>
+                        <div className='description'>
+                                <h4>Description</h4>
+                                <p>{selectedItem.description}</p>
+                        </div>
+                        <div className='related-products'>
+                            <h1>Related Products</h1>
+                            <div className='products-container'>
+                                {filteredProducts.slice(0,5).map(product => <HomeProduct product={product} />)}
+                            </div>
+                        </div>
                     </div>
-                    <div className='price'>
-                        <h4>Price</h4>
-                        <p>Ksh.{selectedItem.price}</p>
-                    </div>
-                    <div className='in-stock'>
-                        <h4>Availability</h4>
-                        <p>In stock</p>
-                    </div>
-                    <div className='quantity'>
-                        <h4>Quantity</h4>
-                        <p><button className='reduce-btn' onClick={reduceQuantity}>-</button> {quantity} <button className='increase-btn' onClick={increaseQuantity}>+</button></p>
-                    </div>
-                   <div className='add-to-cart'>
-                    <p><button onClick={addToCart}>Add to cart <i class="bi bi-cart-check"></i></button></p>
-                   </div>
-                   <div className='back-btn'>
-                    <p><button onClick={continueShopping}>Back</button></p>
-                   </div>
-                </div>
             </div>
         )
     }
