@@ -3,11 +3,10 @@ import {useContext, useEffect, useState} from 'react'
 import AppContext from '../context/AppContext'
 import './selected_display.css'
 import { useNavigate } from 'react-router-dom'
-import Categories from '../all_products_display/categories/Categories'
 import HomeProduct from '../home/home_product/HomeProduct'
 
 const SelectedDisplay = () => {
-    const {selectedItem, cart, setCart, filteredProducts} = useContext(AppContext)
+    const {selectedItem, cart, setCart, filteredProducts, allProducts} = useContext(AppContext)
     const [quantity, setQuantity] = useState(1)
     const navigate = useNavigate()
 
@@ -54,6 +53,11 @@ const SelectedDisplay = () => {
                     <div className='selected-product-display'>
                     <div className='selected-display-image-container'><img src={selectedItem.image} alt='' /></div>
                         <div className='selected-display-details-container'>
+
+                        <div className='description'>
+                                <h4>Description</h4>
+                                <p>{selectedItem.description}</p>
+                        </div>
                             <div className='price'>
                                 <h4>Price</h4>
                                 <p>Ksh.{selectedItem.price}</p>
@@ -73,14 +77,10 @@ const SelectedDisplay = () => {
                             <p><button onClick={continueShopping}>Back</button></p>
                         </div>
                         </div>
-                        <div className='description'>
-                                <h4>Description</h4>
-                                <p>{selectedItem.description}</p>
-                        </div>
                         <div className='related-products'>
-                            <h1>Related Products</h1>
+                            <h3>RELATED PRODUCTS</h3>
                             <div className='products-container'>
-                                {filteredProducts.slice(0,5).map(product => <HomeProduct product={product} />)}
+                                {allProducts.filter(product => product.category === selectedItem.category).slice(0,4).map(product => <HomeProduct product={product} />)}
                             </div>
                         </div>
                     </div>

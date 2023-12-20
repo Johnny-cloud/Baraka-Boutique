@@ -7,14 +7,8 @@
     margin: auto;
 }
 
-.selected-product-display .description{
-    width: 100%;
-    text-align: start;
-}
-
 .selected-product-display .related-products{
-    width: 100%;
-    margin: 20px;
+    margin: 50px 0;
     text-align: start;
 }
 
@@ -24,9 +18,8 @@
 
 
 .selected-display-image-container{
-    width: 400px;
-    height: 500px;
-    margin: auto;
+    width: 450px;
+    height: 600px;
 }
 
 .selected-display-image-container img{
@@ -35,9 +28,7 @@
 }
 
 .selected-display-details-container{
-    width: 45%;
-    margin: auto;
-    margin-top: 15px;
+    width: 500px;
 }
 
 .selected-display-details-container h4{
@@ -45,8 +36,9 @@
 }
 
 .selected-display-details-container > * {
-    margin: 30px;
+    padding: 10px 5px 0px;
     border-bottom: solid;
+    border-color: green;
     border-width: 1px;
 }
 
