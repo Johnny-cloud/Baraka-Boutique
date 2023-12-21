@@ -1,0 +1,35 @@
+.totals-container, .total{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.total{
+    width: 350px;
+    height: 150px;
+    margin: 10px;
+    background-color: rgb(238, 244, 248);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.total > *{
+    margin: 20px;
+}
+
+.total .figures{
+    font-size: 25px;
+}
+
+.total .up-rating{
+    color: green;
+}
+
+.total .down-rating{
+    color: red;
+}
+
+.total .icon .bi{
+    font-size: 30px;
+}

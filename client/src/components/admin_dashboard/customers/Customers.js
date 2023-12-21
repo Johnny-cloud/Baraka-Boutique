@@ -8,9 +8,7 @@ import Loading from '../../animations/loading/Loading'
 import AppContext from '../../context/AppContext'
 
 const Customers = () => {
-    const [customers, setCustomers] = useState([])
-    const [filteredCustomers, setFilteredCustomers] = useState([])
-    const {api} = useContext(AppContext)
+    const {customers, filteredCustomers, setFilteredCustomers} = useContext(AppContext)
     const [formData, setFormData] = useState({
             searchTerm: ""
     })
@@ -22,21 +20,8 @@ const Customers = () => {
 
     }
 
-    const fetchCustomers = async () => {
-        const response = await fetch(`${api}/customers`)
 
-        if(response.ok){
-            const allCustomers = await response.json()
-            setCustomers(allCustomers)
-            setFilteredCustomers(allCustomers)
-        }
-    }
-
-    useEffect(() => {
-        fetchCustomers()
-    }, [])
-
-    if(filteredCustomers){
+    if(filteredCustomers.length > 0){
             return(
                 <div >
                 <AdminNav />

@@ -31,12 +31,17 @@ const App = () => {
     const [placedOrder, setPlacedOrder] = useState(false)
     const [allProducts, setAllProducts] = useState([])
     const [expanded, setExpanded] = useState(false)
+    const [customers, setCustomers] = useState([])
+    const [filteredCustomers, setFilteredCustomers] = useState([])
+    const [orders, setOrders] = useState([])
+    const [filteredOrders, setFilteredOrders] = useState([])
     
     const contextValue = {
         api, placedOrder, setPlacedOrder, productToUpdate, setProductToUpdate, customerToUpdate, setCustomerToUpdate,
         subCategory, setSubCategory, category, setCategory, filteredProducts, setFilteredProducts,
         collectionProducts, setCollectionProducts, cart, setCart, currentCustomer, setCurrentCustomer, 
-        selectedItem, setSelectedItem, allProducts, expanded, setExpanded 
+        selectedItem, setSelectedItem, allProducts, expanded, setExpanded, customers, filteredCustomers, setFilteredCustomers, 
+        orders, filteredOrders, setFilteredOrders,
     }
 
     const fetchAllProducts = async () => {
@@ -44,6 +49,25 @@ const App = () => {
         if(response.ok){
             const fetchedProducts = await response.json()
             setAllProducts(fetchedProducts)
+        }
+    }
+
+    const fetchCustomers = async () => {
+        const response = await fetch(`${api}/customers`)
+
+        if(response.ok){
+            const allCustomers = await response.json()
+            setCustomers(allCustomers)
+            setFilteredCustomers(allCustomers)
+        }
+    }
+
+    const fetchOrders = async () => {
+        const response = await fetch(`${api}/orders`)
+        if(response.ok){
+                const fetchedOrders = await response.json()
+            setOrders(fetchedOrders)
+            setFilteredOrders(fetchedOrders)
         }
     }
 
@@ -63,6 +87,8 @@ const App = () => {
    useEffect(() => {
     auth()
     fetchAllProducts()
+    fetchCustomers()
+    fetchOrders()
     if(JSON.parse(localStorage.getItem("cart"))){
         setCart([...JSON.parse(localStorage.getItem("cart"))])
     }

@@ -1,0 +1,14 @@
+
+.summary > *{
+    background-color: rgb(244, 248, 252);
+    padding-top: 20px;
+    margin: 5px;
+}
+
+.summary{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}

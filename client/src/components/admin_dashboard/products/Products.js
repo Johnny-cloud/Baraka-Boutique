@@ -38,7 +38,7 @@ const Products = () => {
                         </select>
                     </span></h3>
 
-                    <Table>
+                    <Table striped>
                         <thead>
                             <th>Description</th>
                             <th>Price</th>

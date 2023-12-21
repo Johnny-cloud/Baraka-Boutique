@@ -8,18 +8,9 @@ import Loading from '../../animations/loading/Loading'
 import AppContext from '../../context/AppContext'
 
 const Orders = () => {
-    const [orders, setOrders] = useState([])
-    const [filteredOrders, setFilteredOrders] = useState([])
-    const {api} = useContext(AppContext)
+    const {orders, filteredOrders, setFilteredOrders} = useContext(AppContext)
 
-    const fetchOrders = async () => {
-        const response = await fetch(`${api}/orders`)
-        if(response.ok){
-                const fetchedOrders = await response.json()
-            setOrders(fetchedOrders)
-            setFilteredOrders(fetchedOrders)
-        }
-    }
+  
 
     const handleSelectChange = (event) => {
         if(event.target.value === 'all'){
@@ -29,11 +20,7 @@ const Orders = () => {
         }
     }
 
-    useEffect(() => {
-            fetchOrders()
-    }, [])
-
-    if(filteredOrders){
+    if(filteredOrders.length > 0){
             return (
                 <div className='dashboard'>
                 <AdminNav />
@@ -46,7 +33,7 @@ const Orders = () => {
                             <option value={'declined'}>Declined</option>
                         </select>
                     </span></h2>
-                    <Table>
+                    <Table striped>
                         <thead>
                             <td><h5>Description</h5></td>
                             <td><h5>Quantity</h5></td>

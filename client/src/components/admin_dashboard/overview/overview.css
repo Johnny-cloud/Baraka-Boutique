@@ -1,16 +1,17 @@
-.left-container{
-    width: 450px;
-    height: 500px;
+.green{
+  color: green; 
 }
 
-.right-container{
-    width: 900px;
-    height: 500px;
+
+
+.orange{
+    color: orange;
 }
 
-@media screen and (max-width: 600px){
-    .chart-container, .chart-table-container{
-        width: 500px;
-        height: 500px;
-    }
+.purple{
+    color: purple;
+}
+
+.blue{
+    color: blue;
 }
