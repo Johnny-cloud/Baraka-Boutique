@@ -1,5 +1,6 @@
 .sales-overview{
     width: 450px;
+    position: relative;
 }
 
 .sales-summaries{
@@ -24,7 +25,12 @@
     padding: 10px;
 }
 
-
 .summary .icon i{
     font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    .sales-summaries > *{
+        width: 300px;
+    }
 }

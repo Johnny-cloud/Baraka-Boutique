@@ -1,5 +1,5 @@
 .sale-circle{
-    width: 400px;
+    width: 350px;
     text-align: center;
     margin: auto;
 }
@@ -28,9 +28,10 @@
     -webkit-clip-path: inset(0 0 0 50%);
             clip-path: inset(0 0 0 50%);
     transform: rotate(0deg);
-    width: 200px;
-    height: 200px;
-    border: 10px solid #cebf74;
+    width: 300px;
+    height: 300px;
+    left: 1%;
+    border: 10px solid #bca013;
     background: transparent;
     border-radius: 100%;
     transition: width 0.2s ease-out, height 0.2s ease-out, border-width 0.2s ease-out;
@@ -43,19 +44,19 @@
   
   /* percentage circle style */
   .circle {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     cursor: default;
   }
   .circle span {
     position: absolute;
     left: 25%;
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     text-align: center;
-    color: #cebf74;
-    line-height: 200px;
+    color: #bca013;
+    line-height: 300px;
     font-size: 25px;
     font-family: Helvetica, Arial, Geneva, sans-serif;
     transition: font-size 0.2s ease-out;
@@ -64,16 +65,18 @@
     position: absolute;
     content: "";
     background-color: transparent;
-    width: 200px;
-    height: 200px;
-    border: 10px solid #cebf74;
+    width: 300px;
+    height: 300px;
+    left: 11%;
+    border: 10px solid #bca013;
     background: transparent;
     border-radius: 100%;
     transition: width 0.2s ease-out, height 0.2s ease-out, border-width 0.2s ease-out;
   }
   .circle .percentage-bar {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    left: 10%;
     position: absolute;
     -webkit-clip-path: inset(0 0 0 50%);
             clip-path: inset(0 0 0 50%);
@@ -84,8 +87,9 @@
     -webkit-clip-path: inset(0 50% 0 0);
             clip-path: inset(0 50% 0 0);
     transform: rotate(0deg);
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    left: 1.2%;
     border: 10px solid #74B3CE;
     background: transparent;
     border-radius: 100%;

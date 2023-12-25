@@ -1,0 +1,11 @@
+.recent-orders {
+    width: 750px;
+    margin: 15px;
+}
+
+@media screen and (max-width:600px ){
+    .recent-orders{
+        width: 400px;
+        overflow: scroll;
+    }
+}

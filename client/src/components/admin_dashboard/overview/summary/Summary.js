@@ -9,6 +9,7 @@ const Summary = () => {
         <VisitorsByBrowser />
         <SalesOverview />
         <TopSellingCategories />
+        
     </div>
   )
 }
