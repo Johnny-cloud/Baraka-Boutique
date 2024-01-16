@@ -1,9 +1,9 @@
 import Customer from "../models/customer.js";
 import Order from "../models/order.js";
 
-class CustomersController {
-
-    static async index(req, res) {
+class CustomersController{
+    
+    async get_all(req, res){
         try {
             const customers = await Customer.find()
             res.json(customers)
@@ -12,7 +12,7 @@ class CustomersController {
         }
     }
 
-    static async create(req, res){
+    async create(req, res){
         try{
             const customer = await Customer.create({...req.body})
             res.json(customer)
@@ -21,20 +21,7 @@ class CustomersController {
         }
     }
 
-    static async show(req, res){
-        try{
-            const customer = await Customer.findById(req.session.customer_id)
-            const orders = await Order.find({customer_id: customer._id})
-            const {_id, name, email, password} = customer
-            res.json({_id, name, email, password, orders})
-            console.log("Customer show hit +++")
-        } catch(err) {
-            res.status(400).json(err)
-            console.log("Customer show hit ---")
-        }
-    }
-
-    static async update(req, res){
+    async update(req, res){
         try{
             const customer = await Customer.findByIdAndUpdate(req.params.id, {...req.body}, {new: true})
             res.json(customer)
@@ -43,6 +30,20 @@ class CustomersController {
         }
     }
 
+    async get_one(req, res){
+        try{
+            const customer = await Customer.findById(req.session.customer_id)
+            const orders = await Order.find({customer_id: customer._id})
+            const {_id, name, email, password} = customer
+            res.json({_id, name, email, password, orders})
+
+        } catch(err) {
+            res.status(400).json(err)
+        }
+    }
 }
 
-export default CustomersController
+
+
+
+export default new CustomersController ()

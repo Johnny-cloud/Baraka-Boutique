@@ -2,7 +2,7 @@ import Order from "../models/order.js";
 
 class OrdersController{
 
-    static async index(req, res){
+    async get_all(req, res){
         try{
             const orders = await Order.find()
             res.json(orders)
@@ -11,7 +11,7 @@ class OrdersController{
         }
     }
 
-    static async create(req, res){
+    async create(req, res){
         try{
             const order = await Order.create({...req.body})
             res.json(order)
@@ -20,14 +20,26 @@ class OrdersController{
         }
     }
 
-    static async update(req, res){
-        try {
-            const order = await Order.findByIdAndUpdate(req.params.id, {...req.body}, {new: true})
+    async get_one(req, res){
+        try{
+            const order = await Order.findById(req.params.id)
             res.json(order)
-        } catch(err) {
+
+        } catch(err){
             res.status(400).json(err)
         }
     }
 
+    async update(req, res){
+        try{
+            const order = await Order.findByIdAndUpdate(req.params.id, {...req.body}, {new: true})
+            res.json(order)
+        } catch(err){
+            res.status(400).json(err)
+        }
+        
+    }
 }
-export default OrdersController
+
+
+export default new OrdersController()

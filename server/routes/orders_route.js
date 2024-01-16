@@ -1,9 +1,9 @@
 import express from 'express'
 import OrdersController from '../controllers/orders_controller.js'
 
-const ordersRoute = express.Router()
+const route = express.Router()
 
-ordersRoute.get('/', OrdersController.index)
-ordersRoute.post('/', OrdersController.create)
+route.get('/', OrdersController.get_all)
+route.post('/', OrdersController.create)
 
-export default ordersRoute
+export default route

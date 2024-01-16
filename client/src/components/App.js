@@ -89,10 +89,11 @@ const App = () => {
     fetchAllProducts()
     fetchCustomers()
     fetchOrders()
+    
     if(JSON.parse(localStorage.getItem("cart"))){
         setCart([...JSON.parse(localStorage.getItem("cart"))])
     }
-   }, [])
+   }, []) // Comes before localStorage.setItem in order to set the cart to the values of the localStorage
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))

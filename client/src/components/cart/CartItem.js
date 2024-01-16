@@ -10,6 +10,10 @@ const CartItem = ({cartItem, updateTotal}) => {
         setCart(cart.filter(item => item._id !== cartItem._id))
     }
 
+    const increaseQuantity = () => {
+      setQuantity(quantity + 1)
+    }
+
     const decreaseQuantity = () => {
         if(quantity <= 1){
           setQuantity(1)
@@ -20,15 +24,10 @@ const CartItem = ({cartItem, updateTotal}) => {
     }
 
     useEffect(() => {
-        updateTotal()
+      updateTotal()
       setCart([...cart]) // update the cart since the quantity of the item is changed
     }, [quantity])
     
-    const increaseQuantity = () => {
-        setQuantity(quantity + 1)
-      updateTotal()
-
-    }
 
     if(cartItem){
       // Give the cartItem object the quantity attribute dynamically since it does not have one

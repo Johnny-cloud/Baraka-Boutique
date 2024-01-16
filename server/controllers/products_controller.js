@@ -1,15 +1,17 @@
 import Product from "../models/product.js";
+
 class ProductsController{
 
-    static async index(req, res){
-        try {
+    async get_all(req, res){
+        try{
             const products = await Product.find()
             res.json(products)
-        } catch(err) {
-            res.status(400).json({error: err})
+
+        } catch(err){
+            res.status(400).json(err)
         }
     }
-
 }
 
-export default ProductsController
+
+export default new ProductsController()

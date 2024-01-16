@@ -1,8 +1,8 @@
 import express from 'express'
 import ProductsController from '../controllers/products_controller.js'
 
-const productsRoute = express.Router()
+const route = express.Router()
 
-productsRoute.get('/', ProductsController.index)
+route.get('/', ProductsController.get_all)
 
-export default productsRoute
+export default route

@@ -80,7 +80,11 @@ const SelectedDisplay = () => {
                         <div className='related-products'>
                             <h3>RELATED PRODUCTS</h3>
                             <div className='products-container'>
-                                {allProducts.filter(product => product.category === selectedItem.category).slice(0,4).map(product => <HomeProduct product={product} />)}
+                                {selectedItem.sub_category === "none" ? (
+                                    allProducts.filter(product => product.category === selectedItem.category).slice(0,4).map(product => <HomeProduct product={product} />)
+                                ) : (
+                                    allProducts.filter(product => product.category === selectedItem.category && product.sub_category === selectedItem.sub_category).slice(5, 9).map(product => <HomeProduct product={product} />)
+                                ) }
                             </div>
                         </div>
                     </div>
