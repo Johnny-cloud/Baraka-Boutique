@@ -17,11 +17,11 @@ app.set("trust proxy", 1)
 app.use(cors({
     credentials: true,
 
-    // Development
-    origin: "http://localhost:3000",
+    // // Development
+    // origin: "http://localhost:3000",
 
-    // // Production
-    // origin: "https://baraka-boutique-chepseon.vercel.app"
+    // Production
+    origin: "https://baraka-boutique-chepseon.vercel.app"
 })) 
 
 app.use(session({
