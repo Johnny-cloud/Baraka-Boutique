@@ -18,10 +18,10 @@ app.use(cors({
     credentials: true,
 
     // Development
-    origin: "http://localhost:3000",
+    // origin: "http://localhost:3000",
 
     // Production
-    // origin: "https://baraka-boutique-chepseon.vercel.app"
+    origin: "https://baraka-boutique-chepseon.vercel.app"
 })) 
 
 app.use(session({
@@ -30,19 +30,19 @@ app.use(session({
     saveUninitialized: false,
     name: "sessionId",
 
-    // // Development
-    cookie: {
-        secure: false,
-        httpOnly: true,
-        sameSite: "lax",
-    }
+    // // // Development
+    // cookie: {
+    //     secure: false,
+    //     httpOnly: true,
+    //     sameSite: "lax",
+    // }
 
     // Production
-    // cookie: {
-    //     secure: true,
-    //     httpOnly: true,
-    //     sameSite: "none",
-    // }
+    cookie: {
+        secure: true,
+        httpOnly: true,
+        sameSite: "none",
+    }
 }))
 
 connectToDB()
