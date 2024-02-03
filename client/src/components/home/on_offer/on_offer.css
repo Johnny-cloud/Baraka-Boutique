@@ -27,7 +27,8 @@
 }
 
 .on-offer-image-container{
-    height: 450px;
+    height: 300px;
+    margin: 15px;
 }
 
 .on-offer-image-container img{
@@ -42,18 +43,14 @@
     justify-content: space-between;
 }
 
-.on-offer-image-container, .details-container{
-    width: 350px;
-}
+.on-offer-image-container{
+    width: 500px;
 
-.details-container{
-    padding: 5%;
 }
 
 @media screen and (max-width: 600px) {
     .on-offer-image-container{
-        width: 300px;
-        height: 350px;
-        margin: auto;
+        width: 350px;
+        height: 200px;
     }
 }

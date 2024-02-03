@@ -1,32 +1,32 @@
 .category{
-    margin: 50px 70px;
-}
-
-.category-contents-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.category-contents-container > * {
+.category .image-container{
     width: 550px;
-    height: 350px;
+    height: 300px;
+    margin: 15px;
+    position: relative;
 }
 
-.category-contents-container .image-container{
+
+.category img{
     width: 100%;
     height: 100%;
 }
 
-.category-contents-container img{
-    width: 100%;
-    height: 100%;
+.category h4{
+    position: absolute;
+    top: 50%;
+    left: 10%;
 }
 
 @media screen and (max-width: 600px) {
-    .category-contents-container > * {
+    .category .image-container{
         width: 350px;
-        height: 200px;
+        height: 250px;
     }
 }

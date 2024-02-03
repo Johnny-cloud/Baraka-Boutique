@@ -5,13 +5,17 @@
     justify-content: center;
 }
 
+.totals-container{
+    background-color: white;
+}
+
 .total{
     width: 350px;
     height: 150px;
     margin: 10px;
-    background-color: rgb(238, 244, 248);
     border-radius: 5px;
     font-weight: bold;
+    background-color: rgb(246, 246, 246);
 }
 
 .total > *{

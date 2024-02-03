@@ -5,7 +5,7 @@ const NewsLetter = () => {
     return (
       <div className='news-letter'>
         <div className='news-letter-contents'>
-            <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+            <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
             <p>Signup for the weekly newsletter to get the latest and best deals available!</p>
             <div className='news-letter-form'>
                 <input type='email' />

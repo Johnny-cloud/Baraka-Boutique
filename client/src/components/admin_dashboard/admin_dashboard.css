@@ -15,6 +15,10 @@
     margin-bottom: 5px;
 }
 
+.dashboard-contents > * > *{
+    background-color: rgb(243, 243, 243);
+}
+
 .update-btn{
     background-color: green;
     color: aliceblue;

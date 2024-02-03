@@ -1,13 +1,12 @@
 .products-overview{
     width: 1500px;
     margin: auto;
-    background-color: rgb(238, 246, 252);
     padding: 20px 0;
 }
 
 .product-view{
     width: 100%;
-    padding: 10px;
+    padding: 2px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

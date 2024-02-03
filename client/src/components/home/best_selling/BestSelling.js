@@ -10,7 +10,7 @@ const BestSelling = () => {
     if(allProducts){  
             return(
                 <div className="best-selling">
-                <h3>OUR BEST SELLING</h3>
+                <h4>OUR BEST SELLING</h4>
                 <div className="products-container">
                     {allProducts.filter(product => product.category === 'best_selling').map(product => <HomeProduct product={product} key={product._id} />)}
                 </div>

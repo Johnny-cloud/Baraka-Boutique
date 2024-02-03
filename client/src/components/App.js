@@ -17,8 +17,8 @@ import {AdminDashboard, Overview, Products, Customers, Orders, CustomerUpdatePag
 import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
-    const api = "https://baraka-boutique-backend.vercel.app" // This is the route for the backend
-    // let api = "http://localhost:5000"
+    // const api = "https://baraka-boutique-backend.vercel.app" // This is the route for the backend
+    let api = "http://localhost:5000"
     let [cart, setCart] = useState([])
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(null)
@@ -102,11 +102,12 @@ const App = () => {
     useEffect(() => {
         localStorage.removeItem("collectionProducts")
         localStorage.removeItem("selectedItem")
-    })
+    }, [])
 
     return (
             <div className='app'>
             <AppContext.Provider value={{...contextValue}}>
+                <div className='boutique-brand'> <h1>Chess Baraka Boutique</h1></div>
                 <Navigation />
                 <div className='main-content'>
                     <Routes>

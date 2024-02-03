@@ -10,7 +10,7 @@ const Trending = () => {
     if(allProducts){ 
             return(
                 <div className="trending">
-                <h3>LATEST TRENDS</h3>
+                <h4>LATEST TRENDS</h4>
                 <div className="products-container">
                     {allProducts.filter(product => product.category === "trending").map(product => <HomeProduct product={product} key={product._id} />)}
                 </div>

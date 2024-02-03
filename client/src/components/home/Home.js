@@ -12,7 +12,6 @@ const Home = () => {
     return (
       <div className='home-container'>
         <div className='home-landing-page'>
-          <h2>Welcome to Ches-Baraka Boutique</h2>
         </div>
         <Category />
         <Featured />

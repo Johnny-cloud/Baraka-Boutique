@@ -11,7 +11,7 @@ const Featured = () => {
     if(allProducts ){
             return(
             <div className="featured">
-                <h3>FEATURED PRODUCTS</h3>
+                <h4>FEATURED PRODUCTS</h4>
                 <div className="products-container">
                     {allProducts.filter(product => product.category === "featured").map(product => <HomeProduct product={product} key={product._id} />) }
                     
