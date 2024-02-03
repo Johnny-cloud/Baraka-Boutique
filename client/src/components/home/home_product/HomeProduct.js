@@ -3,26 +3,40 @@ import {useContext} from 'react'
 import './home_product.css'
 import AppContext from '../../context/AppContext'
 import { Rating } from 'react-simple-star-rating'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const HomeProduct = ({product}) => {
-    const {setSelectedItem} = useContext(AppContext)
+    const {setSelectedItem, cart, setCart} = useContext(AppContext)
+    const navigate = useNavigate()
 
     const handleClick = () => {
         setSelectedItem(product)
     }
+
+    const addItemToCart = () => {
+        let itemInCart = cart.find(item => item._id === product._id) // Check if item is already in cart
+        if(itemInCart){
+            alert("Item already in cart!")
+        } else {
+            product.quantity = 1
+            setCart([...cart, product])
+            navigate('/cart')
+            alert("ITEM ADDED TO CART!")
+        }
+    }
     
     return (
-        <Link className='home-product' onClick={handleClick} to={'/selected-display'}>
-            <div className='home-product-image-container'>
+        <div className='home-product'>
+            <Link onClick={handleClick} to={'/selected-display'} className='home-product-image-container'>
                 <img src={product.image} alt='img' />
-            </div>
+            </Link>
             <div className='home-product-details-container'>
-                <p>{product.description.substring(0, 30)}...</p>
+                <p>{product.description.substring(0, 20)}...</p>
                 <p><Rating size={20} initialValue={product.rating} allowFraction /></p>
                 <p><h5>Ksh. {product.price}</h5></p>
+                <p><button onClick={addItemToCart}>ADD TO CART</button></p>
             </div>
-        </Link>
+        </div>
 
     )
 }

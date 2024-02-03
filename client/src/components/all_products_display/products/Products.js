@@ -1,9 +1,9 @@
 // This code displays the products in the collections section
 import { useContext} from 'react'
 import './products.css'
-import ProductDisplay from '../../product/ProductDisplay'
 import AppContext from '../../context/AppContext'
 import { useNavigate } from 'react-router-dom'
+import HomeProduct from '../../home/home_product/HomeProduct'
 
 const Products = () => {
 
@@ -14,7 +14,7 @@ const Products = () => {
             return (
             <div className='products'>
                 <div className='products-container'>
-                    {filteredProducts.slice(0, 9).map(product => <ProductDisplay key={product._id} product={product} />)}
+                    {filteredProducts.slice(0, 9).map(product => <HomeProduct key={product._id} product={product} />)}
                 </div>
             </div>
 
