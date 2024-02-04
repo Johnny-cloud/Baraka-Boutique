@@ -33,11 +33,17 @@ const CartItem = ({cartItem, updateTotal}) => {
       // Give the cartItem object the quantity attribute dynamically since it does not have one
       cartItem.quantity = quantity
       return (
-          <tr>
-            <td className='td-description'>{cartItem.description}</td>
-            <td>{cartItem.price}</td>
-            <td><button className="reduce-btn" onClick={decreaseQuantity}>-</button>{cartItem.quantity}<button className="increase-btn" onClick={increaseQuantity}>+</button></td>
-            <td><button onClick={deleteItem} className='delete-btn'><i class="bi bi-trash-fill"></i></button></td>
+          <tr className="flex-row-center">
+            <div className="description-and-price flex-row-center">
+              <td><img src={cartItem.image} alt="" /></td>
+              <td className='description'>{cartItem.description.slice(0, 20)}</td>
+              <td className="price">{cartItem.price}</td>
+            </div>
+            <div className="edit-item flex-row-center">
+              <td className="edit-quantity flex-row-center"><div className="cart-btn reduce-btn" onClick={decreaseQuantity}>-</div>{cartItem.quantity}<div className="cart-btn increase-btn" onClick={increaseQuantity}>+</div></td>
+              <td><div onClick={deleteItem} className='delete-btn'>REMOVE <i class="bi bi-trash-fill"></i></div></td>
+            </div>
+            
           </tr>
       )
 

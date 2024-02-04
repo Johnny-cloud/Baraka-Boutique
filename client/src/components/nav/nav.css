@@ -8,14 +8,20 @@
 
 .navbar .container{
     padding: 10px 0px;
+    width: fit-content;
+    margin: auto;
 }
 
 .my-dropdown-menu{
     display: none;
 }
 
+.me-auto{
+    position: relative;
+}
+
 .me-auto > * {
-    margin: 10px;
+    margin: 15px;
     padding: 5px;
 }
 
@@ -27,17 +33,18 @@
 .my-dropdown:hover .my-dropdown-menu{
     position: absolute;
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    flex-wrap: wrap;
-   max-width: 500px;
+   width: fit-content;
    background-color: white;
    border-color: rgb(97, 83, 3);
    border-top: solid;
 }
 
 .my-dropdown-menu a{
-    width: 150px;
+    width: fit-content;
     margin: 5px;
+    padding: 5px;
 }
 
 .my-dropdown-menu > *{
@@ -104,5 +111,7 @@
     .me-auto > * {
         margin: 15px;
     }
+
+
 
 }

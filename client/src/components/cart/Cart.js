@@ -38,27 +38,24 @@ const Cart = () => {
       return (
         <div className='display-container'>
           <h3>Your cart</h3>
-          <Table>
+          <table className='cart-table'>
               <thead>
-                  <tr>
-                      <td><h4>Description</h4></td>
-                      <td><h3>Price (Ksh.)</h3></td>
-                      <td><h3>Quantity</h3></td>
-                      <td></td>
-                  </tr>
               </thead>
               <tbody>
                 {cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem._id} updateTotal={updateTotal} />)}
                 <tr>
-                  <td><h3>Total</h3></td>
-                  <td><h4>Ksh.{total}</h4></td>
-                  <td></td>
+                  <div className='cart-totals flex-row-center'>
+                    <td><h3>Total</h3></td>
+                    <td><h4>Ksh.{total}</h4></td>
+                    <td></td>
+                  </div>
+                 
                 </tr> 
-                <tr>
+                <div className='proceed-to-checkout-container'>
                   <td className='chekout-btn-container'><button className='checkout-btn' onClick={proceedToCheckout}>Proceed to checkout <i class="bi bi-bag-check"></i></button></td>
-                </tr> 
+                </div> 
               </tbody>
-          </Table>
+          </table>
       </div>
     )
   } else{

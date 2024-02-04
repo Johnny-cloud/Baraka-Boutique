@@ -2,7 +2,7 @@
 import './nav.css'
 import AppContext from "../context/AppContext"
 import { useContext} from "react"
-import {Navbar, Nav,  Container, Offcanvas} from 'react-bootstrap'
+import {Navbar, Nav,  Container, Offcanvas, Dropdown} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
@@ -117,7 +117,15 @@ const Navigation = () => {
                                        </div>
                       
                     </Nav>
-                    {currentCustomer ? (
+                    
+                    <Nav className='me-auto'>
+                        <Link to={'/admin-dashboard'} onClick={() => setExpanded(false)}>Admin Dashboard</Link>
+                    </Nav>
+                    </Offcanvas.Body>
+                </Navbar.Offcanvas>
+                </Navbar.Collapse> 
+            </Container>
+            {currentCustomer ? (
                             <Nav className='me-auto'>
                             <div  className='my-dropdown'>
                                 <span><span class="bi bi-person-check-fill">Welcome {currentCustomer.name}</span><i class="bi bi-chevron-down"></i></span>
@@ -129,26 +137,24 @@ const Navigation = () => {
                             </div>
                             <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
                         </Nav>
-                    ) : (
-                            <Nav className='me-auto'>
-                            <div className='my-dropdown'> 
-                                <span><span class="bi bi-person-circle">Account</span><i class="bi bi-chevron-down"></i></span>
-                                <div className='my-dropdown-menu'>
-                                    <Link to={'/animations/login-page'} onClick={logInDemo}>Demo Account</Link>
-                                    <Link to={'/login'} onClick={() => setExpanded(false)}>Login</Link>
-                                    <Link to={'/signup'}onClick={() => setExpanded(false)}>Signup</Link>
-                                </div>
-                            </div>
-                            <Link to={'/cart'} className='cart-link' onClick={() => setExpanded(false)}><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
-                        </Nav>
+                    ) : (   
+                            <>
+                                <Nav className='me-auto'>
+                                    <div className='my-dropdown'> 
+                                        <span><span class="bi bi-person-circle">Account</span><i class="bi bi-chevron-down"></i></span>
+                                        <div className='my-dropdown-menu'>
+                                            <Link to={'/animations/login-page'} onClick={logInDemo}>Demo</Link>
+                                            <Link to={'/login'} onClick={() => setExpanded(false)}>Login</Link>
+                                            <Link to={'/signup'}onClick={() => setExpanded(false)}>Signup</Link>
+                                        </div>
+                                    </div>
+                                </Nav>
+                                <Nav className='me-auto'>
+                                    <Link to={'/cart'} className='cart-link' onClick={() => setExpanded(false)}><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
+                                </Nav>
+                            </>
+                            
                     )}
-                    <Nav className='me-auto'>
-                        <Link to={'/admin-dashboard'} onClick={() => setExpanded(false)}>Admin Dashboard</Link>
-                    </Nav>
-                    </Offcanvas.Body>
-                </Navbar.Offcanvas>
-                </Navbar.Collapse> 
-            </Container>
         </Navbar>
     </div>
   )
