@@ -17,8 +17,8 @@ const AllProductsDisplay = () => {
           <div className='all-products'>
             <div className='products-banner'><h1>{subCategory} fashion</h1></div>
             <div className='all-products-display-container'>
-              <Categories />
               <Products />
+              <Categories />
             </div>
 
         </div>

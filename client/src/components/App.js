@@ -13,7 +13,6 @@ import CustomerOrders from './customer/customer_orders/CustomerOrders';
 import CheckoutSignup from './checkout/CheckoutSignup';
 import AllProductsDisplay from './all_products_display/AllProductsDisplay';
 import SelectedDisplay from './selected_display/SelectedDisplay';
-import {AdminDashboard, Overview, Products, Customers, Orders, CustomerUpdatePage, ProductUpdatePage} from './admin_dashboard';
 import { LoginPage, LogoutPage } from './animations';
 
 const App = () => {
@@ -120,15 +119,7 @@ const App = () => {
                         <Route exact path='/signup' element={<Signup />} />
                         <Route exact path='/profile' element={<Profile />} />
                         <Route exact path='/all-products-display' element={<AllProductsDisplay />} />
-                        <Route exact path='/selected-display' element={<SelectedDisplay />} />
-                        <Route exact path='/admin-dashboard' element={<AdminDashboard />} />
-                        <Route exact path='/admin-dashboard/overview' element={<Overview />} />
-                        <Route exact path='/admin-dashboard/products' element={<Products />} />
-                        <Route exact path='/admin-dashboard/customers' element={<Customers />} />
-                        <Route exact path='/admin-dashboard/orders' element={<Orders />} />
-                        <Route exact path='/admin-dashboard/customers/customer-update-page' element={<CustomerUpdatePage />} />
-                        <Route exact path='/admin-dashboard/products/product-update-page' element={<ProductUpdatePage />} />
-                        <Route exact path='/animations/login-page' element={<LoginPage />} />
+                        <Route exact path='/selected-display' element={<SelectedDisplay />} /><Route exact path='/animations/login-page' element={<LoginPage />} />
                         <Route exact path='/animations/logout-page' element={<LogoutPage />} />
                     </Routes>
                 </div>

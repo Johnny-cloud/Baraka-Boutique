@@ -1,6 +1,13 @@
 .categories{
     width: 300px;
     text-align: start;
+    position: sticky;
+    top: 20px;
+    background-color: rgb(239, 238, 238);
+}
+
+.categories a{
+    color: black;
 }
 
 .categories .me-auto > *:hover{
@@ -24,29 +31,5 @@
     border-width: 1px;
 }
 
-.offcanvas-column > *{
-    padding: 25px 0 50px;
-}
 
-.categories .offcanvas-column{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.offcanvas-column h4{
-    padding: 2px;
-}
-
-.categories .me-auto h6{
-    font-size: 20px;
-    margin-top: 50px;
-}
-
-@media screen and (max-width: 600px) {
-    .categories{
-        display: none;
-    }
-}
 

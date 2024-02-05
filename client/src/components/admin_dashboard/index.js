@@ -1,7 +1,0 @@
-export {default as AdminDashboard} from './AdminDashboard'
-export {default as Overview} from './overview/Overview'
-export {default as Products} from './products/Products'
-export {default as Customers } from './customers/Customers'
-export {default as Orders} from './orders/Orders'
-export {default as CustomerUpdatePage} from './customers/customer_update/CustomerUpdatePage'
-export {default as ProductUpdatePage} from './products/product_update/ProductUpdatePage'

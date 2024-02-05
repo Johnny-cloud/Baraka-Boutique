@@ -117,14 +117,11 @@ const Navigation = () => {
                                        </div>
                       
                     </Nav>
-                    
-                    <Nav className='me-auto'>
-                        <Link to={'/admin-dashboard'} onClick={() => setExpanded(false)}>Admin Dashboard</Link>
-                    </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
                 </Navbar.Collapse> 
             </Container>
+            <div className='account-cart'>
             {currentCustomer ? (
                             <Nav className='me-auto'>
                             <div  className='my-dropdown'>
@@ -135,7 +132,6 @@ const Navigation = () => {
                                     <Link to={'/animations/logout-page'} onClick={handleLogout}>Logout</Link>
                                 </div>
                             </div>
-                            <Link to={'/cart'} className='cart-link'><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
                         </Nav>
                     ) : (   
                             <>
@@ -149,12 +145,15 @@ const Navigation = () => {
                                         </div>
                                     </div>
                                 </Nav>
-                                <Nav className='me-auto'>
-                                    <Link to={'/cart'} className='cart-link' onClick={() => setExpanded(false)}><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
-                                </Nav>
+                                
                             </>
                             
                     )}
+                    <Nav className='me-auto'>
+                        <Link to={'/cart'} className='cart-link' onClick={() => setExpanded(false)}><i class="bi bi-cart4"></i><sup><span className="cart-number">{cart.length ? cart.length : 0}</span></sup> cart</Link>
+                    </Nav>
+            </div>
+            
         </Navbar>
     </div>
   )

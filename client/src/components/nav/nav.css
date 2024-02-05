@@ -9,7 +9,6 @@
 .navbar .container{
     padding: 10px 0px;
     width: fit-content;
-    margin: auto;
 }
 
 .my-dropdown-menu{
@@ -97,6 +96,14 @@
 
 .close-offcanvas .bi{
     font-size: 40px;
+}
+
+.account-cart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: auto;
 }
 
 @media screen and (max-width: 600px) {
