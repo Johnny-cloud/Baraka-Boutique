@@ -7,7 +7,7 @@ const CartItem = ({cartItem, updateTotal}) => {
     const [quantity, setQuantity] = useState(cartItem.quantity)
 
     const deleteItem = () => {
-        setCart(cart.filter(item => item._id !== cartItem._id))
+        setCart(cart.filter(item => item.description !== cartItem.description))
     }
 
     const increaseQuantity = () => {
@@ -37,7 +37,7 @@ const CartItem = ({cartItem, updateTotal}) => {
             <div className="description-and-price flex-row-center">
               <td><img src={cartItem.image} alt="" /></td>
               <td className='description'>{cartItem.description.slice(0, 20)}</td>
-              <td className="price">{cartItem.price}</td>
+              <td className="price">Ksh.{cartItem.price}</td>
             </div>
             <div className="edit-item flex-row-center">
               <td className="edit-quantity flex-row-center"><div className="cart-btn reduce-btn" onClick={decreaseQuantity}>-</div>{cartItem.quantity}<div className="cart-btn increase-btn" onClick={increaseQuantity}>+</div></td>

@@ -14,14 +14,14 @@ const HomeProduct = ({product}) => {
     }
 
     const addItemToCart = () => {
-        let itemInCart = cart.find(item => item._id === product._id) // Check if item is already in cart
+        let itemInCart = cart.find(item => item.description === product.description) // Check if item is already in cart
         if(itemInCart){
             alert("Item already in cart!")
         } else {
             product.quantity = 1
             setCart([...cart, product])
             navigate('/cart')
-            alert("ITEM ADDED TO CART!")
+            
         }
     }
     

@@ -12,7 +12,7 @@ const SingleOrder = ({order}) => {
   
   return (
       <tr>
-        <td>{order.description}</td>
+        <div className='description'>{order.description.slice(0, 40)}</div>
         <td>{order.quantity}</td>
         <td>{order.price}</td>
         <td>{order.createdAt.split("T")[0]}</td>

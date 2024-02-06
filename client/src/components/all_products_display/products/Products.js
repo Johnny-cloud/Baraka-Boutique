@@ -30,11 +30,16 @@ const Products = () => {
         setProductsDisplayed(filteredProducts.slice(start, end))
     }, [start, end])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        setProductsDisplayed(filteredProducts.slice(0, 9))
+    }, [filteredProducts])
+
     if(filteredProducts.length > 0){
             return (
             <div className='products'>
                 <div>
-                    <h6>SHOWING {start} - {end} OF RESULTS</h6>
+                    <h5>SHOWING {start} - {end} OF RESULTS</h5>
                 </div>
                 <div className='products-container'>
                     {productsDisplayed.map(product => <HomeProduct key={product._id} product={product} />)}

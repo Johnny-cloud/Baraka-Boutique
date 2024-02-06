@@ -4,6 +4,7 @@ import AppContext from '../../context/AppContext'
 import { Table } from 'react-bootstrap'
 import SingleOrder from './SingleOrder'
 import { useNavigate } from 'react-router-dom'
+import './customer_orders.css'
 
 const CustomerOrders = () => {
     const {currentCustomer, setCurrentCustomer, placedOrder, api} = useContext(AppContext)
@@ -29,21 +30,21 @@ const CustomerOrders = () => {
 
     if(currentCustomer){
             return (
-                <div>
+                <div className='customer-orders'>
                 <h3>My previous orders</h3>
-                <div>
-                    <Table striped variant='light'>
+                <div className='table-container'>
+                    <table >
                         <thead>
-                            <td><h5>Description</h5></td>
-                            <td><h5>Quantity</h5></td>
-                            <td><h5>Price</h5></td>
-                            <td><h5>Date Ordered</h5></td>
-                            <td><h5>Status</h5></td>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Date Ordered</th>
+                            <th>Status</th>
                         </thead>
                         <tbody>
                             {currentCustomer.orders.map(order => <SingleOrder order={order} key={order._id} />)}
                         </tbody>
-                    </Table>
+                    </table>
                 </div>
             </div>
           )

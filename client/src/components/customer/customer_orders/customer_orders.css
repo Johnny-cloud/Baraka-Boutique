@@ -1,0 +1,21 @@
+.customer-orders .table-container{
+    max-width: 800px;
+    margin: auto;
+}
+
+.customer-orders td, .customer-orders th, .customer-orders .description{
+    padding: 15px 20px;
+    text-align: start;
+}
+
+.customer-orders .description{
+    width: 300px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .customer-orders .table-container{
+        overflow: scroll;
+    }
+
+}

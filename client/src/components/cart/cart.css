@@ -22,7 +22,8 @@
 }
 
 .cart-table .description-and-price, .cart-table .edit-item, .cart-table .cart-totals{
-    width: 350px;
+    width: 360px;
+    padding: 0px 5px;
 }
 
 .cart-table td{
@@ -35,17 +36,17 @@
 }
 
 .cart-table .price{
-    width: 50px;
+    width: 70px;
 }
 
 .cart-table .cart-btn{
-    margin: 0 7px ;
-    width: 40px;
-    height: 40px;
+    margin: 0 12px ;
+    width: 30px;
+    height: 30px;
     border-radius: 5px;
     background-color: black;
     color: white;
-    padding: 5px 15px;
+    padding: 2px 10px;
 }
 
 .cart-btn:hover{
