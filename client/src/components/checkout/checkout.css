@@ -1,89 +1,92 @@
-.checkout-container{
+.checkout-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 50px 0;
 }
 
-.checkout-container > * {
-    width: 30%;
+.checkout-container>* {
+    width: 500px;
     margin: 15px;
     padding: 0px 0px 10px;
     border: none;
     border-radius: 10px;
     height: fit-content;
-    
+    background-color: rgb(224, 224, 224);
 }
 
-.payment-method form{
+.checkout-container .billing-details form{
+    border: none;
+}
+
+.payment-method form {
     width: 90%;
     padding: 2px;
 }
 
-.order table{
+.order table {
     font-size: 16px;
 }
 
-.order-and-payment{
-    background-color: rgb(232, 226, 226);
-    color: black;
-}
 
-.order-and-payment > *{
+.order-and-payment>* {
     margin-bottom: 25px;
 }
 
-.order-and-payment button{
+.order-and-payment button {
     width: 90%;
     padding: 2% 5%;
     border: none;
     border-radius: 10px;
-    background-color: rgb(142, 83, 5);
+    background-color: green;
     color: aliceblue;
     margin-bottom: 5px;
 }
 
-.credit-card-image-container{
+.credit-card-image-container {
     width: 40px;
     height: 10px;
     margin: 10px;
 }
 
-.credit-card-image-container img{
+.credit-card-image-container img {
     width: 40px;
     height: 100%;
 }
 
-.multiple-btns{
+.multiple-btns {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.multiple-btns > * {
+.multiple-btns>* {
     margin: auto;
     width: 50%;
 }
 
-.multiple-btns button{
+.multiple-btns button {
     width: 50%;
 }
 
-.multiple-btns .demo-btn{
+.multiple-btns .demo-btn {
     border: none;
     background-color: blue;
     color: aliceblue;
-   
+    width: 150px;
+    padding: 1%;
+
 }
 
-.multiple-btns  .demo-btn:hover{
+.multiple-btns .demo-btn:hover {
     background-color: gold;
     color: green;
 }
 
-@media  screen and (max-width: 600px) {
-    .checkout-container > * {
-        width: 500px;
+@media screen and (max-width: 600px) {
+    .checkout-container>* {
+        width: 360px;
     }
 }

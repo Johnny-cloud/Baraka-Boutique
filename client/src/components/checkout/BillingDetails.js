@@ -7,7 +7,7 @@ const BillingDetails = () => {
     const {currentCustomer} = useContext(AppContext)
 
   return (
-        <div>
+        <div className="billing-details">
         <h4>Billing Details</h4>
         <div>
             <Form>
