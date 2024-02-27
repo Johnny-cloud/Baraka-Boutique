@@ -20,8 +20,8 @@ import Shoes from './products/shoes/Shoes';
 import Watches from './products/watches/Watches';
 
 const App = () => {
-    // const api = "https://baraka-boutique-backend.vercel.app" // This is the route for the backend
-    let api = "http://localhost:5000"
+    const api = "https://baraka-boutique-backend.vercel.app" // This is the route for the backend
+    // let api = "http://localhost:5000"
     let [cart, setCart] = useState([])
     const [currentCustomer, setCurrentCustomer] = useState(null)
     const [selectedItem, setSelectedItem] = useState(null)

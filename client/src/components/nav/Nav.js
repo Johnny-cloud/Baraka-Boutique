@@ -46,14 +46,8 @@ const Navigation = () => {
     }
 
 
-    const setProductsToDisplay = (event) => {
+    const hideNavbar = (event) => {
         setExpanded(false)
-        if(allProducts){
-            setCollectionProducts(allProducts.filter(product => product.sub_category === event.target.name))
-            setFilteredProducts(allProducts.filter(product => product.category === event.target.id && product.sub_category === event.target.name))
-            setSubCategory(event.target.name)
-            setCategory(event.target.id)
-        }
     }
 
   return (
@@ -71,10 +65,10 @@ const Navigation = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                     <Nav className='me-auto'>
-                        <Link to={'/'} onClick={() => setExpanded(false)}>Home</Link>
-                        <Link to={'/products/clothings'}>Clothings</Link>
-                        <Link to={'/products/shoes'}>Shoes</Link>
-                        <Link to={'/products/watches'}>Watches</Link>
+                        <Link to={'/'} onClick={hideNavbar}>Home</Link>
+                        <Link to={'/products/clothings'} onClick={hideNavbar}>Clothings</Link>
+                        <Link to={'/products/shoes'} onClick={hideNavbar}>Shoes</Link>
+                        <Link to={'/products/watches'} onClick={hideNavbar}>Watches</Link>
                       
                     </Nav>
                     </Offcanvas.Body>
