@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import HomeProduct from '../home/home_product/HomeProduct'
 
 const SelectedDisplay = () => {
-    const {selectedItem, cart, setCart, filteredProducts, allProducts} = useContext(AppContext)
+    const {selectedItem, cart, setCart, allProducts} = useContext(AppContext)
     const [quantity, setQuantity] = useState(1)
     const navigate = useNavigate()
 

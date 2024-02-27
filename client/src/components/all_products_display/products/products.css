@@ -1,10 +1,22 @@
 .products{
    max-width: 850px;
-    
+    position: relative;
 }
 
 .products > .products-container{
     width: 100%;
+}
+
+.products .btns-container button{
+    margin: 7px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 5px 20px;
+    background-color: black;
+    color: white;
+    position: sticky;
+    top: 0;
 }
 
 .products .page-buttons-container{
@@ -27,11 +39,7 @@
     border-radius: 5px;
 }
 
-.products .page-buttons-container button:hover{
-    background-color: rgb(211, 186, 42);
-}
-
-.products .page-buttons-container button:focus{
+.products button:focus, .products button:hover{
     background-color: rgb(211, 186, 42);
 }
 

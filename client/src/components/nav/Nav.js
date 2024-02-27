@@ -72,49 +72,9 @@ const Navigation = () => {
                     <Offcanvas.Body>
                     <Nav className='me-auto'>
                         <Link to={'/'} onClick={() => setExpanded(false)}>Home</Link>
-
-                                    <div className='my-dropdown'>
-                                        <p>Men <i class="bi bi-chevron-down"></i></p>
-                                        <div className='my-dropdown-menu'>
-                                        <Link to={'/all-products-display'} name="men" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                        <Link to={'/all-products-display'} name="men" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                        <Link to={'/all-products-display'} name="men" id='watches' onClick={setProductsToDisplay}>Watches</Link>
-                                   
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div className='my-dropdown'>
-                                        <p>Women <i class="bi bi-chevron-down"></i></p>
-                                        <div className='my-dropdown-menu'>
-                                        <Link to={'/all-products-display'} name="women" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                        <Link to={'/all-products-display'} name="women" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                        <Link to={'/all-products-display'} name="women" id='watches' onClick={setProductsToDisplay}>Watches</Link>
-                                    
-                                        </div>
-                                      
-                                    </div>
-
-                                    <div className='my-dropdown'>
-                                        <p>Boys <i class="bi bi-chevron-down"></i></p>
-                                        <div className='my-dropdown-menu'>
-                                        <Link to={'/all-products-display'} name="boys" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                        <Link to={'/all-products-display'} name="boys" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                        <Link to={'/all-products-display'} name="boys" id='watches' onClick={setProductsToDisplay}>Watches</Link>
-                                    
-                                        </div>
-                                       
-                                    </div>
-
-                                    <div className='my-dropdown'>
-                                        <p>Girls <i class="bi bi-chevron-down"></i></p>
-                                        <div className='my-dropdown-menu'>
-                                            <Link to={'/all-products-display'} name="girls" id='clothing' onClick={setProductsToDisplay}>Clothing</Link>
-                                            <Link to={'/all-products-display'} name="girls" id='shoes' onClick={setProductsToDisplay}>Shoes</Link>
-                                            <Link to={'/all-products-display'} name="girls" id='watches' onClick={setProductsToDisplay}>Watches</Link>
-                                        
-                                        </div>
-                                       </div>
+                        <Link to={'/products/clothings'}>Clothings</Link>
+                        <Link to={'/products/shoes'}>Shoes</Link>
+                        <Link to={'/products/watches'}>Watches</Link>
                       
                     </Nav>
                     </Offcanvas.Body>

@@ -10,7 +10,7 @@ const Categories = () => {
 
     // Collection products are all products of a particular group i.e men, women, girls, boys
     // Filtered products are the products displayed on the collections page i.e clothes, shoes,
-    const {collectionProducts, setFilteredProducts, category, setCategory} = useContext(AppContext)
+    const {collectionProducts, allProducts, setFilteredProducts, category, setCategory} = useContext(AppContext)
 
     // Filter according to category i.e clothing, shoes, watches
     const handleClick = (event) => {
@@ -28,7 +28,7 @@ const Categories = () => {
         setFilteredProducts(collectionProducts.filter(product => product.price <= event.target.id && product.price >= (event.target.id - 500) && product.category === category))
     }
 
-    if(collectionProducts.length > 0){
+    if(allProducts.length > 0){
                 return (
                     <div>
                         <div className='categories' >

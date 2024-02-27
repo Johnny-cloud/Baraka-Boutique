@@ -5,9 +5,11 @@ import AppContext from '../../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import HomeProduct from '../../home/home_product/HomeProduct'
 
-const Products = () => {
+const Products = ({category}) => {
 
-    const {filteredProducts, collectionProducts} = useContext(AppContext)
+    const {allProducts} = useContext(AppContext)
+    const [subCategory, setSubCategory] = useState('women')
+    const filteredProducts = allProducts.filter(product => product.category === category)
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(9)
     const [productsDisplayed, setProductsDisplayed] = useState(filteredProducts.slice(start, end))
@@ -15,7 +17,6 @@ const Products = () => {
     const navigate = useNavigate()
 
     const updateProductsDisplayed = (event) => {
-        console.log(event.target.id)
         if(event.target.id === 1){
             setStart(0)
             setEnd(9)
@@ -25,19 +26,33 @@ const Products = () => {
         }
     }
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-        setProductsDisplayed(filteredProducts.slice(start, end))
-    }, [start, end])
+    const updateSubCategory = (event) => {
+        setStart(0)
+        setEnd(9)
+        setSubCategory(event.target.id)
+    }
+
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        setProductsDisplayed(filteredProducts.slice(0, 9))
-    }, [filteredProducts])
+        setProductsDisplayed(filteredProducts.filter(product => product.sub_category === subCategory).slice(start, end))
+    }, [subCategory, start, end])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    
 
     if(filteredProducts.length > 0){
             return (
             <div className='products'>
+                <div className='btns-container'>
+                    <button onClick={updateSubCategory} id='men'>men</button>
+                    <button onClick={updateSubCategory} id='women'>women</button>
+                    <button onClick={updateSubCategory} id='boys'>boys</button>
+                    <button onClick={updateSubCategory} id='girls'>girls</button>
+                </div>
                 <div>
                     <h5>SHOWING {start} - {end} OF RESULTS</h5>
                 </div>
@@ -52,7 +67,7 @@ const Products = () => {
             </div>
 
         )
-    } else if(collectionProducts.length !== 0 && filteredProducts.length === 0){
+    } else if(filteredProducts.length === 0){
         return (
             <div className='products no-product-alert'>
                 <h2>Sorry! No such product with the selected filter category</h2>
