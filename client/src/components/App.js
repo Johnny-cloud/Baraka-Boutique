@@ -82,9 +82,9 @@ const App = () => {
 
    useEffect(() => {
     try {
-        // auth()
-        // fetchCustomers()
-        // fetchOrders()
+        auth()
+        fetchCustomers()
+        fetchOrders()
         
         if(JSON.parse(localStorage.getItem("cart"))){
             setCart([...JSON.parse(localStorage.getItem("cart"))])
