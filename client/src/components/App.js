@@ -80,20 +80,20 @@ const App = () => {
     
    }
 
-   useEffect(() => {
-    try {
-        auth()
-        fetchCustomers()
-        fetchOrders()
+//    useEffect(() => {
+//     try {
+//         auth()
+//         fetchCustomers()
+//         fetchOrders()
         
-        if(JSON.parse(localStorage.getItem("cart"))){
-            setCart([...JSON.parse(localStorage.getItem("cart"))])
-        }
-    } catch(err){
-        console.log(err)
-    }
+//         if(JSON.parse(localStorage.getItem("cart"))){
+//             setCart([...JSON.parse(localStorage.getItem("cart"))])
+//         }
+//     } catch(err){
+//         console.log(err)
+//     }
    
-   }, []) // Comes before localStorage.setItem in order to set the cart to the values of the localStorage
+//    }, []) // Comes before localStorage.setItem in order to set the cart to the values of the localStorage
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))

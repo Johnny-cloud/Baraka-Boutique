@@ -15,8 +15,7 @@
     padding: 5px 20px;
     background-color: black;
     color: white;
-    position: sticky;
-    top: 0;
+
 }
 
 .products .page-buttons-container{
@@ -26,6 +25,7 @@
     justify-content: center;
     width: 350px;
     margin: auto;
+    margin-bottom: 100px;
 }
 
 .products .page-buttons-container button{
