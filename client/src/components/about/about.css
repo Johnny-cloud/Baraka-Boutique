@@ -1,0 +1,32 @@
+.about .main-content > *{
+    margin: 30px 0;
+    padding: 20px 0;
+}
+
+.about .team-member{
+    width: 270px;
+    height: 380px;
+    margin: 15px;
+}
+
+.about .team-member .image-container{
+    width: 100%;
+    height: 350px;
+}
+
+.about .testimony{
+    width: 330px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.about .testimony .image-container{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.about .testimony .flex-row-center > b{
+    margin: auto 5px;
+}
