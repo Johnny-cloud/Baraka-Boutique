@@ -7,6 +7,29 @@ const About = () => {
         <TopLanding title={'About'} />
         <div className='main-content'>
 
+          <div className='mission-vision flex-row-center'>
+            <div className='image-container'><img src='https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt=''/></div>
+            <div className='details'>
+              <div>
+                <h3>Our History</h3>
+                <p>Our company was founded in 2005 by Mike. The idea for the business came about when
+                   Mike noticed a gap in the market for high-quality clothes. With his background in 
+                   fashion and his passion for high quality products, he set out to create a company that would
+                    provide effective cleaning solutions while minimizing harm to the planet.</p>
+              </div>
+              <h3>Our Mission</h3>
+              <p>To inspire fashion-forward, confident, and stylish young women. 
+                To enhance individual lives through our clothing, and to be loved by people all over the world.</p>
+              <div>
+                <h3>Our Vision</h3>
+                <p>To inspire customers through a unique combination of product, creativity, 
+                  and cultural understanding. To sustain responsible commercial success as a global marketing company of branded casual apparel.</p>
+                 
+              </div>
+              
+            </div>
+          </div>
+
           <div className='team'>
             <h4>MEET OUR TEAM</h4>
             <div className='flex-row-center'>
@@ -45,8 +68,7 @@ const About = () => {
                 <b>Janey</b>
               </div>
               <div>
-                <p>“I highly recommend this business.”
-                  “Their customer service is second to none.”</p>
+                <p>“Their customer service is second to none.”</p>
               </div>
             </div>
 
@@ -56,8 +78,7 @@ const About = () => {
                 <b>Michael</b>
               </div>
               <div>
-                <p>“The ambiance here is always inviting and comfortable.”
-                  “This is my go-to place for ‘X…’ - the best in town.”</p>
+                <p>“The ambiance here is always inviting and comfortable.”</p>
               </div>
             </div>
 
@@ -67,8 +88,7 @@ const About = () => {
                 <b>James</b>
               </div>
               <div>
-                <p>“Pricing is fair and transparent - definitely value for money.”
-                    “Efficiency and punctuality are hallmarks of their service.”</p>
+                <p>“Pricing is fair and transparent - definitely value for money.”</p>
               </div>
             </div>
           </div>
