@@ -42,7 +42,7 @@ const About = () => {
             <div className='testimony'>
               <div className='flex-row-center'>
                 <div className='image-container'><img src='https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='' /></div>
-                <b>Jane Doe</b>
+                <b>Janey</b>
               </div>
               <div>
                 <p>“I highly recommend this business.”
