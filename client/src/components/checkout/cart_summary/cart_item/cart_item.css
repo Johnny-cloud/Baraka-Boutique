@@ -9,6 +9,11 @@
 
 .cart-item > *{
     width: 350px;
+    text-align: start;
+}
+
+.cart-item > * > *{
+    margin: auto 0;
 }
 
 .cart-item img{

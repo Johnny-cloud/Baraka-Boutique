@@ -3,7 +3,7 @@ import './cart_item.css'
 const CartItem = ({item}) => {
   return (
     <div className='cart-item flex-row-center'>
-        <div>
+        <div className='image-description'>
             <img src={item.image} alt=''/>
             <span>{item.description.slice(0, 15)}</span>
         </div>
