@@ -1,0 +1,24 @@
+.team-member{
+    width: 330px;
+    height: 550px;
+    margin: 15px;
+    border: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(204, 204, 204);
+}
+
+.team-member .image-container{
+    width: 100%;
+    height: 430px;
+    border-radius: 10px;
+}
+
+.team-member img{
+    border-radius: 10px;
+}
+
+.team-member .bi{
+    font-size: 20px;
+    margin: 5px;
+}

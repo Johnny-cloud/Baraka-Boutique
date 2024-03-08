@@ -1,0 +1,24 @@
+.testimony{
+    width: 330px;
+    margin: 15px;
+    padding: 10px;
+    background-color: rgb(242, 242, 242);
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: rgb(200, 200, 200);
+}
+
+.testimony .image-container{
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+}
+
+.testimony img{
+    border-radius: 50%;
+}
+
+.testimony .flex-row-center > b{
+    margin: auto 5px;
+}

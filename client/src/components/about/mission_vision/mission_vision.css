@@ -1,0 +1,16 @@
+.mission-vision .image-container{
+    width: 500px;
+    height: 600px;
+    margin: 15px;
+    
+}
+
+.mission-vision img{
+    border-radius: 10px;
+}
+
+.mission-vision .details{
+    max-width: 500px;
+    margin: auto 15px;
+    text-align: justify;
+}
