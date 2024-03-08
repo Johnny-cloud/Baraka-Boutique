@@ -12,9 +12,9 @@ const About = () => {
             <div className='details'>
               <div>
                 <h3>Our History</h3>
-                <p>Our company was founded in 2005 by Mike. The idea for the business came about when
-                   Mike noticed a gap in the market for high-quality clothes. With his background in 
-                   fashion and his passion for high quality products, he set out to create a company that would
+                <p>Our company was founded in 2005 by Janey. The idea for the business came about when
+                   Janey noticed a gap in the market for high-quality clothes. With her background in 
+                   fashion and his passion for high quality products, she set out to create a company that would
                     provide effective cleaning solutions while minimizing harm to the planet.</p>
               </div>
               <h3>Our Mission</h3>
