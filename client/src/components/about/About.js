@@ -1,7 +1,12 @@
 import './about.css'
 import TopLanding from '../top_landing/TopLanding'
+import { useEffect } from 'react'
 
 const About = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 20)
+  }, [])
   return (
     <div className='about'>
         <TopLanding title={'About'} />

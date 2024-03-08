@@ -1,7 +1,12 @@
 import './contact.css'
 import TopLanding from '../top_landing/TopLanding'
+import { useEffect } from 'react'
 
 const Contact = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 20)
+  }, [])
   return (
     <div className='contact'>
         <TopLanding title={'Contact'} />
