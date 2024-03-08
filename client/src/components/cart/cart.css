@@ -1,86 +1,40 @@
-.cart-table{
-    width: fit-content;
-    margin: auto;
+.cart .main-content{
+    padding: 50px 0;
 }
 
-.cart-table img{
-    width: 60px;
-    height: 70px;
+.cart .main-content > *{
+    margin: 15px;
 }
 
-.cart-table tr{
-    background-color: rgb(236, 236, 236);
-    width: fit-content;
-    margin: 15px auto;
+.cart .cart-items{
+    max-width: 800px;
 }
 
-.flex-row-center{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.cart-table .description-and-price, .cart-table .edit-item, .cart-table .cart-totals{
-    width: 360px;
-    padding: 0px 5px;
-}
-
-.cart-table td{
-    padding: 20px;
-    text-align: start;
-}
-
-.cart-table .description{
-    width: 170px;
-}
-
-.cart-table .price{
-    width: 70px;
-}
-
-.cart-table .cart-btn{
-    margin: 0 12px ;
-    width: 30px;
-    height: 30px;
+.cart .cart-totals{
+    width: 300px;
+    text-align: justify;
+    height: 100%;
+    position: sticky;
+    top: 200px;
+    border: solid;
+    border-width: 1px;
     border-radius: 5px;
+    padding: 20px;
+}
+
+.cart .cart-totals .flex-row-center{
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.cart .cart-totals a{
+    padding: 10px;
     background-color: black;
     color: white;
-    padding: 2px 10px;
+    display: block;
+    margin: 20px 15px 5px;
 }
 
-.cart-btn:hover{
-    cursor: pointer;
-}
-
-.cart-table .delete-btn{
-    width: 100px;
-    color: red;
-    background-color: white;
-    border-radius: 5px;
-    margin-top: 5px;
-    padding: 2px;
-}
-
-.cart-table .delete-btn:hover{
-    background-color: red;
-    color: white;
-    cursor: pointer;
-}
-
-.cart-table .edit-quantity{
-    width: 200px;
-}
-
-
-.cart-table .proceed-to-checkout-container{
-    margin: 15px auto;
-}
-
-.proceed-to-checkout-container button{
-    width: 300px;
-    margin: auto;
-    height: 50px;
-    background-color: rgb(7, 96, 7);
-    color: white;
+.cart .cart-totals a:hover{
+    background-color: orange;
 }

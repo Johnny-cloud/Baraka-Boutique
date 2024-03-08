@@ -1,0 +1,28 @@
+.cart-item{
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.cart-item .flex-row-center{
+    width: 350px;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.cart-item .qty{
+    font-size: 20px;
+}
+
+.cart-item .qty > *{
+    margin: 0 10px;
+}
+
+.cart-item .qty button{
+    width: 30px;
+}
+
+.cart-item img{
+    width: 70px;
+    height: 80px;
+    margin: auto;
+}

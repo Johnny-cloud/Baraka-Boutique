@@ -6,11 +6,11 @@ import { Rating } from 'react-simple-star-rating'
 import { Link, useNavigate } from 'react-router-dom'
 
 const HomeProduct = ({product}) => {
-    const {setSelectedItem, cart, setCart} = useContext(AppContext)
+    const {setSelectedProduct, cart, setCart} = useContext(AppContext)
     const navigate = useNavigate()
 
     const handleClick = () => {
-        setSelectedItem(product)
+        setSelectedProduct(product)
     }
 
     const addItemToCart = () => {
@@ -27,14 +27,14 @@ const HomeProduct = ({product}) => {
     
     return (
         <div className='home-product'>
-            <Link onClick={handleClick} to={'/selected-display'} className='home-product-image-container'>
+            <Link onClick={handleClick} to={'/product-details'} className='home-product-image-container'>
                 <img src={product.image} alt='img' />
             </Link>
             <div className='home-product-details-container'>
                 <p>{product.description.substring(0, 20)}...</p>
                 <p><Rating size={20} initialValue={product.rating} allowFraction /></p>
                 <p><h5>Ksh. {product.price}</h5></p>
-                <p><button onClick={addItemToCart}>ADD TO CART</button></p>
+                <p><Link to={'/cart'}><button onClick={addItemToCart}>ADD TO CART</button></Link></p>
             </div>
         </div>
 

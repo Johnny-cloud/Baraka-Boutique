@@ -1,0 +1,28 @@
+.footer{
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer > *{
+    padding: 10px 0;
+}
+
+.footer .main > *{
+    width: 300px;
+    margin: 15px;
+    text-align: justify;
+}
+
+.footer li{
+    padding: 5px;
+}
+
+.footer .bi{
+    font-size: 22px;
+    margin: 0 5px;
+}
+
+.footer .flex-row-center{
+    justify-content: space-evenly;
+}

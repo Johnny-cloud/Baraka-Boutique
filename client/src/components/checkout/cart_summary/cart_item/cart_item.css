@@ -1,0 +1,18 @@
+.cart-item{
+    justify-content: flex-start;
+    margin: 20px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(205, 204, 204);
+}
+
+.cart-item > *{
+    width: 350px;
+}
+
+.cart-item img{
+    width: 70px;
+    height: 80px;
+    margin-right: 10px;
+}

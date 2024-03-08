@@ -1,0 +1,48 @@
+.product-section  .details-section{
+    max-width: 800px;
+    text-align: justify;
+}
+
+.product-section > *{
+    margin: 10px;
+}
+
+.product-section img{
+    border-radius: 10px;
+}
+
+.product-section  .image-container{
+    width: 350px;
+    height: 500px;
+}
+
+.product-section .price{
+    font-size: 25px;
+}
+
+.product-section .description{
+    padding: 30px 0;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: rgb(189, 188, 188);
+    border-width: 1px;
+}
+
+.product-section .qty-cart{
+    justify-content: flex-start;
+}
+
+.qty-cart > *{
+    margin: 15px;
+    font-size: 22px;
+}
+
+.qty-cart .qty{
+    
+}
+
+.qty-cart .qty-btn{
+    border-radius: 5px;
+    width: 30px;
+    margin: 0 10px;
+}

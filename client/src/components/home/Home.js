@@ -12,6 +12,10 @@ const Home = () => {
     return (
       <div className='home-container'>
         <div className='home-landing-page'>
+          <h1 className='flex-row-center'>
+            <span>Upgrade that wardrobe!</span>
+            <span><i>You deserve nothing but the best!</i></span>
+          </h1>
         </div>
         <Category />
         <Featured />

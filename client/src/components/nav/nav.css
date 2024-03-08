@@ -1,125 +1,24 @@
-
-
-.sticky-nav{
-    position: sticky;
-    top: -20px;
-    background-color: white;
-    z-index: 2;
-}
-
-.navbar .container{
-    padding: 10px 0px;
-    width: fit-content;
-}
-
-.my-dropdown-menu{
-    display: none;
-}
-
-.me-auto{
-    position: relative;
-}
-
-.me-auto > * {
-    margin: 15px;
-    padding: 5px;
-}
-
-.my-dropdown{
-    position: relative;
-    max-width: 800px;
-}
-
-.my-dropdown:hover .my-dropdown-menu{
-    position: absolute;
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   width: fit-content;
-   background-color: white;
-   border-color: rgb(97, 83, 3);
-   border-top: solid;
-}
-
-.my-dropdown-menu a{
-    width: fit-content;
-    margin: 5px;
-    padding: 5px;
-}
-
-.my-dropdown-menu > *{
+.me-auto > *{
+    padding: 10px;
     margin: 10px;
 }
 
-.me-auto > *:hover, .cart-link:hover, .my-dropdown-menu > *:hover{
-    cursor: pointer;
-    color: rgb(155, 106, 16);
+.me-auto a:hover, .me-auto a:focus{
+    color: orange;
 }
 
-
-.dropdown-item:active{
-    background-color: antiquewhite;
-}
-.cart-number{
-    color: rgb(131, 109, 11);
-    font-weight: bold;
-    font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.cart-link .bi-cart4{
-    font-size: 30px;
-}
-
-.cart-link{
-    font-size: 20px;
-    font-weight: 500px;
-    margin-left: 20px;
-    margin-top: 0px;
-}
-
-
-.bi-person-check-fill{
+.me-auto .bi-cart-check{
     font-size: 25px;
-    color: rgb(10, 153, 10);
 }
 
-.navbar a{
-    color: black;
+.offcanvas{
+    background-color: rgb(240, 239, 238);
 }
 
-.navbar-brand{
-    font-weight: bold;
-}
-
-.navbar-brand:hover h3{
-    color: rgb(155, 106, 16);
-}
-
-.close-offcanvas .bi{
-    font-size: 40px;
-}
-
-.account-cart{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+.offcanvas-header{
     margin: auto;
 }
 
-@media screen and (max-width: 600px) {
-
-    .my-dropdown{
-        position: relative;
-    }
-    .my-dropdown:hover .my-dropdown-menu{
-        position: relative;
-    }
-
-    .me-auto > * {
-        margin: 15px;
-    }
-
-
-
+.bi-x-square{
+    font-size: 40px;
 }
