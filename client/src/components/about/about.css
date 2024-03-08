@@ -23,8 +23,11 @@
 .about .testimony .image-container{
     width: 60px;
     height: 60px;
-    border-radius: 50%;
     margin: 10px;
+}
+
+.about .testimony img{
+    border-radius: 50%;
 }
 
 .about .testimony .flex-row-center > b{
