@@ -56,4 +56,7 @@ li{
 
 .main-content{
     padding: 50px 5px;
+    width: 100%;
+    margin: auto;
+    padding: 0px 0px 30px;
 }

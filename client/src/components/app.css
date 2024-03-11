@@ -1,3 +1,7 @@
+.app .main-content{
+    padding: 0px 0px 50px;
+}
+
 .boutique-brand{
     padding: 30px 0;
 }
@@ -8,13 +12,6 @@
     border: solid;
     padding: 1% 2%;
 }
-
-.main-content{
-    width: 100%;
-    margin: auto;
-    padding: 0px 0px 30px;
-}
-
 
 .products-container{
     display: flex;
