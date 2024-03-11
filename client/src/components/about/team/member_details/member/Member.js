@@ -2,7 +2,7 @@ import './member.css'
 
 const Member = ({member}) => {
   return (
-    <div className='member flex-row-center'>
+    <div className='member'>
         <div className='image-container'><img src={member.image} alt='' /></div>
         <div className='description'>
             <h3>{member.name}</h3>
