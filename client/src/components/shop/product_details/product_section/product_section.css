@@ -46,3 +46,9 @@
     width: 30px;
     margin: 0 10px;
 }
+
+@media screen and (max-width: 600px) {
+    .product-section .image-container{
+        height: 430px;
+    }
+}
