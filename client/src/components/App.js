@@ -13,14 +13,16 @@ import ProductDetails from './shop/product_details/ProductDetails';
 import { useEffect, useState } from 'react';
 import Cart from './cart/Cart';
 import Checkout from './checkout/Checkout';
+import MemberDetails from './about/team/member_details/MemberDetails';
 
 const App = () => {
 
     const [selectedProduct, setSelectedProduct] = useState(null)
     const [cart, setCart] = useState([])
+    const [selectedMember, setSelectedMember] = useState(null)
 
     const contextValue = {
-        selectedProduct, setSelectedProduct, cart, setCart
+        selectedProduct, setSelectedProduct, cart, setCart, selectedMember, setSelectedMember,
     }
 
     useEffect(() => {
@@ -53,6 +55,7 @@ const App = () => {
                         <Route exact path='/signup' element={<Signup />} />
                         <Route exact path='/cart' element={<Cart />} />
                         <Route exact path='/checkout' element={<Checkout />} />
+                        <Route exact path='/member-details' element={<MemberDetails />} />
                     </Routes>
                 </div>
                 <Footer />

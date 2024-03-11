@@ -8,10 +8,12 @@
     border-color: rgb(204, 204, 204);
 }
 
+
 .team-member .image-container{
     width: 100%;
     height: 430px;
     border-radius: 10px;
+    display: block;
 }
 
 .team-member img{
@@ -21,4 +23,14 @@
 .team-member .bi{
     font-size: 20px;
     margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .team-member{
+        height: 500px;
+    }
+
+    .team-member .image-container{
+        height: 380px;
+    }
 }

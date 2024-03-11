@@ -2,7 +2,7 @@
     width: 100%;
     background-color: rgb(235, 235, 235);
     text-align: center;
-    padding: 2% 0;
+    padding: 50px 0;
 }
 
 .news-letter p{
@@ -11,10 +11,11 @@
 
 .news-letter-contents{
     background-color: white;
-    width: 1000px;
+    padding: 20px 10px;
+    max-width: 800px;
     margin: auto;
-    padding: 50px 0px;
 }
+
 
 .news-letter-form > *{
     margin: 10px;
@@ -31,12 +32,4 @@
     border: none;
     background-color: black;
     color: aliceblue;
-}
-
-@media screen and (max-width: 600px) {
-    .news-letter, .news-letter-contents{
-        width: 400px;
-        margin: auto;
-        text-align: center;
-    }
 }

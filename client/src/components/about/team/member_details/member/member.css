@@ -1,0 +1,23 @@
+.member{
+    justify-content: flex-start;
+}
+
+.member .image-container{
+    width: 350px;
+    height: 450px;
+    margin: 15px;
+}
+
+.member img{
+    border-radius: 5px;
+}
+
+.member .description{
+    max-width: 500px;
+    margin: auto 15px;
+}
+
+.member .bi{
+    font-size: 22px;
+    margin: 5px;
+}

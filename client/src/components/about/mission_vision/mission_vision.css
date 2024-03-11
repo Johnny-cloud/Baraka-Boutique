@@ -14,3 +14,10 @@
     margin: auto 15px;
     text-align: justify;
 }
+
+@media screen and (max-width: 600px) {
+    .mission-vision .image-container{
+        width: 380px;
+        height: 430px;
+    }
+}
