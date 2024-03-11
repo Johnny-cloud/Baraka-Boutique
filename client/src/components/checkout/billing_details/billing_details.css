@@ -1,0 +1,35 @@
+.billing-details {
+    width: 500px;
+    margin: 15px;
+}
+
+.billing-details form{
+    padding: 20px 5px;
+    text-align: justify;
+    margin: 30px 0;
+}
+
+.billing-details form > *{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.billing-details form input, .billing-details form textarea{
+    border: none;
+    border-bottom: solid;
+    border-width: 2px;
+    background-color: inherit;
+}
+
+.billing-details button{
+    width: 100%;
+    padding: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .billing-details{
+        width: 350px;
+    }
+}

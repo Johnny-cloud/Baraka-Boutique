@@ -1,4 +1,18 @@
 .cart-summary{
     max-width: 800px;
-    margin: auto;
+    margin: 15px;
+    position: sticky;
+    top: 120px;
+}
+
+.cart-summary .totals{
+    justify-content: space-between;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+@media screen and (max-width: 600px) {
+    .cart-summary .totals{
+        width: 350px;
+    }
 }
