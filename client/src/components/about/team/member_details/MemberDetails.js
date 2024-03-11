@@ -1,30 +1,23 @@
 import './member_details.css'
 import TopLanding from '../../../top_landing/TopLanding'
 import Member from './member/Member'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import AppContext from '../../../context/AppContext'
 
 const MemberDetails = () => {
     const {selectedMember} = useContext(AppContext)
 
-    const [member, setMember] = useState({
-        name: "Prince",
-        title: "Co-Founder",
-        image: "https://images.unsplash.com/photo-1491349174775-aaafddd81942?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    })
 
     useEffect(() => {
         window.scrollTo(0, 50)
-        if(selectedMember){
-            setMember(selectedMember)
-        }
+        console.log('Team member....')
     }, [selectedMember])
 
   return (
     <div className='member-details'>
         <TopLanding title={'Member'} />
         <div className='main-content'>
-            <Member member={member} />
+            <Member member={selectedMember} />
             <div className='details'>
                 <div>
                     <h3>Background</h3>

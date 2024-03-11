@@ -1,9 +1,3 @@
-.member{
-    text-align: start;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
 
 .member .image-container{
     width: 350px;

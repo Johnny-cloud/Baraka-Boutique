@@ -17,9 +17,22 @@ import MemberDetails from './about/team/member_details/MemberDetails';
 
 const App = () => {
 
-    const [selectedProduct, setSelectedProduct] = useState(null)
+    const [selectedProduct, setSelectedProduct] = useState({
+            description: "Timex Women's T2H331 Indiglo Leather Strap Watch, Black/Silver-Tone/White", 
+            price: 300, 
+            rating: 3.6, 
+            category: 'watches', 
+            sub_category: 'women', 
+            image: "https://images.unsplash.com/photo-1584208124232-7919e0000ad5?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    })
+
     const [cart, setCart] = useState([])
-    const [selectedMember, setSelectedMember] = useState(null)
+    
+    const [selectedMember, setSelectedMember] = useState({
+        name: "Prince",
+        title: "Co-Founder",
+        image: "https://images.unsplash.com/photo-1491349174775-aaafddd81942?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    })
 
     const contextValue = {
         selectedProduct, setSelectedProduct, cart, setCart, selectedMember, setSelectedMember,
