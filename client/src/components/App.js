@@ -58,6 +58,7 @@ const App = () => {
                 <div className='boutique-brand'> <h1>Chess Baraka Boutique</h1></div>
                 <Navigation />
                 <div className='main-content'>
+                   
                     <Routes>
                         <Route exact path='/' element={<Home />} />
                         <Route exact path='/product-details' element={<ProductDetails />} />

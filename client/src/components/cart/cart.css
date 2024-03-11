@@ -27,7 +27,7 @@
     padding: 20px 0;
 }
 
-.cart .cart-totals a{
+.cart a{
     padding: 10px;
     background-color: black;
     color: white;
@@ -35,6 +35,12 @@
     margin: 20px 15px 5px;
 }
 
-.cart .cart-totals a:hover{
+.cart a:hover{
     background-color: orange;
+    color: white;
+
+}
+
+.cart a .bi{
+    font-size: 22px;
 }

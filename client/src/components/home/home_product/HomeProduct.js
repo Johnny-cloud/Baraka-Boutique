@@ -3,25 +3,22 @@ import {useContext} from 'react'
 import './home_product.css'
 import AppContext from '../../context/AppContext'
 import { Rating } from 'react-simple-star-rating'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 
 const HomeProduct = ({product}) => {
     const {setSelectedProduct, cart, setCart} = useContext(AppContext)
-    const navigate = useNavigate()
-
     const handleClick = () => {
         setSelectedProduct(product)
     }
 
     const addItemToCart = () => {
         let itemInCart = cart.find(item => item.description === product.description) // Check if item is already in cart
+        
         if(itemInCart){
-            alert("Item already in cart!")
+            alert("ITEM ALREADY IN CART!")
         } else {
             product.quantity = 1
             setCart([...cart, product])
-            navigate('/cart')
-            
         }
     }
     

@@ -26,6 +26,7 @@ const Cart = () => {
                 {
                     cart.map(item => <CartItem item={item} updateCartTotal={updateCartTotal} cart={cart} setCart={setCart} />)
                 }
+                <Link to={'/shop'}>Continue shopping <i class="bi bi-bag-heart"></i></Link>
             </div>
             <div className='cart-totals'>
                 <h5>CART TOTALS</h5>
@@ -33,7 +34,7 @@ const Cart = () => {
                     <div>Totals</div> 
                     <div><b>Ksh. {cartTotal}</b></div>
                 </div>
-                <Link to={'/checkout'}>Proceed To Checkout</Link>
+                <Link to={'/checkout'}>Proceed To Checkout <i class="bi bi-bag-check"></i></Link>
             </div>
         </div>
         
