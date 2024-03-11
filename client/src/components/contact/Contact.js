@@ -12,6 +12,12 @@ const Contact = () => {
         <TopLanding title={'Contact'} />
         <div className='main-content'>
         <h4>GET IN TOUCH</h4>
+        <p>We love to hear from you on our customer service, merchandise, website or any 
+          topics you want to share with us. Your comments and suggestions will be appreciated. 
+          Please complete the form below.</p>
+        <p><i class="bi bi-geo-alt"></i> Nairobi, Kenya</p>
+        <p><i class="bi bi-telephone-forward"></i> +254 7xx xxx 899</p>
+        <p><i class="bi bi-envelope-at-fill"></i> barakainfo@gmail.com</p>
         <form>
           <div>
             <label htmlFor='name'>Your name</label>
