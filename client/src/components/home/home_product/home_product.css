@@ -46,6 +46,7 @@
 .home-product button:hover{
     background-color: orange;
     border-color: orange;
+    color: white;
 }
 
 .home-product .details-container{
