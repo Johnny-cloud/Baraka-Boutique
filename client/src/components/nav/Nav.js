@@ -27,8 +27,8 @@ const Navigation = () => {
                     <Offcanvas.Body>
                     <Nav className='me-auto'>
                         <Link to={'/'} onClick={hideNavbar}>HOME</Link>
-                        <Link to={'/shop'} onClick={hideNavbar}>SHOP</Link>
                         <Link to={'/about'} onClick={hideNavbar}>ABOUT</Link>
+                        <Link to={'/shop'} onClick={hideNavbar}>SHOP</Link>
                         <Link to={'/contact'} onClick={hideNavbar}>CONTACT</Link>
                     </Nav>
                     <Nav className='me-auto'>

@@ -27,11 +27,11 @@ const HomeProduct = ({product}) => {
             <Link onClick={handleClick} to={'/product-details'} className='home-product-image-container'>
                 <img src={product.image} alt='img' />
             </Link>
-            <div className='home-product-details-container'>
+            <div className='details-container'>
                 <p>{product.description.substring(0, 20)}...</p>
                 <p><Rating size={20} initialValue={product.rating} allowFraction /></p>
                 <p><h5>Ksh. {product.price}</h5></p>
-                <p><Link to={'/cart'}><button onClick={addItemToCart}>ADD TO CART</button></Link></p>
+                <p><Link to={'/cart'}><button onClick={addItemToCart}>ADD TO CART <i class="bi bi-basket"></i></button></Link></p>
             </div>
         </div>
 

@@ -28,11 +28,26 @@
 }
 
 .home-product button{
-    background-color: black;
-    border: none;
-    color: white;
+    border: solid;
+    border-color: rgb(84, 84, 84);
+    border-width: 2px;
+    padding: 5px;
+    background-color: inherit;
+    color: black;
+    width: 90%;
+    margin: auto;
+}
+
+.home-product button .bi{
+    font-size: 22px;
+    margin: 5px;
 }
 
 .home-product button:hover{
-    background-color: goldenrod;
+    background-color: orange;
+    border-color: orange;
+}
+
+.home-product .details-container{
+    text-align:justify;
 }
