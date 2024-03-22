@@ -2,7 +2,6 @@
 import {useContext} from 'react'
 import './home_product.css'
 import AppContext from '../../context/AppContext'
-import { Rating } from 'react-simple-star-rating'
 import { Link, } from 'react-router-dom'
 
 const HomeProduct = ({product}) => {
@@ -12,7 +11,7 @@ const HomeProduct = ({product}) => {
     }
 
     const addItemToCart = () => {
-        let itemInCart = cart.find(item => item.description === product.description) // Check if item is already in cart
+        let itemInCart = cart.find(item => item.name === product.name) // Check if item is already in cart
         
         if(itemInCart){
             alert("ITEM ALREADY IN CART!")
@@ -28,10 +27,10 @@ const HomeProduct = ({product}) => {
                 <img src={product.image} alt='img' />
             </Link>
             <div className='details-container'>
-                <p>{product.description.substring(0, 20)}...</p>
-                <p><Rating size={20} initialValue={product.rating} allowFraction /></p>
-                <p><h5>Ksh. {product.price}</h5></p>
-                <p><Link to={'/cart'}><button onClick={addItemToCart}>ADD TO CART <i class="bi bi-basket"></i></button></Link></p>
+                <p>{product.name.toUpperCase()}</p>
+                <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p className='price'><b>${product.price}</b> <Link to={'/cart'}><button onClick={addItemToCart}>ADD TO CART <i class="bi bi-basket"></i></button></Link></p>
+               
             </div>
         </div>
 

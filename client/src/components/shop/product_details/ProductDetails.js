@@ -22,7 +22,7 @@ const ProductDetails = () => {
           <h4>RELATED PRODUCTS</h4>
           <div className='flex-row-center'>
             {
-              products.filter(prod => prod.category === selectedProduct.category && prod.description !== selectedProduct.description).slice(10, 14).map(prod => <HomeProduct product={prod} />)
+              products.filter(prod => prod.category === selectedProduct.category && prod.name !== selectedProduct.name).slice(0, 4).map(prod => <HomeProduct product={prod} />)
             }
           </div>
         </div>

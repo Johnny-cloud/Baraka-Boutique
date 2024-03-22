@@ -11,7 +11,7 @@ const BestSelling = () => {
     if(products){  
             return(
                 <div className="best-selling">
-                <h4>OUR BEST SELLING</h4>
+                <h3>OUR BEST SELLING</h3>
                 <div className="products-container">
                     {products.slice(15, 19).map(product => <HomeProduct product={product} key={product._id} />)}
                 </div>

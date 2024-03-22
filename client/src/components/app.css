@@ -2,16 +2,6 @@
     padding: 0px 0px 50px;
 }
 
-.boutique-brand{
-    padding: 30px 0;
-}
-
-.boutique-brand h1{
-    width: fit-content;
-    margin: auto;
-    border: solid;
-    padding: 1% 2%;
-}
 
 .products-container{
     display: flex;

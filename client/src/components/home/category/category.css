@@ -1,12 +1,6 @@
-.category{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
 .category .image-container{
-    width: 550px;
+    width: 400px;
     height: 300px;
     margin: 15px;
     position: relative;

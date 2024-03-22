@@ -26,9 +26,9 @@ const Sidebar = ({setFilteredProducts, products}) => {
         <div>
             <h3>Categories</h3>
             <Link onClick={updateOnCategory} id={'all'}>All</Link>
-            <Link onClick={updateOnCategory} id={'shoes'}>Shoes</Link>
+            <Link onClick={updateOnCategory} id={'shoe'}>Shoes</Link>
             <Link onClick={updateOnCategory} id={'clothing'}>Clothing</Link>
-            <Link onClick={updateOnCategory} id={'watches'}>Watches</Link>
+            <Link onClick={updateOnCategory} id={'watch'}>Watches</Link>
             <Link onClick={updateOnSubCategory} id={'men'}>Men</Link>
             <Link onClick={updateOnSubCategory} id={'women'}>Women</Link>
         </div>

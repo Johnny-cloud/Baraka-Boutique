@@ -55,7 +55,6 @@ const App = () => {
     return (
             <div className='app'>
             <AppContext.Provider value={{...contextValue}}>
-                <div className='boutique-brand'> <h1>Chess Baraka Boutique</h1></div>
                 <Navigation />
                 <div className='main-content'>
                    

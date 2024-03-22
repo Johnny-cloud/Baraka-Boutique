@@ -1,21 +1,24 @@
 import './on_offer.css'
-import {Link} from 'react-router-dom'
 
 const OnOffer = () => {
+   
     return (
       <div className='on-offer'>
-      <h4>OUR OFFERS THIS SEASON</h4>
-        <div className='on-offer-contents-container'>
-              <Link to={'/shop'} className='on-offer-item'>
-                  <div className='on-offer-image-container'>
-                    <img src='https://images.unsplash.com/photo-1568251188392-ae32f898cb3b?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='' />
-                </div>
-              </Link>
-              <Link to={'/shop'} className='on-offer-item'>
-                  <div className='on-offer-image-container'>
-                    <img src='https://images.unsplash.com/photo-1525171254930-643fc658b64e?q=80&w=1977&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='' />
-                  </div>
-              </Link>
+        <h4>End of Season Clearance</h4>
+        <p>Save Up To 30%</p>
+        <div className='time-container flex-row-center'>
+          <div>
+            <h4>5</h4>
+            <p>DAYS</p>
+          </div>
+          <div>
+            <h4>10</h4>
+            <p>HOURS</p>
+          </div>
+          <div>
+            <h4>28</h4>
+            <p>MINS</p>
+          </div>
         </div>
     </div>
   )

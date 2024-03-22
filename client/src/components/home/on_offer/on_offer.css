@@ -1,53 +1,24 @@
 .on-offer{
-    margin: 50px 0 70px;
+    max-width: 1300px;
+    margin: auto;
+    background-color: rgb(211, 209, 209);
+    border-radius: 10px;
+    font-size: 20px;
 }
 
-.on-offer-contents-container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-.on-offer-details-container p{
+.on-offer h4{
     font-size: 30px;
-    font-weight: 400;
 }
 
-.current-price{
-    color: green;
-}
-
-.previous-price{
-    color: red;
-    text-decoration: line-through;
-    text-decoration-line: 3px;
-}
-
-.on-offer-image-container{
-    height: 300px;
+.on-offer .time-container > *{
     margin: 15px;
-}
-
-.on-offer-image-container img{
-    width: 100%;
-    height: 100%;
-}
-
-.on-offer-item{
-    display: block;
-}
-
-.on-offer-image-container{
-    width: 500px;
+    border: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    width: 100px;
 
 }
 
-@media screen and (max-width: 600px) {
-    .on-offer-image-container{
-        width: 350px;
-        height: 200px;
-    }
+.on-offer h4{
+    font-weight: bold;
 }

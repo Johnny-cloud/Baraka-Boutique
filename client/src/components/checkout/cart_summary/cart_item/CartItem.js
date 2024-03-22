@@ -5,10 +5,10 @@ const CartItem = ({item}) => {
     <div className='cart-item flex-row-center'>
         <div className='image-description'>
             <img src={item.image} alt=''/>
-            <span>{item.description.slice(0, 15)}</span>
+            <span>{item.name}</span>
         </div>
         <div className='flex-row-center'>
-            <div>Ksh.{item.price}</div>
+            <div>${item.price}</div>
             <div>Qty: {item.quantity}</div>
             <div>Tot: <b>Ksh.{item.price * item.quantity}</b></div>
         </div>

@@ -1,101 +1,175 @@
 const products = [
-    //Trending
-    
-    // Women clothing
-    {description: "SHAPERX Bodysuit for Women Tummy Control Shapewear Seamless Sculpting Thong Body Shaper Tank Top", price: 1000, rating: 4.1, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/71EPHz3fArL._AC_SX466_.jpg"},
-    {description: "Wolverine Men’s Floorhand Waterproof 6” Steel-Toe Work Boot", price: 3200, rating: 4, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1655898283066-1b682b7b6736?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "New Balance Men's 574 Core Sneaker", price: 1700, rating: 4, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1608380272894-b3617f04b463?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "UGG Women's Classic Short II Boot", price: 2000, rating: 4.7, category: 'shoes', sub_category: 'women', image: "https://plus.unsplash.com/premium_photo-1667161521716-9904b4a25658?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "G Gradual Men's Sweatpants with Zipper Pockets Tapered Joggers for Men Athletic Pants for Workout, Jogging, Running", price: 400, rating: 4.5, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/71E9cr3vZAL._AC_SY550_.jpg"},
-    {description: "Viracy Womens Golf Polo Shirts 1/4 Zip Up Overlap Short Sleeve Quick Dry Workout Tops", price: 450, rating: 4.2, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/811l2fft0FL._AC_SY550_.jpg"},
-    {description: "LIGE Mens Watches Automatic Leather Chronograph Waterproof Stainless Steel Analog Quartz Business Casual Wrist Watches for Men", price: 450, rating: 4.5, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1621903498608-4815b66984bb?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "FIZILI 8mm Thin Men's Watch, 41mm Watch Men's Calendar Model", price: 350, rating: 3.2, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1622628706475-38e212aed074?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    
-    {description: "Fruit of the Loom Men's Tag-Free Woven Boxer Shorts, Relaxed Fit, Moisture Wicking, Assorted Color Multipacks", price: 200, rating: 4.6, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/914b-+0gXEL._AC_SX679_.jpg"},
-    {description: "OLEVS Mens Automatic Watches Self Winding Mechanical Dress Wrist Watch Multifunction Calendar Hidden Button Sun Moon Display Waterproof Luminous", price: 450, rating: 3.9, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1695345272166-4efd76dd7a21?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Michael Kors Oversized Slim Runway Men's Watch, Stainless Steel Watch for Men", price: 350, rating: 4.7, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1661030420771-245b957d331c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Casio Men's MDV106-1AV 200 M WR Black Dive Watch (MDV106-1A)", price: 400, rating: 4.7, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1611353229530-f17036b8479a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "PASOY Mens Simple Leather Watch 40mm Dial Casual Business Watch Analog Reloj de Hombre", price: 300, rating: 4.6, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1456444029056-7dfaeeb83a19?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "HUK Men's Rogue Wave Shoe | High-Performance Fishing & Deck Boot Rain", price: 2300, rating: 5, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1672622012959-45355279c93e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Hey Dude Womens Wendy Canvas", price: 1000, rating: 4.3, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "OLEVS Women Watches Gold Silver Stainless Steel Waterproof Analog Large Easy Reader Day Date Watches", price: 350, rating: 4.2, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1506193095-80bc749473f2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Nine West Women's Floral Dial Strap Watch", price: 350, rating: 4.6, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1525872387695-8bdd54d7b3d2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Cotton t-shirt", price: 400, rating: 4.7, category: 'clothing', sub_category: 'men', image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHNoaXJ0fGVufDB8fDB8fHww"},
-    {description: "Flowring skirt", price: 350, rating: 4.8, category: 'clothing', sub_category: 'women', image: "https://images.unsplash.com/photo-1592301933927-35b597393c0a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Cotton scarf", price: 350, rating: 4.6, category: 'clothing', sub_category: 'women', image: "https://images.unsplash.com/photo-1601244005535-a48d21d951ac?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Jasmin socks", price: 200, rating: 4.9, category: 'clothing', sub_category: 'men', image: "https://images.unsplash.com/photo-1631180543602-727e1197619d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    
-    //Featured
-    {description: "Herschel supply co 25!", price: 1000, rating: 4.7, category: 'clothing', sub_category: 'women', image: "https://images.unsplash.com/photo-1632282003890-020318a49e62?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Black leather jacket", price: 600, rating: 4.5, category: 'clothing', sub_category: 'women', image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Trendy Denim Long sleeve", price: 600, rating: 5.0, category: 'clothing', sub_category: 'men', image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Women side pocket", price: 1000, rating: 5.0, category: 'clothing', sub_category: 'women', image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "OLEVS Mens Watches Diamond Luxury Business Dress Watches for Men Stainless Steel Classic Analog Quartz Male Wrist Watches Date Waterproof Luminous", price: 400, rating: 4.1, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1696774690902-6e2057307e20?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "UGG Women's Classic Mini II Winter Boot", price: 1800, rating: 4.5, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1553545985-1e0d8781d5db?q=80&w=1894&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "LIGE Stylish Wrist Watch for Men, Waterproof Sports Moon Phase Chronograph Watch Luxury Business Dress Analogue Quartz Watches Men Fashion Casual Brown Leather Watch", price: 400, rating: 4.3, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1524738258074-f8125c6a7588?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Timberland Men's White Ledge Mid Waterproof Hiking Boot", price: 3200, rating: 5, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1628619932492-a4c885c979f9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "TACVASEN Men's Flat Shorts with Pockets Summer Casual Cotton Cargo Work Shorts Elastic Waist", price: 400, rating: 4.3, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/61xhX7+leRL._AC_SX466_.jpg"},
-    {description: "J.VER Men's Dress Shirts Solid Long Sleeve Stretch Wrinkle-Free Formal Shirt Business Casual Button Down Shirts", price: 400, rating: 4.4, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/61owdlDd7wL._AC_SX466_.jpg"},
-    {description: "KIIU Mens Thong Sandals Indoor and Outdoor Beach Flip Flop", price: 250, rating: 4.5, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1608230616491-5d696aa9fe52?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "UGG Women's Neumel Fashion Boot", price: 2000, rating: 4.6, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1552419272-b0d8e736ea2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "devaco Quartz Casual Men's Watches，Genuine Leather Strap Mens Watches, Waterproof, Night Light, Calendar, Chronograph Watch for Stylish Men", price: 370, rating: 4.6, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1623998022151-6a4df88517cd?q=80&w=1893&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Nine West Women's Crystal Accented Bracelet Watch", price: 300, rating: 3.5, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1521229503786-cae30070bf02?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Columbia Men's Newton Ridge Plus Wp Hiking Shoe", price: 2700, rating: 3.5, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1612015670817-0127d21628d4?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "EliteLand Women's Rain Boots, Waterproof Fishing Deck Boots, Anti-Slip Outdoor Rain Shoes for Women", price: 2300, rating: 4.6, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1531310197839-ccf54634509e?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "AISEW Womens Button Down Shirts Casual V Neck Long Sleeve Loose Fit Collared Plain Blouses Tops with Pocket", price: 500, rating: 3.1, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/81RNKkMLKvL._AC_SX466_.jpg"},
-    {description: "Real Essentials 5 Pack: Women's Short Sleeve V-Neck Activewear T-Shirt Dry-Fit Wicking Yoga Top (Available in Plus)", price: 400, rating: 3.3, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/612Lz89socL._AC_SX569_.jpg"},
-    {description: "GRAPENT Womens Cargo Pants Wide Leg Baggy High Rise Pull On Elastic Waist Stretch Loose Pants with Pocket 90s Outfit Y2K", price: 500, rating: 3.2, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/6107TdXDFcL._AC_SX466_.jpg"},
-    {description: "Cole Haan Men's 2.Zerogrand Laser Wing Oxford", price: 1500, rating: 4, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1613839817782-6c41fef752ff?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "LN LENQIN Mens Watches Unisex Military Watches Sport Nylon Strap Stylish Luminous Fashion Watches Analog Quartz Watches for Men Waterproof Army Tactical Casual Wristwatch", price: 300, rating: 4.4, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1661030418545-fd307b4c6f16?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Litfun Women's Fuzzy Memory Foam Slippers Fluffy Winter House Shoes Indoor and Outdoor", price: 1500, rating: 3.5, category: 'shoes', sub_category: 'women', image: "https://m.media-amazon.com/images/I/71fnIod1SqL._AC_SY575_.jpg"},
-    {description: "Under Armour Men's Micro G Valsetz Zip Military and Tactical Boot", price: 2700, rating: 4.5, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1646640735429-6584464899f7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Amazfit Bip 3 Pro Smart Watch for Android iPhone, 4 Satellite Positioning Systems, 1.69 Color Display, 14-Day Battery Life, 60+ Sports Modes, Blood Oxygen Heart Rate Monitor, Water-Resistant(Black)", price: 300, rating: 4.2, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1694656937152-b2377c0b5de7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Bulova Men's 3-Hand Calendar Date Quartz Watch, Patterned Dial, 38mm", price: 400, rating: 4.6, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1618215649872-6e3143a716ec?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Timex silver", price: 350, rating: 5.0, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1694656937152-b2377c0b5de7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Soft shirt", price: 350, rating: 4.6, category: 'clothing', sub_category: 'women', image: "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
 
-    //Best selling
-    {description: "Nike sneakers", price: 2500, rating: 5.0, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Adma boots", price: 2700, rating: 5.0, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1582897085656-c636d006a246?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "OLEVS Watches Waterproof Leather Watch Quartz Watches with Day Date,Gifts", price: 300, rating: 3.1, category: 'watches', sub_category: 'women', image: "https://plus.unsplash.com/premium_photo-1669904021350-c59c580086e3?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Anne Klein Women's AK/1470 Bangle Watch and Bracelet Set", price: 200, rating: 4.6, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1668414310227-67e62a8b4087?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "UGG Women's Classic Ultra Mini Platform Boot", price: 1900, rating: 4.5, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1617379799234-a23386fe3e91?q=80&w=1852&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Michael Kors Pyper Women's Watch, Stainless Steel Watch for Women with Steel, Leather, or Silicone Band", price: 250, rating: 4.6, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=1894&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "HUE Women's Slouch Sock 3 Pair Pack", price: 250, rating: 4.4, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/71av7iHTuRL._AC_SY550_.jpg"},
-    {description: "adidas mens Yeezy Slide", price: 2000, rating: 5, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Fossil Coachman Men's Watch with Genuine Leather Bracelet Cuff", price: 500, rating: 4.7, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1634808881367-b6a82c798498?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Fossil Men's Nate Quartz Stainless Steel Chronograph Watch, Color: Black (Model: JR1401)", price: 450, rating: 4.5, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1667754188015-ffa59a35d2b3?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "MAGNIVIT Men's Bomber Jacket Casual Fall Winter Military Jacket and Coats Outwear", price: 800, rating: 4.4, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/518rvMmy9QL._AC_SX569_.jpg"},
-    {description: "Gildan Fleece Hoodie Sweatshirt, Style G18500, Multipack", price: 700, rating: 4.6, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/61qTPaU7dYL._AC_SX569_.jpg"},
-    {description: "TIJN Women’s Fashion Ankle Booties Causal 8-Eye Side Zipper Lace-up Combat Boots(Briar)", price: 2100, rating: 5, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1608348970337-f52ff3e8ce14?q=80&w=1946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Nike Men's Basketball Shoes Sneakers", price: 2000, rating: 4, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1556227151-799479f586bc?q=80&w=1909&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Astylish Womens Open Front Cardigan Hollow Out Crochet Long Sleeve Knit Sweater Coat", price: 1200, rating: 4.1, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/71Imt00lLdL._AC_SY550_.jpg"},
-    {description: "Hanes Men's Max Cushioned Crew Socks, Moisture-Wicking with Odor Control, Multi-Pack", price: 1000, rating: 4.6, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/81vTEPIns+L._AC_SX569_.jpg"},
-    {description: "Timex Women's T2H331 Indiglo Leather Strap Watch, Black/Silver-Tone/White", price: 300, rating: 3.6, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1584208124232-7919e0000ad5?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    
-    {description: "devaco Genuine Leather Strap Waterproof Watches for Women Quartz Casual Watch for Women, Calendar Women's Watches Chronograph Women's Wrist Watches", price: 400, rating: 4.2, category: 'watches', sub_category: 'women', image: "https://plus.unsplash.com/premium_photo-1681150012494-7030abadfd3d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "JOMLUN Boys Fleece Lined Hiking Pants Outdoor Soft shell Snow Ski Waterproof Windproof Kids Warm Cargo Insulated Pant Winter", price: 450, rating: 3.1, category: 'clothing', sub_category: 'boys', image: "https://m.media-amazon.com/images/I/61IyN-nMHrL._AC_SX569_.jpg"},
-    {description: "Anne Klein Women's Genuine Diamond Dial Bangle Watch", price: 300, rating: 4.6, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1543428390-8bc1a79ff735?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "FIYTA Women's Small Gold Watch, Vintage Rectangular Case, Stainless Steel Bracelet Watches for Women", price: 300, rating: 3.4, category: 'watches', sub_category: 'women', image: "https://plus.unsplash.com/premium_photo-1681336999719-cb51ea71fa43?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Brooks Men's Adrenaline GTS 22 Supportive Running Shoe", price: 1600, rating: 4.7, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1608379743498-ac08f6d022ba?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Suunto Core Classic, Outdoor Watch, All Black", price: 400, rating: 4.3, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1682353213514-81a621a39d8b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Rollda Women's Mid-Calf Boots Lace Up Combat Boots Side Zipper Riding Military Boots", price: 1700, rating: 5, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1604001307862-2d953b875079?q=80&w=1879&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "ASICS Men's Matflex 6 Wrestling Shoes", price: 1800, rating: 3.8, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1625697501174-93bdbf1b280c?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "SEIKO SSK003 Watch for Men 5 Sports Collection - Stainless Steel Case and Bracelet, Blue Dial", price: 350, rating: 3.6, category: 'watches', sub_category: 'men', image: "https://images.unsplash.com/photo-1611353229945-f4693d90aed7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Vivobarefoot Tracker II FG, Womens Leather Hiking Boot With Barefoot Firm Ground Sole and Thermal Protection", price: 1800, rating: 3.4, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Legendary Whitetails Men's Buck Camp Flannel, Long Sleeve Plaid Button Down Casual Shirt, Corduroy Cuffs", price: 400, rating: 4.6, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/917xzOZDnPL._AC_SY879_.jpg"},
-    {description: "Nippies Nipple Cover - Sticky Adhesive Silicone Nipple Pasties - Reusable Pasty Nipple Covers for Women with Travel Box", price: 500, rating: 4.3, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/51S9vy6ywpL._AC_SX569_.jpg"},
-    {description: "Venado Henley Long Sleeve Shirts for Men - Mens Henley with Flex Material", price: 500, rating: 4.4, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/91SRrJHOR8L._AC_SX522_.jpg"},
-    {description: "Merrell Men's Moab 3 Mid Waterproof Hiking Boot", price: 2500, rating: 4.6, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1571524847680-4593c72f41db?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Vivobarefoot womens High-top", price: 1900, rating: 4, category: 'shoes', sub_category: 'women', image: "https://images.unsplash.com/photo-1602593330926-30c90a271fa5?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "UGG Women's Tasman Slipper", price: 1800, rating: 4.7, category: 'shoes', sub_category: 'women', image: "https://plus.unsplash.com/premium_photo-1673977133185-a460c4744cec?q=80&w=1890&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Ultra Performance 3 Pack Fleece Active Tech Joggers for Men, Mens Sweatpants with Zipper Pockets", price: 1200, rating: 3.9, category: 'clothing', sub_category: 'men', image: "https://m.media-amazon.com/images/I/61UWxvmW85L._AC_SX569_.jpg"},
-    {description: "Timex Women's Easy Reader 25mm Watch – Two-Tone Case White Dial with Expansion Band", price: 250, rating: 4.5, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1564595076323-71cc27edacf8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "Anne Klein Women's Leather Strap Watch", price: 300, rating: 4.5, category: 'watches', sub_category: 'women', image: "https://images.unsplash.com/photo-1458687293558-333901cff16a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "OQQ Women Yoga Jumpsuits Workout Ribbed Long Sleeve Sport Jumpsuits", price: 1000, rating: 3.5, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/615CKGkHk4L._AC_SY550_.jpg"},
-    {description: "Fearless Tape - Double Sided Tape", price: 300, rating: 3.4, category: 'clothing', sub_category: 'women', image: "https://m.media-amazon.com/images/I/61hJejycXrL._AC_SY550_.jpg"},
-    {description: "Muck Boot Men's Arctic Excursion Ankle Snow Boot", price: 2200, rating: 4, category: 'shoes', sub_category: 'men', image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {description: "KIDMI Women's Suede Clogs Leather Mules Cork Footbed Sandals Potato Shoes with Arch Support", price: 1900, rating: 4.8, category: 'shoes', sub_category: 'women', image: "https://plus.unsplash.com/premium_photo-1673716788817-c4ac2a825819?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-   ]
+    // Watches
+
+    {
+        name: "Office shoe",
+        category: "shoe",
+        sub_category: "men",
+        price: 13,
+        image: "https://images.unsplash.com/photo-1626947346165-4c2288dadc2a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Shirt buttoned",
+        category: "clothing",
+        sub_category: "men",
+        price: 10,
+        image: "https://images.unsplash.com/photo-1602810316693-3667c854239a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+   
+    {
+        name: "Mystrey",
+        category: "watch",
+        sub_category: "men",
+        price: 10,
+        image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Nike Red",
+        category: "shoe",
+        sub_category: "men",
+        price: 12,
+        image: "https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Sleeveless",
+        category: "clothing",
+        sub_category: "women",
+        price: 7,
+        image: "https://images.unsplash.com/photo-1525171254930-643fc658b64e?q=80&w=1977&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+   
+    {
+        name: "Vultz",
+        category: "watch",
+        sub_category: "women",
+        price: 12,
+        image: "https://images.unsplash.com/photo-1632280071595-b13521457242?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Soft Comfy",
+        category: "shoe",
+        sub_category: "women",
+        price: 11,
+        image: "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Varaca",
+        category: "clothing",
+        sub_category: "men",
+        price: 5,
+        image: "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+   
+    {
+        name: "Weltz",
+        category: "watch",
+        sub_category: "men",
+        price: 10,
+        image: "https://images.unsplash.com/photo-1623998021450-85c29c644e0d?q=80&w=1857&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Step Ons",
+        category: "shoe",
+        sub_category: "women",
+        price: 12,
+        image: "https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Bultz",
+        category: "clothing",
+        sub_category: "men",
+        price: 6,
+        image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+   
+    {
+        name: "Dytz",
+        category: "watch",
+        sub_category: "women",
+        price: 15,
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Puma",
+        category: "shoe",
+        sub_category: "men",
+        price: 14,
+        image: "https://images.unsplash.com/photo-1545289414-1c3cb1c06238?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Blue shorts",
+        category: "clothing",
+        sub_category: "women",
+        price: 10,
+        image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+   
+    {
+        name: "Shines",
+        category: "watch",
+        sub_category: "men",
+        price: 11,
+        image: "https://images.unsplash.com/photo-1639006570490-79c0c53f1080?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Rubber Comfy",
+        category: "shoe",
+        sub_category: "men",
+        price: 9,
+        image: "https://images.unsplash.com/photo-1463100099107-aa0980c362e6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Belt headphones",
+        category: "clothing",
+        sub_category: "men",
+        price: 12,
+        image: "https://images.unsplash.com/photo-1600086827875-a63b01f1335c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+   
+    {
+        name: "Sheins",
+        category: "watch",
+        sub_category: "women",
+        price: 14,
+        image: "https://images.unsplash.com/photo-1565531185009-b89c734b9719?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Fila",
+        category: "shoe",
+        sub_category: "women",
+        price: 14,
+        image: "https://images.unsplash.com/photo-1579446565308-427218a2c60e?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+        name: "Comfy socks",
+        category: "clothing",
+        sub_category: "women",
+        price: 6,
+        image: "https://images.unsplash.com/photo-1564379976409-79bd0786fff1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+   
+    {
+        name: "Mia Myles",
+        category: "watch",
+        sub_category: "men",
+        price: 10,
+        image: "https://images.unsplash.com/flagged/photo-1564826836200-87e3faad54bb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+]
 
 export default products

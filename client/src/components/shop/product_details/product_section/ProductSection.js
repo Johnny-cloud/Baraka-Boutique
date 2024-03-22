@@ -22,7 +22,7 @@ const ProductSection = ({product}) => {
     }
 
     const addItemToCart = () => {
-        const itemIsInCart = cart.find(item => item.description === product.description)
+        const itemIsInCart = cart.find(item => item.name === product.name)
         if(itemIsInCart){
             alert("Item already in cart")
         } else{
@@ -34,8 +34,8 @@ const ProductSection = ({product}) => {
     <div className='product-section flex-row-center'>
         <div className='image-container'><img src={product.image} alt=''/></div>
         <div className='details-section'>
-            <p>{product.description.slice(0, 10).toUpperCase()}</p>
-            <p className='price'><b>ksh. {product.price}</b></p>
+            <h4>{product.name.toUpperCase()}</h4>
+            <p className='price'><b>${product.price}</b></p>
             <p>Available: <span className='green'>In stock</span></p>
             <div className='description'>
                 <p>Made with the best fabrics from the best available sources in town.</p>

@@ -20,7 +20,7 @@ const CartItem = ({item, updateCartTotal, cart, setCart}) => {
     }
 
     const removeItemFromCart = () => {
-        setCart(cart.filter(cartItem => cartItem.description !== item.description))
+        setCart(cart.filter(cartItem => cartItem.name !== item.name))
         updateCartTotal()
     }
 
@@ -34,9 +34,9 @@ const CartItem = ({item, updateCartTotal, cart, setCart}) => {
     <div className='cart-item flex-row-center'>
         <div className='flex-row-center'>
             <div>
-                <span><img src={item.image} alt=''/> {item.description.slice(0, 12)}</span>
+                <span><img src={item.image} alt=''/> {item.name}</span>
             </div>
-            <div>ksh. {item.price}</div>
+            <div>${item.price}</div>
         </div>
         <div className='flex-row-center'>
             <div className='qty'>

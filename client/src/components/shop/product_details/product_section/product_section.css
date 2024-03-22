@@ -12,8 +12,8 @@
 }
 
 .product-section  .image-container{
-    width: 350px;
-    height: 500px;
+    width: 400px;
+    height: 350px;
 }
 
 .product-section .price{
@@ -37,9 +37,6 @@
     font-size: 22px;
 }
 
-.qty-cart .qty{
-    
-}
 
 .qty-cart .qty-btn{
     border-radius: 5px;
@@ -49,6 +46,7 @@
 
 @media screen and (max-width: 600px) {
     .product-section .image-container{
-        height: 430px;
+        height: 300px;
+        width: 350px;
     }
 }

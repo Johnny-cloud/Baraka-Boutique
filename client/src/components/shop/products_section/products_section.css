@@ -1,5 +1,5 @@
 .products-section{
-    max-width: 900px;
+    max-width: 1200px;
     margin: 10px;
 }
 
@@ -11,8 +11,4 @@
     background-color: black;
     color: white;
     padding: 5px;
-}
-
-.products-section button:hover, .products-section button:focus{
-    background-color: orange;
 }
