@@ -12,7 +12,7 @@ const Home = () => {
       <div className='home-container'>
         <div className=''>
           <div className='home-landing'>
-            <div className='image-container'></div>
+            <div className='image-container'><h3>NOTHING BUT THE BEST DEALS FOR YOU!</h3></div>
           </div>
         </div>
         

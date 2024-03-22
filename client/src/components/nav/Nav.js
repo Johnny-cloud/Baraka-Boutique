@@ -15,6 +15,7 @@ const Navigation = () => {
 
   return (
         <Navbar expand='lg' className="bg-body-tertiary" sticky='top' expanded={expanded}>
+            <Navbar.Brand><b>BARAKA BOUTIQUE</b></Navbar.Brand>
             <Container>
                 <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">

@@ -8,7 +8,12 @@
     border: none;
     border-radius: 5px;
     width: 50px;
+    background-color: rgb(205, 205, 205);
+    color: black;
+    padding: 5px;
+}
+
+.products-section .page-btns button:hover{
     background-color: black;
     color: white;
-    padding: 5px;
 }

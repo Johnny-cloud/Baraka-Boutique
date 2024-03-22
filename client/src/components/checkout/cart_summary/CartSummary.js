@@ -17,15 +17,15 @@ const CartSummary = () => {
         }
         <div className='totals flex-row-center'>
           <div>Subtotal</div>
-          <div><b>Ksh. {subTotal}</b></div>
+          <div><b>${subTotal}</b></div>
         </div>
         <div className='totals flex-row-center'>
           <div>Shipping</div>
-          <div><b>ksh. 200</b></div>
+          <div><b>$200</b></div>
         </div>
         <div className='totals flex-row-center'>
           <div>Total</div>
-          <div><b>ksh. {total}</b></div>
+          <div><b>${total}</b></div>
         </div>
     </div>
     </div>

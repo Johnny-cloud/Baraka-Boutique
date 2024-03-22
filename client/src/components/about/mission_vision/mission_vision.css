@@ -1,18 +1,18 @@
-.mission-vision .image-container{
-    width: 500px;
-    height: 600px;
-    margin: 15px;
-    
-}
-
-.mission-vision img{
-    border-radius: 10px;
-}
-
 .mission-vision .details{
-    max-width: 500px;
-    margin: auto 15px;
+    max-width: 1300px;
+    margin: 20px auto;
+    background-color: rgb(214, 214, 214);
+    padding: 20px 7px;
+    border-radius: 10px;
     text-align: justify;
+}
+
+.mission-vision .details > *{
+    max-width: 350px;
+    margin: auto 15px;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 600px) {

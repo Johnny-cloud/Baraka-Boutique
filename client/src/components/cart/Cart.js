@@ -32,7 +32,7 @@ const Cart = () => {
                 <h5>CART TOTALS</h5>
                 <div className='flex-row-center'>
                     <div>Totals</div> 
-                    <div><b>Ksh. {cartTotal}</b></div>
+                    <div><b>$ {cartTotal}</b></div>
                 </div>
                 <Link to={'/checkout'}>Proceed To Checkout <i class="bi bi-bag-check"></i></Link>
             </div>

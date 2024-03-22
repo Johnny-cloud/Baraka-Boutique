@@ -3,6 +3,11 @@
     margin: 10px;
 }
 
+.navbar-brand{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+}
+
 .me-auto a:hover, .me-auto a:focus{
     color: orange;
 }

@@ -26,7 +26,6 @@ const CartItem = ({item, updateCartTotal, cart, setCart}) => {
 
     useEffect(() => {
         updateCartTotal()
-        console.log('Great!')
     }, [item.quantity])
     
 
@@ -44,7 +43,7 @@ const CartItem = ({item, updateCartTotal, cart, setCart}) => {
                 {item.quantity}
                 <button onClick={increaseQty}>+</button>
             </div>
-            <div>Ksh. {qty * item.price}</div>
+            <div>${qty * item.price}</div>
             <div><button onClick={removeItemFromCart}>Remove <i class="bi bi-trash"></i></button></div>
         </div>
     </div>

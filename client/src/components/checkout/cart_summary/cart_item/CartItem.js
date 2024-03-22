@@ -10,7 +10,7 @@ const CartItem = ({item}) => {
         <div className='flex-row-center'>
             <div>${item.price}</div>
             <div>Qty: {item.quantity}</div>
-            <div>Tot: <b>Ksh.{item.price * item.quantity}</b></div>
+            <div>Tot: <b>${item.price * item.quantity}</b></div>
         </div>
         
     </div>
