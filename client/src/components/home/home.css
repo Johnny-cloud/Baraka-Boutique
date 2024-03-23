@@ -29,6 +29,7 @@
 }
 
 .home-landing .image-container{
+    border-radius: 10px;
     height: 100%;
     width: 100%;
     background-color: rgb(150, 148, 148, 0.3);

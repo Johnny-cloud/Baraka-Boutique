@@ -6,7 +6,8 @@ import CartItem from './cart_item/CartItem'
 const CartSummary = () => {
     const {cart} = useContext(AppContext)
     const subTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0)
-    const total = subTotal + 200
+    const shipping = 20
+    const total = subTotal + shipping
   
   return (
     <div>
@@ -21,7 +22,7 @@ const CartSummary = () => {
         </div>
         <div className='totals flex-row-center'>
           <div>Shipping</div>
-          <div><b>$200</b></div>
+          <div><b>${shipping}</b></div>
         </div>
         <div className='totals flex-row-center'>
           <div>Total</div>

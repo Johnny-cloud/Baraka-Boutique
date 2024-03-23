@@ -16,6 +16,11 @@
     height: 350px;
 }
 
+.product-section .image-container, .product-section .image-container img{
+    background-color: rgb(215, 214, 214);
+    mix-blend-mode: multiply;
+}
+
 .product-section .price{
     font-size: 25px;
 }
