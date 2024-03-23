@@ -6,6 +6,11 @@
 .navbar-brand{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 25px;
+    border: solid;
+    border-color: grey;
+    border-width: 2px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .me-auto a:hover, .me-auto a:focus{
