@@ -19,7 +19,7 @@ const Testimonials = () => {
         },
     ]
   return (
-    <div className='testimonials'>
+    <div className='testimonials dark-about'>
         <h4>TESTIMONIALS</h4>
         <div className='flex-row-center'>
         {

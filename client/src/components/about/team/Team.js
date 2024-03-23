@@ -28,7 +28,7 @@ const Team = () => {
         setSelectedMember(member)
     }
   return (
-    <div className='team'>
+    <div className='team dark-about'>
         <h3>MEET THE TEAM</h3>
         <div className='flex-row-center'>
             {

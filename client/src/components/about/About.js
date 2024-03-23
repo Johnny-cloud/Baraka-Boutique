@@ -15,8 +15,9 @@ const About = () => {
         <TopLanding title={'About'} />
         <div className='main-content'>
           <MissionVission />
-          <Team />
           <Testimonials />
+          <Team />
+          
         </div>
     </div>
   )
