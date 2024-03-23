@@ -1,10 +1,9 @@
 .cart-item{
     justify-content: flex-start;
     margin: 20px;
-    border: solid;
+    border: none;
     border-width: 1px;
-    border-radius: 5px;
-    border-color: rgb(205, 204, 204);
+    border-radius: 10px;
 }
 
 .cart-item > *{

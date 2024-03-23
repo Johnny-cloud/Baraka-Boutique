@@ -2,6 +2,7 @@
     max-width: 800px;
     margin: 20px 0;
     height: fit-content;
+    background-color: rgb(228, 226, 226);
 }
 
 .cart-item > .flex-row-center{
