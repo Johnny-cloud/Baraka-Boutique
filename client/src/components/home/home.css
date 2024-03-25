@@ -41,9 +41,10 @@
 
 .home-landing .image-container h3{
     margin: auto;
-    background-color: rgb(245, 245, 245, 0.4);
+    background-color: rgba(247, 247, 247, 0.4);
     border-radius: 10px;
     padding: 10px;
+    font-weight: bold;
 }
 
 
