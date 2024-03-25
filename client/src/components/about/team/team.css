@@ -28,13 +28,3 @@
     font-size: 20px;
     margin: 5px;
 }
-
-@media screen and (max-width: 600px) {
-    .team-member{
-        height: 500px;
-    }
-
-    .team-member .image-container{
-        height: 380px;
-    }
-}
