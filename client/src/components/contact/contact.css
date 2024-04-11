@@ -25,6 +25,12 @@
     background-color: inherit;
 }
 
+.contact form > * > input{
+    border-width: 2px;
+    border-color: rgb(181, 181, 181);
+    background-color: inherit;
+}
+
 .contact form input:focus, .contact form textarea:focus{
     outline: none;
 }
